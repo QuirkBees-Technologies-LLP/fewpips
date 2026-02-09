@@ -5563,6 +5563,99 @@
          </div>
       </section>
 
+   <section class="bg-ebony py-[100px] relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
+         <div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-purple blur-[120px]"></div>
+      </div>
+
+      <div class="v2-container relative z-10">
+         <div class="text-center mb-8">
+            <h2 class="text-[28px] lg:text-[52px] font-extrabold font-bernou leading-[62px] text-white">
+               Create New Challenge
+            </h2>
+            <p class="mt-3 text-white/60 font-Inter">
+               Select your configuration, we will send the credentials to your account.
+            </p>
+         </div>
+
+         <section class="text-center mb-8">
+            <h2 class="text-md font-semibold text-white/80 mb-6 uppercase tracking-wider text-sm">Select your preferred
+               plan</h2>
+            <div id="plan-container" class="flex flex-wrap justify-center gap-3">
+            </div>
+         </section>
+
+         <section class="mx-auto mb-8 range-responsive text-center">
+            <h2 class="text-md font-semibold text-white/80 mb-8 uppercase tracking-wider text-sm">Select the funded
+               amount</h2>
+            <div class="range-container">
+               <div class="value-display">
+                  <span id="valueDisplay">$5k</span>
+               </div>
+
+               <div class="range-wrapper" id="rangeWrapper">
+                  <div class="track-bg" id="trackBg"></div>
+                  <div class="track-fill" id="trackFill"></div>
+                  <div class="steps" id="steps"></div>
+                  <div class="thumb" id="thumb"></div>
+               </div>
+            </div>
+
+            <div class="relative max-w-xs">
+               <select id="amount-select"
+                  class="w-full p-4 bg-ebony border border-white/20 rounded-xl outline-none focus:ring-2 focus:ring-purple transition-all font-medium text-white appearance-none cursor-pointer">
+               </select>
+               <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-white">
+                  <i data-lucide="chevron-down" class="w-5 h-5"></i>
+               </div>
+            </div>
+         </section>
+         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div
+               class="lg:col-span-1 space-y-10 bg-white/5 backdrop-blur-xl p-6 md:p-8 rounded-[24px] border border-white/10 shadow-2xl">
+               <div id="phases-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+               </div>
+            </div>
+
+            <div class="lg:col-span-1">
+               <div
+                  class="bg-gradient-to-br from-purple/20 to-ebony p-8 rounded-[24px] border border-purple/30 shadow-sm sticky top-28 backdrop-blur-md">
+                  <h2 class="text-xl font-bold text-white font-bernou">Challenge Price</h2>
+                  <p class="text-sm text-white/50 mb-6">Secure checkout for your evaluation</p>
+
+                  <div id="price-display" class="text-5xl font-black text-white mb-8 font-bernou">$0.00</div>
+
+                  <div class="space-y-4">
+                     <label class="text-xs font-bold text-white/40 uppercase tracking-widest">Bonus Code</label>
+                     <div class="flex gap-2">
+                        <input type="text" placeholder="Enter Code"
+                           class="flex-1 p-4 bg-ebony border border-white/20 rounded-xl outline-none focus:border-purple text-white text-sm">
+                        <button
+                           class="bg-purple hover:bg-purple/80 text-white px-6 rounded-xl font-bold transition-all flex items-center gap-2 text-sm whitespace-nowrap">
+                           Redeem
+                        </button>
+                     </div>
+
+                     <div class="flex items-center gap-3 py-6 border-t border-white/5 mt-6">
+                        <input type="checkbox" id="terms-creator"
+                           class="w-5 h-5 accent-purple rounded border-white/20 bg-ebony">
+                        <label for="terms-creator" class="text-xs text-white/60 leading-relaxed">
+                           I accept the <span
+                              class="text-purple underline cursor-pointer hover:text-white transition-colors">Terms and
+                              Conditions</span> of FewPips.
+                        </label>
+                     </div>
+
+                     <button
+                        class="w-full bg-[#635BFF] hover:brightness-110 text-white py-5 rounded-xl font-bold text-lg shadow-[0_0_20px_rgba(99,91,255,0.3)] transition-all transform active:scale-[0.98]">
+                        Start Evaluation Now
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
       <section class="sm:v2-container mx-auto py-[50px]">
          <div class="justify-between gap-[50px] tab:flex-row tab:gap-[48px]">
             <div class=" max-sm:v2-container">
@@ -6331,100 +6424,6 @@
          </div>
       </footer>
    </section>
-   <section class="bg-ebony py-[100px] relative overflow-hidden">
-      <div class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
-         <div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-purple blur-[120px]"></div>
-      </div>
-
-      <div class="v2-container relative z-10">
-         <div class="text-center mb-8">
-            <h2 class="text-[28px] lg:text-[52px] font-extrabold font-bernou leading-[62px] text-white">
-               Create New Challenge
-            </h2>
-            <p class="mt-3 text-white/60 font-Inter">
-               Select your configuration, we will send the credentials to your account.
-            </p>
-         </div>
-
-         <section class="text-center mb-8">
-            <h2 class="text-md font-semibold text-white/80 mb-6 uppercase tracking-wider text-sm">Select your preferred
-               plan</h2>
-            <div id="plan-container" class="flex flex-wrap justify-center gap-3">
-            </div>
-         </section>
-
-         <section class="mx-auto mb-8 range-responsive text-center">
-            <h2 class="text-md font-semibold text-white/80 mb-8 uppercase tracking-wider text-sm">Select the funded
-               amount</h2>
-            <div class="range-container">
-               <div class="value-display">
-                  <span id="valueDisplay">$5k</span>
-               </div>
-
-               <div class="range-wrapper" id="rangeWrapper">
-                  <div class="track-bg" id="trackBg"></div>
-                  <div class="track-fill" id="trackFill"></div>
-                  <div class="steps" id="steps"></div>
-                  <div class="thumb" id="thumb"></div>
-               </div>
-            </div>
-
-            <div class="relative max-w-xs">
-               <select id="amount-select"
-                  class="w-full p-4 bg-ebony border border-white/20 rounded-xl outline-none focus:ring-2 focus:ring-purple transition-all font-medium text-white appearance-none cursor-pointer">
-               </select>
-               <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-white">
-                  <i data-lucide="chevron-down" class="w-5 h-5"></i>
-               </div>
-            </div>
-         </section>
-         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div
-               class="lg:col-span-1 space-y-10 bg-white/5 backdrop-blur-xl p-6 md:p-8 rounded-[24px] border border-white/10 shadow-2xl">
-               <div id="phases-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-               </div>
-            </div>
-
-            <div class="lg:col-span-1">
-               <div
-                  class="bg-gradient-to-br from-purple/20 to-ebony p-8 rounded-[24px] border border-purple/30 shadow-sm sticky top-28 backdrop-blur-md">
-                  <h2 class="text-xl font-bold text-white font-bernou">Challenge Price</h2>
-                  <p class="text-sm text-white/50 mb-6">Secure checkout for your evaluation</p>
-
-                  <div id="price-display" class="text-5xl font-black text-white mb-8 font-bernou">$0.00</div>
-
-                  <div class="space-y-4">
-                     <label class="text-xs font-bold text-white/40 uppercase tracking-widest">Bonus Code</label>
-                     <div class="flex gap-2">
-                        <input type="text" placeholder="Enter Code"
-                           class="flex-1 p-4 bg-ebony border border-white/20 rounded-xl outline-none focus:border-purple text-white text-sm">
-                        <button
-                           class="bg-purple hover:bg-purple/80 text-white px-6 rounded-xl font-bold transition-all flex items-center gap-2 text-sm whitespace-nowrap">
-                           Redeem
-                        </button>
-                     </div>
-
-                     <div class="flex items-center gap-3 py-6 border-t border-white/5 mt-6">
-                        <input type="checkbox" id="terms-creator"
-                           class="w-5 h-5 accent-purple rounded border-white/20 bg-ebony">
-                        <label for="terms-creator" class="text-xs text-white/60 leading-relaxed">
-                           I accept the <span
-                              class="text-purple underline cursor-pointer hover:text-white transition-colors">Terms and
-                              Conditions</span> of FewPips.
-                        </label>
-                     </div>
-
-                     <button
-                        class="w-full bg-[#635BFF] hover:brightness-110 text-white py-5 rounded-xl font-bold text-lg shadow-[0_0_20px_rgba(99,91,255,0.3)] transition-all transform active:scale-[0.98]">
-                        Start Evaluation Now
-                     </button>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
-
    <script>
 
 const API_URL = 'https://api.fewpips.com/api/v1/challenges/templates';

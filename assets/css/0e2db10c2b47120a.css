@@ -1,5 +1,5 @@
 .pricing-plan-btn {
-    background: linear-gradient(180deg,#11cc38,#05aa4e)
+    background: linear-gradient(180deg, #11cc38, #05aa4e)
 }
 
 .bg-transition-inactive {
@@ -30,7 +30,7 @@
 
 .glow {
     animation: rotate 3s linear infinite;
-    background: radial-gradient(#fff,#f1f5f9,transparent);
+    background: radial-gradient(#fff, #f1f5f9, transparent);
     transform-origin: bottom center
 }
 
@@ -44,7 +44,8 @@
     }
 }
 
-.price-drawer input[type=checkbox],.price-drawer input[type=radio] {
+.price-drawer input[type=checkbox],
+.price-drawer input[type=radio] {
     -webkit-appearance: none;
     appearance: none;
     border: 1.25px solid #000;
@@ -63,18 +64,20 @@
     border-radius: 6px
 }
 
-.price-drawer input[type=checkbox]:checked,.price-drawer input[type=radio]:checked {
-    border: 1px solid #635bff
+.price-drawer input[type=checkbox]:checked,
+.price-drawer input[type=radio]:checked {
+    border: 1px solid #11cc38
 }
 
-.price-drawer input[type=checkbox]:checked:after,.price-drawer input[type=radio]:checked:after {
-    background-color: #635bff;
+.price-drawer input[type=checkbox]:checked:after,
+.price-drawer input[type=radio]:checked:after {
+    background-color: #11cc38;
     content: "";
     height: 12px;
     left: 50%;
     position: absolute;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     width: 12px
 }
 
@@ -93,4 +96,117 @@
 
 .addonList::-webkit-scrollbar-thumb {
     scrollbar-color: #cecccc
+}
+
+#amount-select option {
+    background-color: #121217 !important;
+}
+
+.range-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.value-display {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.value-display::before {
+    content: '💰';
+    font-size: 20px;
+}
+
+.range-wrapper {
+    position: relative;
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+/* Custom track background */
+.track-bg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    transform: translateY(-50%);
+    background: #363636;
+    border-radius: 2px;
+    z-index: 0;
+    cursor: pointer;
+}
+
+/* Active track (filled portion) */
+.track-fill {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    transform: translateY(-50%);
+    background: #11cb39;
+    border-radius: 2px;
+    z-index: 1;
+    transition: width 0.3s ease;
+    pointer-events: none;
+}
+
+/* Step dots */
+.steps {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.step {
+    width: 20px;
+    height: 20px;
+    background: #363636;
+    border-radius: 50%;
+    transition: all 0.3s;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.step:hover {
+    transform: scale(1.3);
+}
+
+.step.active {
+    background: #11cb39;
+}
+
+/* Thumb (custom made) */
+.thumb {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    background: #11cb39;
+    border: 4px solid #0a1628;
+    border-radius: 50%;
+    cursor: grab;
+    box-shadow: 0 0 0 2px #11cb39;
+    transition: transform 0.2s, left 0.3s ease;
+    z-index: 3;
+}
+
+.thumb:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.thumb:active {
+    cursor: grabbing;
 }

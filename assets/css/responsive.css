@@ -7,6 +7,11 @@
         display: block;
     }
 }
+@media (min-width: 767px) {
+    .range-responsive {
+        width: 60% !important; 
+    }
+}
 @media (max-width: 1024px) {
     .topbar-logo-image {
         display: none;

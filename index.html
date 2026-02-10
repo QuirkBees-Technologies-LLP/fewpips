@@ -1340,7 +1340,7 @@
                   </div>
                </ul>
             </nav>
-            <!-- <button type="button"
+            <button type="button"
                class="nav:hidden cursor-pointer text-2xl px-2 flex items-center rounded-sm h-[30px] nav-sm:h-[35px] text-white bg-white/10">
                <svg stroke="#ffffff" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
                   stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -1348,7 +1348,7 @@
                   <line x1="3" y1="6" x2="21" y2="6"></line>
                   <line x1="3" y1="18" x2="21" y2="18"></line>
                </svg>
-            </button> -->
+            </button>
          </div>
       </div>
    </header>
@@ -1920,7 +1920,6 @@
             </div>
          </div>
       </section>
-
       <section class="bg-ebony mobile_section">
          <div class="md:v2-container pt-[100px] pb-[40px] lg:pb-[80px] xl:pt-0 relative z-[1]">
             <div class="flex flex-col gap-[50px] lg:gap-[90px] max-lg:flex-col">
@@ -2412,7 +2411,7 @@
             <div class=""
                style="background-image: url('./assets/image/bg.png'); background-size: cover; background-position: center;">
                <!-- <img src="./assets/image/bg.png" alt="" height="800px"> -->
-               <div class="z-1 relative py-[50px] mb-[50px] mt-[50px]">
+               <div class="z-1 relative py-[10px] mb-[50px] mt-[50px]">
                   <div class="flex flex-col items-center justify-center">
                      <div class="mb-3 md:mb-5"> </div>
                      <h2
@@ -2468,7 +2467,7 @@
                                     </th>
                                  </tr>
                               </thead>
-                              <tbody class="text-white">
+                              <tbody id="compare-programs-body" class="text-white">
                                  <tr class="hover:bg-[#ffffff09] bg-[#ffffff05]">
                                     <td class="border-r border-[#ffffff1a] px-6 py-4 relative">
                                        <div class="flex gap-3 items-center">
@@ -4690,7 +4689,7 @@
                      </div>
                   </div>
                   <div
-                     class="mb-[60px] mt-[30px] lg:mt-[30px] flex flex-wrap items-center justify-center gap-[5px] sm:gap-10 v2-container">
+                     class="invisible mb-[60px] mt-[30px] lg:mt-[30px] flex flex-wrap items-center justify-center gap-[5px] sm:gap-10 v2-container">
                      <p class="text-[14px] font-bold text-white">Add-ons for Stella</p>
                      <ul class="flex list-disc flex-wrap justify-center pl-3 space-x-5 sm:space-x-10">
                         <li class="mt-2 sm:mt-0 text-[14px] text-white/75">Lifetime Rewards 95%</li>
@@ -4877,7 +4876,7 @@
                            Minimum 5 trading days required
                         </p>
                         <p class="relative z-[99] mt-[20px] text-sm font-[500] leading-[34px] text-white xl:text-base">
-                           Consistency rule: Max 40% profit per day (funded only)
+                           Consistency rule: The highest profit day cannot exceed 40% of the total profit.
                         </p>
 
                      </div>
@@ -5740,101 +5739,100 @@
             </div>
          </div>
       </section>
-      <section class="bg-ebony py-[100px] relative overflow-hidden">
-         <div class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
-            <div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-purple blur-[120px]"></div>
+
+   <section class="bg-ebony py-[100px] relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
+         <div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-purple blur-[120px]"></div>
+      </div>
+
+      <div class="v2-container relative z-10">
+         <div class="text-center mb-8">
+            <h2 class="text-[28px] lg:text-[52px] font-extrabold font-bernou leading-[62px] text-white">
+               Create New Challenge
+            </h2>
+            <p class="mt-3 text-white/60 font-Inter">
+               Select your configuration, we will send the credentials to your account.
+            </p>
          </div>
 
-         <div class="v2-container relative z-10">
-            <div class="text-center mb-8">
-               <h2 class="text-[28px] lg:text-[52px] font-extrabold font-bernou leading-[62px] text-white">
-                  Create New Challenge
-               </h2>
-               <p class="mt-3 text-white/60 font-Inter">
-                  Select your configuration, we will send the credentials to your account.
-               </p>
+         <section class="text-center mb-8">
+            <h2 class="text-md font-semibold text-white/80 mb-6 uppercase tracking-wider text-sm">Select your preferred
+               plan</h2>
+            <div id="plan-container" class="flex flex-wrap justify-center gap-3">
+            </div>
+         </section>
+
+         <section class="mx-auto mb-8 range-responsive text-center">
+            <h2 class="text-md font-semibold text-white/80 mb-8 uppercase tracking-wider text-sm">Select the funded
+               amount</h2>
+            <div class="range-container">
+               <div class="value-display">
+                  <span id="valueDisplay">$5k</span>
+               </div>
+
+               <div class="range-wrapper" id="rangeWrapper">
+                  <div class="track-bg" id="trackBg"></div>
+                  <div class="track-fill" id="trackFill"></div>
+                  <div class="steps" id="steps"></div>
+                  <div class="thumb" id="thumb"></div>
+               </div>
             </div>
 
-            <section class="text-center mb-8">
-               <h2 class="text-md font-semibold text-white/80 mb-6 uppercase tracking-wider text-sm">Select your
-                  preferred
-                  plan</h2>
-               <div id="plan-container" class="flex flex-wrap justify-center gap-3">
+            <div class="relative max-w-xs">
+               <select id="amount-select"
+                  class="w-full p-4 bg-ebony border border-white/20 rounded-xl outline-none focus:ring-2 focus:ring-purple transition-all font-medium text-white appearance-none cursor-pointer">
+               </select>
+               <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-white">
+                  <i data-lucide="chevron-down" class="w-5 h-5"></i>
                </div>
-            </section>
-
-            <section class="mx-auto mb-8 range-responsive text-center">
-               <h2 class="text-md font-semibold text-white/80 mb-8 uppercase tracking-wider text-sm">Select the funded
-                  amount</h2>
-               <div class="range-container">
-                  <div class="value-display">
-                     <span id="valueDisplay">$5k</span>
-                  </div>
-
-                  <div class="range-wrapper" id="rangeWrapper">
-                     <div class="track-bg" id="trackBg"></div>
-                     <div class="track-fill" id="trackFill"></div>
-                     <div class="steps" id="steps"></div>
-                     <div class="thumb" id="thumb"></div>
-                  </div>
+            </div>
+         </section>
+         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div
+               class="lg:col-span-1 space-y-10 bg-white/5 backdrop-blur-xl p-6 md:p-8 rounded-[24px] border border-white/10 shadow-2xl">
+               <div id="phases-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
                </div>
+            </div>
 
-               <div class="relative max-w-xs">
-                  <select id="amount-select"
-                     class="w-full p-4 bg-ebony border border-white/20 rounded-xl outline-none focus:ring-2 focus:ring-purple transition-all font-medium text-white appearance-none cursor-pointer">
-                  </select>
-                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-white">
-                     <i data-lucide="chevron-down" class="w-5 h-5"></i>
-                  </div>
-               </div>
-            </section>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div class="lg:col-span-1">
                <div
-                  class="lg:col-span-1 space-y-10 bg-white/5 backdrop-blur-xl p-6 md:p-8 rounded-[24px] border border-white/10 shadow-2xl">
-                  <div id="phases-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-                  </div>
-               </div>
+                  class="bg-gradient-to-br from-purple/20 to-ebony p-8 rounded-[24px] border border-purple/30 shadow-sm sticky top-28 backdrop-blur-md">
+                  <h2 class="text-xl font-bold text-white font-bernou">Challenge Price</h2>
+                  <p class="text-sm text-white/50 mb-6">Secure checkout for your evaluation</p>
 
-               <div class="lg:col-span-1">
-                  <div
-                     class="bg-gradient-to-br from-purple/20 to-ebony p-8 rounded-[24px] border border-purple/30 shadow-sm sticky top-28 backdrop-blur-md">
-                     <h2 class="text-xl font-bold text-white font-bernou">Challenge Price</h2>
-                     <p class="text-sm text-white/50 mb-6">Secure checkout for your evaluation</p>
+                  <div id="price-display" class="text-5xl font-black text-white mb-8 font-bernou">$0.00</div>
 
-                     <div id="price-display" class="text-5xl font-black text-white mb-8 font-bernou">$0.00</div>
-
-                     <div class="space-y-4">
-                        <label class="text-xs font-bold text-white/40 uppercase tracking-widest">Bonus Code</label>
-                        <div class="flex gap-2">
-                           <input type="text" placeholder="Enter Code"
-                              class="flex-1 p-4 bg-ebony border border-white/20 rounded-xl outline-none focus:border-purple text-white text-sm">
-                           <button
-                              class="bg-purple hover:bg-purple/80 text-white px-6 rounded-xl font-bold transition-all flex items-center gap-2 text-sm whitespace-nowrap">
-                              Redeem
-                           </button>
-                        </div>
-
-                        <div class="flex items-center gap-3 py-6 border-t border-white/5 mt-6">
-                           <input type="checkbox" id="terms-creator"
-                              class="w-5 h-5 accent-purple rounded border-white/20 bg-ebony">
-                           <label for="terms-creator" class="text-xs text-white/60 leading-relaxed">
-                              I accept the <span
-                                 class="text-purple underline cursor-pointer hover:text-white transition-colors">Terms
-                                 and
-                                 Conditions</span> of FewPips.
-                           </label>
-                        </div>
-
+                  <div class="space-y-4">
+                     <label class="text-xs font-bold text-white/40 uppercase tracking-widest">Bonus Code</label>
+                     <div class="flex gap-2">
+                        <input type="text" placeholder="Enter Code"
+                           class="flex-1 p-4 bg-ebony border border-white/20 rounded-xl outline-none focus:border-purple text-white text-sm">
                         <button
-                           class="w-full bg-[#635BFF] hover:brightness-110 text-white py-5 rounded-xl font-bold text-lg shadow-[0_0_20px_rgba(99,91,255,0.3)] transition-all transform active:scale-[0.98]">
-                           Start Evaluation Now
+                           class="bg-purple hover:bg-purple/80 text-white px-6 rounded-xl font-bold transition-all flex items-center gap-2 text-sm whitespace-nowrap">
+                           Redeem
                         </button>
                      </div>
+
+                     <div class="flex items-center gap-3 py-6 border-t border-white/5 mt-6">
+                        <input type="checkbox" id="terms-creator"
+                           class="w-5 h-5 accent-purple rounded border-white/20 bg-ebony">
+                        <label for="terms-creator" class="text-xs text-white/60 leading-relaxed">
+                           I accept the <span
+                              class="text-purple underline cursor-pointer hover:text-white transition-colors">Terms and
+                              Conditions</span> of FewPips.
+                        </label>
+                     </div>
+
+                     <button
+                        class="w-full bg-[#635BFF] hover:brightness-110 text-white py-5 rounded-xl font-bold text-lg shadow-[0_0_20px_rgba(99,91,255,0.3)] transition-all transform active:scale-[0.98]">
+                        Start Evaluation Now
+                     </button>
                   </div>
                </div>
             </div>
          </div>
-      </section>
+      </div>
+   </section>
       <section class="sm:v2-container mx-auto py-[50px]">
          <div class="justify-between gap-[50px] tab:flex-row tab:gap-[48px]">
             <div class=" max-sm:v2-container">
@@ -6314,7 +6312,7 @@
                   <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
                      <div
                         class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
-                        We offer up to 95% profit split for our funded traders. The exact percentage depends on your
+                        We offer up to 90% profit split for our funded traders. The exact percentage depends on your
                         account tier and performance. Scale higher and earn more.
                      </div>
                   </div>
@@ -6359,15 +6357,13 @@
                   <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
                      <div
                         class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
-                        Yes! EAs and automated trading bots are fully supported on FewPips. Trade your own strategy
-                        across MT4, MT5, cTrader, and Match-Trader platforms.
+                        Yes! EAs and automated trading bots are allowed on FewPips with restrictions. Prohibited strategies include HFT, latency arbitrage, extreme grid/martingale strategies, and replication or multi-IP abuse. Currently, trading is supported on the MT5 platform.
                      </div>
                   </div>
                </div>
             </div>
          </div>
          <script>
-            // Accordion functionality
             document.querySelectorAll('.accordion-header').forEach(button => {
                button.addEventListener('click', function () {
                   const item = this.closest('.accordion-item');
@@ -6375,7 +6371,6 @@
                   const chevron = this.querySelector('.accordion-chevron');
                   const isOpen = this.getAttribute('aria-expanded') === 'true';
 
-                  // Close all other accordions
                   document.querySelectorAll('.accordion-item').forEach(otherItem => {
                      if (otherItem !== item) {
                         const otherContent = otherItem.querySelector('.accordion-content');
@@ -6387,7 +6382,6 @@
                      }
                   });
 
-                  // Toggle current accordion
                   if (isOpen) {
                      content.style.maxHeight = '0px';
                      this.setAttribute('aria-expanded', 'false');
@@ -6607,123 +6601,420 @@
          </div>
       </footer>
    </section>
-
-
    <script>
-      // (Maintain the logic from previous script, just updating the render function for styles)
-      const API_URL = 'https://api.fewpips.com/api/v1/challenges';
-      const AUTH_TOKEN = 'pk_test_5ba70bd5f1d3e9f29130273f5a6d07f444d078fa9370ee19be1719fc90b19a63';
 
-      const PLAN_CONFIG = {
-         "Three-Step": { phases: ["Phase 1", "Phase 2", "Phase 3", "Funded"] },
-         "Two-Step": { phases: ["Phase 1", "Phase 2", "Funded"] },
-         "One-Step": { phases: ["Phase 1", "Funded"] },
-         "Instant": { phases: ["Funded"] }
-      };
+const API_URL = 'https://api.fewpips.com/api/v1/challenges/templates';
 
-      let allData = [];
-      let activePlan = "Three-Step";
+const AUTH_TOKEN = 'pk_live_734f28105c2a0d2ad1588e2067fed29af743a3735321fb5a2ee4b42fbc07f325';
 
-      async function initChallengeCreator() {
-         try {
-            const response = await fetch(API_URL, { headers: { 'Authorization': `Bearer ${AUTH_TOKEN}` } });
-            const result = await response.json();
-            allData = result.data;
-            renderPlanButtons();
-            updatePlan(activePlan);
-         } catch (err) { console.error("API Error:", err); }
-      }
+const PLAN_CONFIG = {
+   "Three-Step": { phases: ["Phase 1", "Phase 2", "Phase 3", "Funded"] },
+   "Two-Step": { phases: ["Phase 1", "Phase 2", "Funded"] },
+   "One-Step": { phases: ["Phase 1", "Funded"] },
+   "Instant": { phases: ["Funded"] }
+};
 
-      function renderPlanButtons() {
-         const container = document.getElementById('plan-container');
-         container.innerHTML = Object.keys(PLAN_CONFIG).map(p => `
-         <button onclick="updatePlan('${p}')" id="btn-${p}" 
+let allData = {};
+let activePlan = "Three-Step";
+
+function formatTemplates(templates) {
+
+    const formatted = {};
+    const planNames = ["One-Step", "Two-Step", "Three-Step", "Instant"];
+
+    planNames.forEach(plan => {
+        formatted[plan] = [];
+    });
+
+    const tempMap = {};
+
+    templates.forEach(template => {
+
+        const planName = template?.plan?.name?.en;
+        const phaseName = template?.phase?.name?.en;
+        const price = template?.equity?.price;
+
+        if (!planName || !price || !formatted.hasOwnProperty(planName)) return;
+
+        if (!tempMap[planName]) tempMap[planName] = {};
+
+        if (!tempMap[planName][price]) {
+            tempMap[planName][price] = {
+                price: price,
+                equityPrice : template?.price,
+                equityLabel: template?.equity?.name?.en || price,
+                phases: []
+            };
+        }
+
+        tempMap[planName][price].phases.push({
+
+            type: phaseName === "Funded" ? "funded" : "phase",
+
+            name: phaseName,
+
+            uuid: template?.uuid || null,
+
+            minTradingDays: template?.minTradingDays ?? null,
+
+            maxTradingDays: template?.maxTradingDays ?? null,
+
+            maxDailyLoss: template?.maxDailyLoss ?? null,
+
+            maxOverallLoss: template?.maxOverallLoss ?? null,
+
+            profitTarget: template?.profitTarget ?? null,
+
+            maxProfitTarget: template?.maxProfitTarget ?? null,
+
+            maxWithdrawal: template?.maxWithdrawal ?? null,
+
+            consistency: template?.consistency ?? null
+
+        });
+
+    });
+
+    planNames.forEach(plan => {
+        formatted[plan] = Object.values(tempMap[plan] || {})
+            .sort((a, b) => Number(a.price) - Number(b.price));
+    });
+
+    return formatted;
+}
+
+function updateComparisonTable(data) {
+
+    // get all the unique values for price through out all records from all the elements.
+    const prices = new Set();
+    Object.values(data).forEach(plan => {
+        plan.forEach(record => {
+            prices.add(record.price);
+        });
+    });
+
+    // sort the prices first by converting it into number
+    const sortedPrices = Array.from(prices).sort((a, b) => Number(a) - Number(b));
+
+    // now create an array of objects with data in below format [{price : 10000, "three-step-price" : 10000, "one-step-price" : 10000 , "two-step-price" : 10000, "instant-price" : 10000}] and "N/A if not available"
+    const finalData = sortedPrices.map((price) => ({
+        account_size : price,
+        "three-step-price" : data["Three-Step"]?.find((record) => record.price === price)?.equityPrice || "N/A",
+        "one-step-price" : data["One-Step"]?.find((record) => record.price === price)?.equityPrice || "N/A",
+        "two-step-price" : data["Two-Step"]?.find((record) => record.price === price)?.equityPrice || "N/A",
+        "instant-price" : data["Instant"]?.find((record) => record.price === price)?.equityPrice || "N/A"
+    }))
+
+ const tableBody = document.querySelector("#compare-programs-body");
+    if (!tableBody) return;
+
+    let html = "";
+
+    finalData.forEach(row => {
+        // Format the account size for display (e.g., 3000.00 -> $3,000)
+        const formattedSize = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            maximumFractionDigits: 0
+        }).format(row.account_size);
+
+        // Helper to format price cells or return N/A
+        const formatPrice = (val) => val !== "N/A" ? new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            maximumFractionDigits: 0
+        }).format(val) : "N/A";
+
+        html += `
+        <tr class="hover:bg-[#ffffff09] bg-[#ffffff05]">
+            <td class="border-r border-[#ffffff1a] px-6 py-4 relative">
+                <div class="flex gap-3 items-center">
+                    <p class="false">${formattedSize}</p>
+                </div>
+            </td>
+            <td class="relative px-12 py-4 text-center xl:px-6 border-r border-dashed border-[#ffffff1a]">
+                <p class="text-[14px] font-normal">${formatPrice(row['one-step-price'])}</p>
+            </td>
+            <td class="relative px-12 py-4 text-center xl:px-6 border-r border-dashed border-[#ffffff1a]">
+                <p class="text-[14px] font-normal">${formatPrice(row['two-step-price'])}</p>
+            </td>
+            <td class="relative px-12 py-4 text-center xl:px-6 border-r border-dashed border-[#ffffff1a]">
+                <p class="text-[14px] font-normal">${formatPrice(row['three-step-price'])}</p>
+            </td>
+            <td class="relative px-12 py-4 text-center xl:px-6 border-r border-dashed border-[#ffffff1a]">
+                <p class="text-[14px] font-normal">${formatPrice(row['instant-price'])}</p>
+            </td>
+        </tr>`;
+    });
+
+    tableBody.innerHTML = html;
+}
+
+async function initChallengeCreator() {
+
+    try {
+
+        const response = await fetch(API_URL, {
+            headers: { 'Authorization': `Bearer ${AUTH_TOKEN}` }
+        });
+
+        const templates = await response.json();
+
+        allData = formatTemplates(templates);
+        
+        renderPlanButtons();
+
+        updateComparisonTable(allData);
+
+        updatePlan(activePlan);
+
+    } catch (err) {
+
+        console.error("API Error:", err);
+
+    }
+
+}
+
+function renderPlanButtons() {
+
+    const container = document.getElementById('plan-container');
+
+    container.innerHTML = Object.keys(PLAN_CONFIG).map(plan => `
+        <button onclick="updatePlan('${plan}')"
+            id="btn-${plan}"
             class="plan-btn border border-white/10 px-6 py-3 rounded-xl bg-white/5 text-white/70 font-semibold transition-all hover:bg-white/10 active:scale-95">
-            ${p}
-         </button>
-      `).join('');
+            ${plan}
+        </button>
+    `).join('');
+
+}
+
+function updateRangeSlider(planName, items) {
+    const stepsContainer = document.getElementById('steps');
+    if (!stepsContainer) return;
+
+    // Create dots based on current plan items
+    stepsContainer.innerHTML = items.map((item, index) => 
+        `<div class="step" data-index="${index}"></div>`
+    ).join('');
+
+    const steps = stepsContainer.querySelectorAll('.step');
+    steps.forEach((step, index) => {
+        step.onclick = () => {
+            // Force the synchronization using the shared function
+            syncSliderToIndex(index, items, planName);
+        };
+    });
+}
+
+function syncSliderToIndex(index, items, planName) {
+    const valueDisplay = document.getElementById('valueDisplay');
+    const trackFill = document.getElementById('trackFill');
+    const thumb = document.getElementById('thumb');
+    const select = document.getElementById('amount-select');
+    const steps = document.querySelectorAll('#steps .step');
+
+    const selectedItem = items[index];
+    const totalSteps = items.length - 1;
+    
+    // Calculate precise percentage (Handle division by zero for single-item plans)
+
+    let percentage = totalSteps > 0 ? (index / totalSteps) * 100 : 0;
+    
+    if(totalSteps === 4) {
+      switch(index) {
+         case 0:
+            percentage = 0;
+            break;
+         case 1:
+            percentage = 25;
+            break;
+            case 2:
+            percentage = 50;
+            break;
+         case 3:
+            percentage = 75;
+            break;
+         case 4:
+            percentage = 100;
+            break;
+         default:
+            percentage = 0;
       }
+    }
+    
+    // Update Visuals
+    const percentString = `${percentage}%`;
+    trackFill.style.width = percentString;
+    thumb.style.left = percentString;
+    console.log("total steps" , totalSteps , index , percentage , percentString )
 
-      function updatePlan(planName) {
-         activePlan = planName;
-         document.querySelectorAll('.plan-btn').forEach(b => {
-            b.classList.remove('bg-purple', 'text-white', 'border-purple', 'shadow-[0_0_15px_rgba(99,91,255,0.4)]');
-            b.classList.add('bg-white/5', 'text-white/70');
-         });
-         const activeBtn = document.getElementById(`btn-${planName}`);
-         activeBtn.classList.add('bg-purple', 'text-white', 'border-purple', 'shadow-[0_0_15px_rgba(99,91,255,0.4)]');
-         activeBtn.classList.remove('bg-white/5', 'text-white/70');
+    // Update Dots Active State
+    steps.forEach((step, i) => {
+        if (i <= index) step.classList.add('active');
+        else step.classList.remove('active');
+    });
 
-         const planItems = allData.filter(item => item.challenge.plan.name.en === planName);
-         const select = document.getElementById('amount-select');
-         const uniqueAmounts = [...new Map(planItems.map(item => [item.challenge.equity.name.en, item])).values()]
-            .sort((a, b) => a.challenge.equity.price - b.challenge.equity.price);
+    // Fix the "Amount Above Range" Display
+    const rawValue = Number(selectedItem.price ?? 0);
+    const displayLabel = rawValue >= 1000 
+        ? "$" + (rawValue / 1000) + "k" 
+        : "$" + rawValue;
+    
+    valueDisplay.innerText = displayLabel;
 
-         select.innerHTML = uniqueAmounts.map(item => `<option class="bg-ebony text-white" value="${item.challenge.equity.price}">${item.challenge.equity.name.en}</option>`).join('');
-         select.onchange = (e) => renderChallengeDetails(planName, e.target.value);
-         if (uniqueAmounts.length > 0) renderChallengeDetails(planName, uniqueAmounts[0].challenge.equity.price);
-      }
+    // Sync the Selector Value
+    select.value = selectedItem.price;
 
-      function renderChallengeDetails(planName, amountPrice) {
-         const data = allData.find(item => item.challenge.plan.name.en === planName && item.challenge.equity.price == amountPrice);
-         if (!data) return;
+    // Render the Details Section
+    renderChallengeDetails(planName, selectedItem.price);
+}
 
-         document.getElementById('price-display').innerText = `$${data.price.toFixed(2)}`;
-         const phases = PLAN_CONFIG[planName].phases;
-         const grid = document.getElementById('phases-grid');
+function updatePlan(planName) {
+    activePlan = planName;
 
-         grid.innerHTML = phases.map(phaseName => {
-            const isFunded = phaseName === "Funded";
-            let pTarget = 0, pPercent = 0;
-            if (!isFunded) {
-               if (phaseName === "Phase 1") {
-                  pTarget = data.requiredProfitTarget;
-                  pPercent = data.challenge.profitTarget;
-               } else {
-                  pPercent = 4;
-                  pTarget = (data.challenge.equity.price * pPercent) / 100;
-               }
-            }
+    // Update Button UI
+    document.querySelectorAll('.plan-btn').forEach(btn => {
+        btn.classList.remove('bg-purple', 'text-white', 'border-purple', 'shadow-[0_0_15px_rgba(99,91,255,0.4)]');
+        btn.classList.add('bg-white/5', 'text-white/70');
+    });
+    const activeBtn = document.getElementById(`btn-${planName}`);
+    activeBtn.classList.add('bg-purple', 'text-white', 'border-purple', 'shadow-[0_0_15px_rgba(99,91,255,0.4)]');
 
-            return `
-            <div class="min-w-[240px] border border-white/10 rounded-2xl p-6 bg-ebony shadow-inner flex-shrink-0">
-               <div class="flex items-center gap-3 mb-6">
-                  <div class="bg-[#11cb39] w-6 h-6 rounded-lg"></div>
-                  <h3 class="font-bold text-white font-bernou tracking-wide">${phaseName}</h3>
-               </div>
-               <div class="space-y-4 text-sm font-Inter">
-                  <div class="flex justify-between items-start border-b border-white/5 pb-3">
-                     <span class="text-white/40 font-medium">Profit target</span>
-                     <div class="text-right">
-                        <p class="font-bold text-white">${isFunded ? '—' : '$' + pTarget.toLocaleString()}</p>
-                        <p class="text-[11px] font-bold text-purple">${isFunded ? '—' : pPercent.toFixed(0) + '%'}</p>
-                     </div>
-                  </div>
-                  <div class="flex justify-between items-start border-b border-white/5 pb-3">
-                     <span class="text-white/40 font-medium">Max Loss</span>
-                     <div class="text-right">
-                        <p class="font-bold text-white">$${data.requiredOverallLoss.toLocaleString()}</p>
-                        <p class="text-[11px] font-bold text-purple">${data.challenge.maxOverallLoss}%</p>
-                     </div>
-                  </div>
-                  <div class="flex justify-between items-center border-b border-white/5 pb-3">
-                     <span class="text-white/40 font-medium">Min Days</span>
-                     <span class="font-bold text-white">${data.challenge.minTradingDays} Days</span>
-                  </div>
-                  <div class="flex justify-between items-center">
-                     <span class="text-white/40 font-medium">Consistency</span>
-                     <span class="font-bold ${isFunded ? 'text-purple' : 'text-white/20'}">${isFunded ? 'Enabled' : '—'}</span>
-                  </div>
-               </div>
+    const planItems = allData[planName] || [];
+    const select = document.getElementById('amount-select');
+
+    // Populate Selector
+    select.innerHTML = planItems.map(item => `
+        <option class="bg-ebony text-white" value="${item.price}">
+            ${Number(item.equityLabel ?? 0) ? "$" + Number(item.equityLabel ?? 0).toLocaleString() : item.equityLabel}
+        </option>
+    `).join('');
+
+    // Update Slider
+    updateRangeSlider(planName, planItems);
+
+    // Two-Way Sync: Selector -> Slider
+    select.onchange = (e) => {
+        const selectedPrice = e.target.value;
+        const index = planItems.findIndex(item => item.price === selectedPrice);
+        if (index !== -1) {
+            // Use the specific sync function defined in step 2
+            syncSliderToIndex(index, planItems, planName);
+        }
+    };
+
+    if (planItems.length > 0) {
+        syncSliderToIndex(0, planItems, planName);
+    }
+}
+
+function renderChallengeDetails(planName, price) {
+
+    const planItems = allData[planName] || [];
+
+    const data = planItems.find(item => item.price == price);
+
+    if (!data) return;
+
+
+    document.getElementById('price-display')
+        .innerText = `$${Number(data?.equityPrice ?? 0).toLocaleString()}`;
+
+
+    const phases = PLAN_CONFIG[planName].phases;
+
+    const grid = document.getElementById('phases-grid');
+
+
+    grid.innerHTML = phases.map(phaseName => {
+
+        const phaseData = data.phases.find(p => p.name === phaseName);
+
+        if (!phaseData) return '';
+
+        const isFunded = phaseData.type === "funded";
+
+        let profitPercent = phaseData.profitTarget || 0;
+
+        let profitAmount = isFunded
+            ? "—"
+            : `$${((price * profitPercent) / 100).toLocaleString()}`;
+
+        return `
+        <div class="min-w-[240px] border border-white/10 rounded-2xl p-6 bg-ebony shadow-inner flex-shrink-0">
+
+            <div class="flex items-center gap-3 mb-6">
+                <div class="bg-[#11cb39] w-6 h-6 rounded-lg"></div>
+                <h3 class="font-bold text-white font-bernou tracking-wide">${phaseName}</h3>
             </div>
-         `;
-         }).join('');
 
-         lucide.createIcons();
-      }
+            <div class="space-y-4 text-sm font-Inter">
 
-      initChallengeCreator();
-   </script>
+                <div class="flex justify-between border-b border-white/5 pb-3">
+                    <span class="text-white/40">Profit target</span>
+                    <div class="text-right">
+                        <p class="font-bold text-white">${profitAmount}</p>
+                        <p class="text-purple text-xs">
+                            ${isFunded ? "—" : profitPercent + "%"}
+                        </p>
+                    </div>
+                </div>
+
+                ${phaseData.maxDailyLoss ? `<div class="flex justify-between border-b border-white/5 pb-3">
+                    <span class="text-white/40">Max Daily Loss</span>
+                    <div class="text-right">
+                        <p class="font-bold text-white">
+                            $${((price * phaseData.maxDailyLoss) / 100).toLocaleString()}
+                        </p>
+                        <p class="text-purple text-xs">
+                            ${phaseData.maxDailyLoss}%
+                        </p>
+                    </div>
+                </div>` : ""}
+
+                <div class="flex justify-between border-b border-white/5 pb-3">
+                    <span class="text-white/40">Max Overall Loss</span>
+                    <div class="text-right">
+                        <p class="font-bold text-white">
+                            $${((price * phaseData.maxOverallLoss) / 100).toLocaleString()}
+                        </p>
+                        <p class="text-purple text-xs">
+                            ${phaseData.maxOverallLoss}%
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex justify-between border-b border-white/5 pb-3">
+                    <span class="text-white/40">Min Days</span>
+                    <span class="font-bold text-white">
+                        ${phaseData.minTradingDays ?? "—"}
+                    </span>
+                </div>
+
+                <div class="flex justify-between">
+                    <span class="text-white/40">Consistency</span>
+                    <span class="font-bold text-purple">
+                        ${phaseData.consistency ?? "—"}
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+        `;
+
+    }).join('');
+
+    lucide.createIcons();
+
+}
+
+initChallengeCreator();
+
+</script>
+
    <div id="modal-root"></div>
    <div
       class="fixed bottom-[105px] right-[18px] lg:right-[14px] z-[10000] w-[70px] h-[70px] lg:w-[80px] lg:h-[80px] rounded-full flex items-center justify-center">
@@ -6767,8 +7058,6 @@
       $(document).ready(function () {
          $(".tab-btn").click(function () {
             var tabId = $(this).data("tab");
-
-            // active class handle
             $(".tab-btn").removeClass("active bg-white text-[#16084D]");
             $(this).addClass("active bg-white text-[#16084D]");
 

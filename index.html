@@ -5828,18 +5828,18 @@
                         </button>
                         <script>
                            function handleButtonClick(button) {
-    const checkbox = document.getElementById('terms-creator');
-    
-    if (checkbox && checkbox.checked) {
-        // If checked, open the dynamic link
-        const url = button.getAttribute('data-link');
-        window.open(url, '_blank');
-    } else {
-        // If not checked, show alert
-        alert("Please accept the Terms and Conditions to proceed.");
-    }
-}
-                           </script>
+                              const checkbox = document.getElementById('terms-creator');
+                              
+                              if (checkbox && checkbox.checked) {
+                                 // If checked, open the dynamic link
+                                 const url = button.getAttribute('data-link');
+                                 window.open(url, '_blank');
+                              } else {
+                                 // If not checked, show alert
+                                 alert("Please accept the Terms and Conditions to proceed.");
+                              }
+                           }
+                        </script>
                      </div>
                   </div>
                </div>
@@ -7038,6 +7038,56 @@
       }
 
       initChallengeCreator();
+
+       // Drag and Click Logic for Slider - Integrated
+       const rangeWrapperVal = document.getElementById('rangeWrapper');
+       const thumbVal = document.getElementById('thumb');
+       let isDragging = false;
+
+       if (thumbVal && rangeWrapperVal) {
+          thumbVal.addEventListener('mousedown', function (e) {
+             isDragging = true;
+             e.preventDefault(); // Prevent selection
+          });
+
+          document.addEventListener('mousemove', function (e) {
+             if (!isDragging) return;
+             handleSliderInteraction(e);
+          });
+
+          document.addEventListener('mouseup', function () {
+             isDragging = false;
+          });
+
+          rangeWrapperVal.addEventListener('click', function (e) {
+             if (e.target === thumbVal) return;
+             handleSliderInteraction(e);
+          });
+       }
+
+       function handleSliderInteraction(e) {
+          const planItems = allData[activePlan] || [];
+          if (planItems.length === 0) return;
+
+          const rect = rangeWrapperVal.getBoundingClientRect();
+          let clickX = e.clientX - rect.left;
+
+          // Constrain
+          clickX = Math.max(0, Math.min(clickX, rect.width));
+
+          const clickPercentage = (clickX / rect.width) * 100;
+          const totalSteps = planItems.length - 1;
+          
+          let nearestIndex = 0;
+          if (totalSteps > 0) {
+             nearestIndex = Math.round((clickPercentage / 100) * totalSteps);
+          }
+          
+          // Ensure within bounds
+          nearestIndex = Math.max(0, Math.min(nearestIndex, totalSteps));
+
+          syncSliderToIndex(nearestIndex, planItems, activePlan);
+       }
 
    </script>
 

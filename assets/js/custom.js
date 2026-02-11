@@ -118,3 +118,28 @@ function updateRange() {
 
 // Initial update
 updateRange();
+
+const tabs = document.querySelectorAll(".plan-tab");
+const contents = document.querySelectorAll(".tab-content");
+
+tabs.forEach(tab=>{
+  tab.addEventListener("click",()=>{
+
+    // active tab remove
+    tabs.forEach(t=>t.classList.remove("active"));
+    tab.classList.add("active");
+
+    // content hide
+    contents.forEach(c=>c.classList.remove("active"));
+
+    // content show
+    const id = tab.getAttribute("data-tab");
+    document.getElementById(id).classList.add("active");
+
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const list = document.querySelector(".payout-scroll ul");
+  list.innerHTML += list.innerHTML; // duplicate items
+});

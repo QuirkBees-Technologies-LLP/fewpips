@@ -5865,7 +5865,7 @@ input[type=number] {
 
 .bg-\[\#252144\] {
 	--tw-bg-opacity: 1;
-	background-color: rgb(37 33 68/var(--tw-bg-opacity, 1))
+	background-color: #214427;
 }
 
 .bg-\[\#26116D\] {
@@ -6214,7 +6214,8 @@ input[type=number] {
 }
 
 .bg-\[\#ffffff1f\] {
-	background-color: #ffffff1f
+	background: radial-gradient(83% 87% at 14.9% 0%, rgb(30 83 27) 0%, rgba(51, 37, 33, 0.31) 100%);
+	border: 1px solid #ffffff26;
 }
 
 .bg-\[rgba\(112\2c 104\2c 255\2c 0\.15\)\] {
@@ -6911,7 +6912,7 @@ input[type=number] {
 	fill: #635bff
 }
 
-.fill-\[\#838EFF\] {
+.fill-\[\#11cc38\] {
 	fill: #11cc38
 }
 

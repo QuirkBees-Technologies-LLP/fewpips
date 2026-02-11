@@ -5820,7 +5820,11 @@
                         </div>
 
                         <button
-                           class="w-full bg-[#635BFF] hover:brightness-110 text-white py-5 rounded-xl font-bold text-lg shadow-[0_0_20px_rgba(99,91,255,0.3)] transition-all transform active:scale-[0.98]">
+                           class="w-full bg-[#635BFF] hover:brightness-110 text-white py-5 rounded-xl font-bold text-lg shadow-[0_0_20px_rgba(99,91,255,0.3)] transition-all transform active:scale-[0.98]"
+                           id="start-evaluation-now"
+                           data-link="https://www.example.com"
+                           onclick="window.open(this.getAttribute('data-link'), '_blank')"
+                           >
                            Start Evaluation Now
                         </button>
                      </div>
@@ -6616,71 +6620,70 @@
       let activePlan = "Three-Step";
 
       function formatTemplates(templates) {
+      const formatted = {};
+      const planNames = ["One-Step", "Two-Step", "Three-Step", "Instant"];
 
-         const formatted = {};
-         const planNames = ["One-Step", "Two-Step", "Three-Step", "Instant"];
+      planNames.forEach((plan) => {
+         formatted[plan] = [];
+      });
 
-         planNames.forEach(plan => {
-            formatted[plan] = [];
+      const tempMap = {};
+
+      templates.forEach((template) => {
+         const planName = template?.plan?.name?.en;
+         const phaseName = template?.phase?.name?.en;
+         const price = template?.equity?.price;
+         const uuid = template?.uuid;
+
+         if (!planName || !price || !formatted.hasOwnProperty(planName)) return;
+
+         if (!tempMap[planName]) tempMap[planName] = {};
+
+         if (!tempMap[planName][price]) {
+            tempMap[planName][price] = {
+            price: price,
+            equityPrice: template?.price,
+            equityLabel: template?.equity?.name?.en || price,
+            uuid,
+            planName,
+            phases: [],
+            };
+         }
+
+         tempMap[planName][price].phases.push({
+            type: phaseName === "Funded" ? "funded" : "phase",
+
+            name: phaseName,
+
+            uuid: template?.uuid || null,
+
+            minTradingDays: template?.minTradingDays ?? null,
+
+            maxTradingDays: template?.maxTradingDays ?? null,
+
+            maxDailyLoss: template?.maxDailyLoss ?? null,
+
+            maxOverallLoss: template?.maxOverallLoss ?? null,
+
+            profitTarget: template?.profitTarget ?? null,
+
+            maxProfitTarget: template?.maxProfitTarget ?? null,
+
+            maxWithdrawal: template?.maxWithdrawal ?? null,
+
+            consistency: template?.consistency ?? null,
          });
+      });
 
-         const tempMap = {};
+      planNames.forEach((plan) => {
+         formatted[plan] = Object.values(tempMap[plan] || {}).sort(
+            (a, b) => Number(a.price) - Number(b.price),
+         );
+      });
 
-         templates.forEach(template => {
-
-            const planName = template?.plan?.name?.en;
-            const phaseName = template?.phase?.name?.en;
-            const price = template?.equity?.price;
-
-            if (!planName || !price || !formatted.hasOwnProperty(planName)) return;
-
-            if (!tempMap[planName]) tempMap[planName] = {};
-
-            if (!tempMap[planName][price]) {
-               tempMap[planName][price] = {
-                  price: price,
-                  equityPrice: template?.price,
-                  equityLabel: template?.equity?.name?.en || price,
-                  phases: []
-               };
-            }
-
-            tempMap[planName][price].phases.push({
-
-               type: phaseName === "Funded" ? "funded" : "phase",
-
-               name: phaseName,
-
-               uuid: template?.uuid || null,
-
-               minTradingDays: template?.minTradingDays ?? null,
-
-               maxTradingDays: template?.maxTradingDays ?? null,
-
-               maxDailyLoss: template?.maxDailyLoss ?? null,
-
-               maxOverallLoss: template?.maxOverallLoss ?? null,
-
-               profitTarget: template?.profitTarget ?? null,
-
-               maxProfitTarget: template?.maxProfitTarget ?? null,
-
-               maxWithdrawal: template?.maxWithdrawal ?? null,
-
-               consistency: template?.consistency ?? null
-
-            });
-
-         });
-
-         planNames.forEach(plan => {
-            formatted[plan] = Object.values(tempMap[plan] || {})
-               .sort((a, b) => Number(a.price) - Number(b.price));
-         });
-
-         return formatted;
+      return formatted;
       }
-
+      
       function updateComparisonTable(data) {
 
          // get all the unique values for price through out all records from all the elements.
@@ -6920,6 +6923,18 @@
          document.getElementById('price-display')
             .innerText = `$${Number(data?.equityPrice ?? 0).toLocaleString()}`;
 
+         const destination = data?.uuid ?? "default-id";
+         const name = encodeURIComponent(data?.planName ?? "Challenge");
+         const equityPrice = data?.equityPrice ?? "0.00";
+         const planPrice = data?.price;
+
+         const dynamicLink = `https://crm.fewpips.com/financial/deposit?destination=${destination}&source=challenge&name=${name}+x+${planPrice}&price=${equityPrice}`;
+
+         const evalBtn = document.getElementById('start-evaluation-now');
+         
+         if (evalBtn) {
+            evalBtn.setAttribute('data-link', dynamicLink);
+         }
 
          const phases = PLAN_CONFIG[planName].phases;
 

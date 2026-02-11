@@ -244,18 +244,19 @@
       </div>
    </div> -->
    <header
-      class="fixed left-0 w-full h-[120px] sm:h-[90px] nav-sm:h-[65px] z-[999] backdrop-blur-[60px] border-b px-5 xl:px-10 flex nav-sm:items-center nav-sm:justify-between shadow-header bg-black/30 border-white/15">
+      class="fixed left-0 w-full h-[70px] sm:h-[70px] nav-sm:h-[65px] z-[999] backdrop-blur-[60px] border-b px-5 xl:px-10 flex nav-sm:items-center nav-sm:justify-between shadow-header bg-black/30 border-white/15">
       <div
-         class="xl:v2-container flex items-center nav-sm:justify-between w-full flex-col nav-sm:flex-row gap-3 header_main">
+         class="xl:v2-container flex items-center justify-between w-full flex-row gap-3 header_main">
          <div class="header_logo">
             <a href="/">
-               <!-- <h1 class="text-white font-bold text-[32px] leading-[120%] font-bernou">FewPips
-
-               </h1> -->
                <img alt="logo" width="150" height="150" src="./assets/image/Fewpips.png">
             </a>
          </div>
-         <div class="flex items-center gap-5 max-nav-sm:w-full">
+         <div class="flex items-center gap-3 max-nav:gap-5">
+                  <a class="header-menu-button mx-2 text-purple bg-white hover:!bg-purple hover:!text-white"
+                           href="#">Login</a>
+                  </div>
+         <!-- <div class="flex items-center gap-5 max-nav-sm:w-full">
             <div class="flex items-center gap-2 flex-1">
                <a class="h-[30px] flex-1 flex justify-center items-center nav-sm:px-3 rounded-sm font-Poppins font-medium text-xs bg-purple text-white"
                   href="/"><span data-wg-notranslate="true"
@@ -277,7 +278,7 @@
                   <div class="flex items-center gap-3 max-nav:gap-5 nav:hidden">
                      <li><a class="header-menu-button mx-2 text-purple bg-white hover:!bg-purple hover:!text-white"
                            href="#">Login</a></li>
-                     <!-- <li>
+                     <li>
                         <div class="language-dropdown relative group">
                            <button type="button" class="flex items-center text-sm uppercase">
                               <img alt="en" loading="lazy" width="20" height="20"
@@ -444,7 +445,7 @@
                               </div>
                            </div>
                         </div>
-                     </li> -->
+                     </li>
                   </div>
                   <li class="relative max-nav:w-full transition-all duration-300 group max-nav:opacity-0 max-nav:translate-y-10"
                      style="transition-delay:0s">
@@ -1166,10 +1167,10 @@
                         </div>
                      </div>
                   </li>
-                  <div class="flex items-center gap-3 max-nav:gap-5 max-nav:hidden">
+                  <div class="flex items-center gap-3 max-nav:gap-5">
                      <li><a class="header-menu-button mx-2 text-purple bg-white hover:!bg-purple hover:!text-white"
                            href="#">Login</a></li>
-                     <!-- <li>
+                     <li>
                         <div class="language-dropdown relative group">
                            <button type="button" class="flex items-center text-sm uppercase">
                               <img alt="en" loading="lazy" width="20" height="20"
@@ -1336,7 +1337,7 @@
                               </div>
                            </div>
                         </div>
-                     </li> -->
+                     </li>
                   </div>
                </ul>
             </nav>
@@ -1349,7 +1350,7 @@
                   <line x1="3" y1="18" x2="21" y2="18"></line>
                </svg>
             </button>
-         </div>
+         </div> -->
       </div>
    </header>
    <main class="">
@@ -2424,7 +2425,7 @@
 
                      </p>
                   </div>
-                  <div class="container tab-content active mt-5" id="stellar-2">
+                  <div class="container tab-content hidden mt-5" id="stellar-2">
                      <div class="rounded-2xl border border-white/30 bg-black/60">
                         <div class="hide-scroll-bar overflow-x-auto"
                            style="box-shadow: rgba(0, 0, 0, 0.4) 0px 20px 40px 0px; border-radius: 15px;">
@@ -3281,7 +3282,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="container tab-content hidden" id="stellar-lite">
+                  <div class="container tab-content active mt-10" id="stellar-lite">
                      <div class="rounded-2xl border border-white/30 bg-black/60">
                         <div class="hide-scroll-bar overflow-x-auto"
                            style="box-shadow: rgba(0, 0, 0, 0.4) 0px 20px 40px 0px; border-radius: 15px;">
@@ -4736,7 +4737,7 @@
                   <div
                      class="w-full rounded-[20px] px-[30px] py-[30px] xsm:py-[30px] transition-all duration-300 ease-in-out hover:scale-[102%] flex flex-col justify-between gap-10"
                      style="background: #11cc382b">
-                     <div class="flex items-center justify-between gap-5">
+                     <div class="flex flex-wrap items-center justify-between gap-5">
                         <div>
                            <div class="flex items-center gap-2">
                               <h3 class="text-[24px] leading-[120%] text-white font-bernou font-bold">
@@ -4790,7 +4791,7 @@
 
                   </div>
                   <div
-                     class="w-full flex items-center justify-between rounded-[20px] px-[30px] py-[30px] xsm:py-[40px] transition-all duration-300 ease-in-out hover:scale-[102%]"
+                     class="w-full flex flex-wrap items-center justify-between rounded-[20px] px-[30px] py-[30px] xsm:py-[40px] transition-all duration-300 ease-in-out hover:scale-[102%]"
                      style="background: #11cc382b">
                      <div class="flex-1">
                         <div class="flex items-center gap-2">
@@ -7018,7 +7019,7 @@ initChallengeCreator();
    <div id="modal-root"></div>
    <div
       class="fixed bottom-[105px] right-[18px] lg:right-[14px] z-[10000] w-[70px] h-[70px] lg:w-[80px] lg:h-[80px] rounded-full flex items-center justify-center">
-      <div class="absolute inset-0 flex items-center justify-center">
+      <!-- <div class="absolute inset-0 flex items-center justify-center">
          <div class="w-full h-full rounded-full animate-spin"
             style="animation-duration: 25s; animation-timing-function: linear; animation-iteration-count: infinite;">
             <svg viewBox="0 0 150 150" class="w-full h-full transform rotate-90 text-white">
@@ -7029,8 +7030,8 @@ initChallengeCreator();
                </text>
             </svg>
          </div>
-      </div>
-      <div class="w-[44px] h-[44px] lg:w-12 lg:h-12 rounded-full bg-purple flex items-center justify-center z-10">
+      </div> -->
+      <div class="w-12 h-12 rounded-full bg-purple flex items-center justify-center z-10">
          <button type="button" class="flex items-center justify-center w-full h-full"
             aria-label="Scroll to voice AI section">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"

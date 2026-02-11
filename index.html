@@ -5823,10 +5823,23 @@
                            class="w-full bg-[#635BFF] hover:brightness-110 text-white py-5 rounded-xl font-bold text-lg shadow-[0_0_20px_rgba(99,91,255,0.3)] transition-all transform active:scale-[0.98]"
                            id="start-evaluation-now"
                            data-link="https://www.example.com"
-                           onclick="window.open(this.getAttribute('data-link'), '_blank')"
-                           >
+                           onclick="handleButtonClick(this)">
                            Start Evaluation Now
                         </button>
+                        <script>
+                           function handleButtonClick(button) {
+    const checkbox = document.getElementById('terms-creator');
+    
+    if (checkbox && checkbox.checked) {
+        // If checked, open the dynamic link
+        const url = button.getAttribute('data-link');
+        window.open(url, '_blank');
+    } else {
+        // If not checked, show alert
+        alert("Please accept the Terms and Conditions to proceed.");
+    }
+}
+                           </script>
                      </div>
                   </div>
                </div>

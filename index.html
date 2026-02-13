@@ -190,7 +190,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             <nav class="hidden lg:flex items-center gap-12 text-white/70">
                <a href="#" class="hover:text-white transition text-sm">Home</a>
                <a href="#" class="hover:text-white transition text-sm">Challenge</a>
-               <a href="#" class="hover:text-white transition text-sm">Instant Funding</a>
+               <a href="#" class="hover:text-white transition text-sm">INSTANT Funding</a>
                <a href="#" class="hover:text-white transition text-sm">About Us</a>
             </nav>
 
@@ -221,7 +221,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             <div class="px-6 py-8 flex flex-col gap-5 text-white/80 text-lg">
                <a href="#" class="hover:text-white">Home</a>
                <a href="#" class="hover:text-white">Challenge</a>
-               <a href="#" class="hover:text-white">Instant Funding</a>
+               <a href="#" class="hover:text-white">INSTANT Funding</a>
                <a href="#" class="hover:text-white">About Us</a>
                <a href="#" class="hover:text-white">More</a>
                <hr class="border-white/10">
@@ -582,20 +582,20 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                      <div class="plan-switcher">
 
                         <button class="plan-tab active" data-tab="stellar-2step">
-                           Three-Step
+                           THREE-STEP
                         </button>
 
                         <button class="plan-tab" data-tab="stellar-1step">
-                           Two-Step
+                           TWO-STEP
                         </button>
 
                         <button class="plan-tab" data-tab="stellar-lite">
-                           One-Step
+                           ONE-STEP
                         </button>
 
-                        <button class="plan-tab price-drop" data-tab="stellar-instant">
+                        <button class="plan-tab price-drop" data-tab="stellar-INSTANT">
                            <!-- <span class="badge">Price Dropped</span> -->
-                           Instant
+                           INSTANT
                         </button>
 
                      </div>
@@ -818,7 +818,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                         <p>3-Step: No daily limit <span>(lorem ipsam dummy text)</span></p>
                         <p>2-Step: 4% <span>(lorem ipsam dummy text)</span></p>
                         <p>1-Step: 4% <span>(lorem ipsam dummy text)</span></p>
-                        <p>Instant: 3% <span>(lorem ipsam dummy text)</span></p>
+                        <p>INSTANT: 3% <span>(lorem ipsam dummy text)</span></p>
                      </div>
                   </div>
                   <div class="plan-card">
@@ -830,7 +830,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                         <p> 3-Step: 6% <span>(lorem ipsam dummy text)</span></p>
                         <p>2-Step: 8% <span>(lorem ipsam dummy text)</span></p>
                         <p>1-Step: 6% <span>(lorem ipsam dummy text)</span></p>
-                        <p>Instant: 5% <span>(lorem ipsam dummy text)</span></p>
+                        <p>INSTANT: 5% <span>(lorem ipsam dummy text)</span></p>
                      </div>
                   </div>
                   <div class="plan-card">
@@ -2479,18 +2479,18 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
       const AUTH_TOKEN = 'pk_live_734f28105c2a0d2ad1588e2067fed29af743a3735321fb5a2ee4b42fbc07f325';
 
       const PLAN_CONFIG = {
-         "Three-Step": { phases: ["Phase 1", "Phase 2", "Phase 3", "Funded"] },
-         "Two-Step": { phases: ["Phase 1", "Phase 2", "Funded"] },
-         "One-Step": { phases: ["Phase 1", "Funded"] },
-         "Instant": { phases: ["Funded"] }
+         "THREE-STEP": { phases: ["Phase 1", "Phase 2", "Phase 3", "Funded"] },
+         "TWO-STEP": { phases: ["Phase 1", "Phase 2", "Funded"] },
+         "ONE-STEP": { phases: ["Phase 1", "Funded"] },
+         "INSTANT": { phases: ["Funded"] }
       };
 
       let allData = {};
-      let activePlan = "Three-Step";
+      let activePlan = "THREE-STEP";
 
       function formatTemplates(templates) {
          const formatted = {};
-         const planNames = ["One-Step", "Two-Step", "Three-Step", "Instant"];
+         const planNames = ["ONE-STEP", "TWO-STEP", "THREE-STEP", "INSTANT"];
 
          planNames.forEach((plan) => {
             formatted[plan] = [];
@@ -2566,13 +2566,13 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
          // sort the prices first by converting it into number
          const sortedPrices = Array.from(prices).sort((a, b) => Number(a) - Number(b));
 
-         // now create an array of objects with data in below format [{price : 10000, "three-step-price" : 10000, "one-step-price" : 10000 , "two-step-price" : 10000, "instant-price" : 10000}] and "N/A if not available"
+         // now create an array of objects with data in below format [{price : 10000, "THREE-STEP-price" : 10000, "ONE-STEP-price" : 10000 , "TWO-STEP-price" : 10000, "INSTANT-price" : 10000}] and "N/A if not available"
          const finalData = sortedPrices.map((price) => ({
             account_size: price,
-            "three-step-price": data["Three-Step"]?.find((record) => record.price === price)?.equityPrice || "N/A",
-            "one-step-price": data["One-Step"]?.find((record) => record.price === price)?.equityPrice || "N/A",
-            "two-step-price": data["Two-Step"]?.find((record) => record.price === price)?.equityPrice || "N/A",
-            "instant-price": data["Instant"]?.find((record) => record.price === price)?.equityPrice || "N/A"
+            "THREE-STEP-price": data["THREE-STEP"]?.find((record) => record.price === price)?.equityPrice || "N/A",
+            "ONE-STEP-price": data["ONE-STEP"]?.find((record) => record.price === price)?.equityPrice || "N/A",
+            "TWO-STEP-price": data["TWO-STEP"]?.find((record) => record.price === price)?.equityPrice || "N/A",
+            "INSTANT-price": data["INSTANT"]?.find((record) => record.price === price)?.equityPrice || "N/A"
          }))
 
          const tableBody = document.querySelector("#compare-programs-body");
@@ -2603,16 +2603,16 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                 </div>
             </td>
             <td class="relative px-12 py-4 text-center xl:px-6 border-r border-dashed border-[#ffffff1a]">
-                <p class="text-[14px] font-normal">${formatPrice(row['one-step-price'])}</p>
+                <p class="text-[14px] font-normal">${formatPrice(row['ONE-STEP-price'])}</p>
             </td>
             <td class="relative px-12 py-4 text-center xl:px-6 border-r border-dashed border-[#ffffff1a]">
-                <p class="text-[14px] font-normal">${formatPrice(row['two-step-price'])}</p>
+                <p class="text-[14px] font-normal">${formatPrice(row['TWO-STEP-price'])}</p>
             </td>
             <td class="relative px-12 py-4 text-center xl:px-6 border-r border-dashed border-[#ffffff1a]">
-                <p class="text-[14px] font-normal">${formatPrice(row['three-step-price'])}</p>
+                <p class="text-[14px] font-normal">${formatPrice(row['THREE-STEP-price'])}</p>
             </td>
             <td class="relative px-12 py-4 text-center xl:px-6 border-r border-dashed border-[#ffffff1a]">
-                <p class="text-[14px] font-normal">${formatPrice(row['instant-price'])}</p>
+                <p class="text-[14px] font-normal">${formatPrice(row['INSTANT-price'])}</p>
             </td>
         </tr>`;
          });
@@ -2636,6 +2636,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
             updateComparisonTable(allData);
 
+            console.log("Calling updatePlan with:", activePlan);
             updatePlan(activePlan);
 
          } catch (err) {
@@ -2648,7 +2649,12 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
       function renderPlanButtons() {
 
+         console.log("renderPlanButtons called");
          const container = document.getElementById('plan-container');
+         if (!container) {
+             console.error("Plan container not found");
+             return;
+         }
 
          container.innerHTML = Object.keys(PLAN_CONFIG).map(plan => `
         <button onclick="updatePlan('${plan}')"
@@ -2742,41 +2748,60 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
       }
 
       function updatePlan(planName) {
-         activePlan = planName;
+         try {
+            console.log("updatePlan called for:", planName);
+            activePlan = planName;
 
-         // Update Button UI
-         document.querySelectorAll('.plan-btn').forEach(btn => {
-            btn.classList.remove('bg-purple', 'text-white', 'border-purple', 'shadow-[0 0 15px rgb(115 255 91 / 40%)]');
-            btn.classList.add('bg-white/5', 'text-white/70');
-         });
-         const activeBtn = document.getElementById(`btn-${planName}`);
-         activeBtn.classList.add('bg-purple', 'text-white', 'border-purple', 'shadow-[0 0 15px rgb(115 255 91 / 40%)]');
+            // Update Button UI
+            const buttons = document.querySelectorAll('.plan-btn');
+            if (buttons.length === 0) console.warn("No .plan-btn elements found");
+            
+            buttons.forEach(btn => {
+               btn.classList.remove('bg-purple', 'text-white', 'border-purple', 'shadow-[0_0_15px_rgb(115_255_91_/_40%)]');
+               btn.classList.add('bg-white/5', 'text-white/70');
+            });
 
-         const planItems = allData[planName] || [];
-         const select = document.getElementById('amount-select');
-
-         // Populate Selector
-         select.innerHTML = planItems.map(item => `
-        <option class="bg-ebony text-white" value="${item.price}">
-            ${Number(item.equityLabel ?? 0) ? "$" + Number(item.equityLabel ?? 0).toLocaleString() : item.equityLabel}
-        </option>
-    `).join('');
-
-         // Update Slider
-         updateRangeSlider(planName, planItems);
-
-         // Two-Way Sync: Selector -> Slider
-         select.onchange = (e) => {
-            const selectedPrice = e.target.value;
-            const index = planItems.findIndex(item => item.price === selectedPrice);
-            if (index !== -1) {
-               // Use the specific sync function defined in step 2
-               syncSliderToIndex(index, planItems, planName);
+            const activeBtn = document.getElementById(`btn-${planName}`);
+            if (activeBtn) {
+               activeBtn.classList.add('bg-purple', 'text-white', 'border-purple', 'shadow-[0_0_15px_rgb(115_255_91_/_40%)]');
+            } else {
+               console.error(`Button btn-${planName} not found`);
             }
-         };
 
-         if (planItems.length > 0) {
-            syncSliderToIndex(0, planItems, planName);
+            const planItems = allData[planName] || [];
+            console.log(`Plan items for ${planName}:`, planItems);
+
+            const select = document.getElementById('amount-select');
+            if (!select) {
+                console.error("Select element #amount-select not found");
+                return;
+            }
+
+            // Populate Selector
+            select.innerHTML = planItems.map(item => `
+            <option class="bg-ebony text-white" value="${item.price}">
+                ${Number(item.equityLabel ?? 0) ? "$" + Number(item.equityLabel ?? 0).toLocaleString() : item.equityLabel}
+            </option>
+            `).join('');
+
+            // Update Slider
+            updateRangeSlider(planName, planItems);
+
+            // Two-Way Sync: Selector -> Slider
+            select.onchange = (e) => {
+               const selectedPrice = e.target.value;
+               const index = planItems.findIndex(item => item.price === selectedPrice);
+               if (index !== -1) {
+                  // Use the specific sync function defined in step 2
+                  syncSliderToIndex(index, planItems, planName);
+               }
+            };
+
+            if (planItems.length > 0) {
+               syncSliderToIndex(0, planItems, planName);
+            }
+         } catch (e) {
+            console.error("Error in updatePlan:", e);
          }
       }
 

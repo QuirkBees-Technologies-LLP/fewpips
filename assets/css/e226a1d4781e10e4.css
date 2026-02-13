@@ -1827,7 +1827,9 @@ input[type=number] {
 .ml-9 {
 	margin-left: 2.25rem
 }
-
+.ml-20 {
+	margin-top: 5rem
+}
 .ml-\[2px\] {
 	margin-left: 2px
 }
@@ -5967,7 +5969,7 @@ input[type=number] {
 
 .bg-\[\#635bff\] {
 	--tw-bg-opacity: 1;
-	background-color: rgb(2 72 228/var(--tw-bg-opacity, 1))
+	background: linear-gradient(to right, #00ffc2, #42ff00)
 }
 
 .bg-\[\#665bff\] {
@@ -6214,7 +6216,7 @@ input[type=number] {
 }
 
 .bg-\[\#ffffff1f\] {
-	background: radial-gradient(83% 87% at 14.9% 0%, rgb(30 83 27) 0%, rgba(51, 37, 33, 0.31) 100%);
+	background: radial-gradient(83% 87% at 14.9% 0%, rgb(30 83 27) 0%, rgba(33, 51, 34, 0.31) 100%);
 	border: 1px solid #ffffff26;
 }
 

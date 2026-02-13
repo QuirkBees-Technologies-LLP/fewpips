@@ -1739,15 +1739,16 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                      <div id="price-display" class="text-5xl text-white mb-8">$0.00</div>
 
                      <div class="space-y-4">
-                        <!-- <label class="text-xs font-bold text-white/40 uppercase tracking-widest">Bonus Code</label>
+                        <label class="text-xs font-bold text-white/40 uppercase tracking-widest">Bonus Code</label>
                         <div class="flex gap-2">
-                           <input type="text" placeholder="Enter Code"
-                              class="flex-1 p-4 bg-ebony border border-white/20 rounded-xl outline-none focus:border-purple text-white text-sm">
-                           <button
+                           <input type="text" id="bonus-code-input" placeholder="Enter Code"
+                              class="flex-1 p-4 bg-ebony border border-white/20 rounded-xl outline-none focus:border-purple text-white text-sm transition-colors">
+                           <button id="redeem-btn" onclick="redeemBonusCode()"
                               class="bg-purple hover:bg-purple/80 text-white px-6 rounded-xl font-bold transition-all flex items-center gap-2 text-sm whitespace-nowrap">
                               Redeem
                            </button>
-                        </div> -->
+                        </div>
+                        <div id="bonus-message" class="text-xs min-h-[20px]"></div>
 
                         <div class="flex items-center gap-3 py-6 border-t border-white/10 mt-4">
                            <input type="checkbox" id="terms-creator"
@@ -2613,13 +2614,31 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
          try {
 
+            // 1. Fetch Templates
             const response = await fetch(API_URL, {
                headers: { 'Authorization': `Bearer ${AUTH_TOKEN}` }
             });
-
             const templates = await response.json();
-
             allData = formatTemplates(templates);
+
+            // 2. Fetch Active Bonuses
+            // Using a separate try-catch so bonus failure doesn't break the whole app
+            try {
+                // Construct bonus API URL assuming it's on the same base
+                // API_URL is .../challenges/templates
+                // We want .../bonuses?isActive=true
+                const bonusUrl = API_URL.replace('/challenges/templates', '/bonuses?isActive=true');
+                const bonusResponse = await fetch(bonusUrl, {
+                    headers: { 'Authorization': `Bearer ${AUTH_TOKEN}` }
+                });
+                const bonusData = await bonusResponse.json();
+                if (bonusData && bonusData.data) {
+                    activeBonuses = bonusData.data;
+                    console.log("Active Bonuses loaded:", activeBonuses.length);
+                }
+            } catch (bonusErr) {
+                console.warn("Failed to load bonuses:", bonusErr);
+            }
 
             renderPlanButtons();
 
@@ -2636,6 +2655,90 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
          }
 
+      }
+
+      function redeemBonusCode() {
+          const input = document.getElementById('bonus-code-input');
+          const msg = document.getElementById('bonus-message');
+          const code = input.value.trim();
+
+          // Reset UI
+          msg.className = "text-xs min-h-[20px]";
+          msg.innerText = "";
+          input.classList.remove('border-green-500', 'border-red-500');
+
+          if (!code) {
+              msg.innerText = "Please enter a code.";
+              msg.classList.add('text-red-500');
+              return;
+          }
+
+          // Get current selected item to check UUID
+          const select = document.getElementById('amount-select');
+          if (!select || !select.value) {
+             msg.innerText = "Please select an account size.";
+              msg.classList.add('text-red-500');
+             return;
+          }
+          const price = select.value;
+          const planItems = allData[activePlan] || [];
+          const currentItem = planItems.find(item => item.price == price);
+          
+          if (!currentItem) {
+             msg.innerText = "Invalid plan selection.";
+             msg.classList.add('text-red-500');
+             return;
+            }
+
+          const bonus = activeBonuses.find(b => b.code.toUpperCase() === code.toUpperCase());
+          
+          if (bonus) {
+              if (bonus.sources && bonus.sources.length > 0 && !bonus.sources.includes(currentItem.uuid)) {
+                  msg.innerText = "Code not applicable.";
+                  msg.classList.add('text-red-500');
+                  input.classList.add('border-red-500');
+                  
+                  if (currentBonusCode) {
+                      currentDiscount = 0;
+                      currentBonusCode = null;
+                      currentBonusUuid = null;
+                      renderChallengeDetails(activePlan, price);
+                  }
+                  return;
+              }
+
+              // Valid Bonus
+              currentDiscountType = bonus.isPercentual ? 'percent' : 'fixed';
+              currentDiscount = parseFloat(bonus.bonusAmount);
+              currentBonusCode = bonus.code;
+              currentBonusUuid = bonus.uuid;
+
+              console.log("Bonus Applied:", bonus);
+
+              // Update UI
+              msg.innerText = `Code applied: ${bonus.description || bonus.code}`;
+              msg.classList.add('text-green-500');
+              input.classList.add('border-green-500');
+              
+              // Trigger price update
+              renderChallengeDetails(activePlan, price);
+
+          } else {
+              // Invalid Bonus
+              currentDiscount = 0;
+              currentDiscountType = null;
+              currentBonusCode = null;
+              
+              msg.innerText = "Invalid or expired code.";
+              msg.classList.add('text-red-500');
+              input.classList.add('border-red-500');
+
+              // Re-render to clear any existing discount
+              const select = document.getElementById('amount-select');
+              if (select && select.value) {
+                  renderChallengeDetails(activePlan, select.value);
+              }
+          }
       }
 
       function initComparisonTabs() {
@@ -2761,6 +2864,18 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             console.log("updatePlan called for:", planName);
             activePlan = planName;
 
+            // Optional: clear discount on plan change? 
+            // For now, let's keep it if it's a global promo code, 
+            // OR reset it if we think it might not apply.
+            // Let's reset for safety unless user re-applies.
+            currentDiscount = 0;
+            currentBonusCode = null;
+            currentBonusUuid = null;
+            document.getElementById('bonus-code-input').value = "";
+            document.getElementById('bonus-message').innerText = "";
+            document.getElementById('bonus-code-input').classList.remove('border-green-500', 'border-red-500');
+
+
             // Update Button UI
             const buttons = document.querySelectorAll('.plan-btn');
             if (buttons.length === 0) console.warn("No .plan-btn elements found");
@@ -2822,16 +2937,71 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
          if (!data) return;
 
+         // RE-VALIDATE BONUS for this new item (UUID)
+         // If we have an active discount, ensure it still applies to this specific item UUID
+         if (currentBonusCode) {
+             const activeBonus = activeBonuses.find(b => b.code === currentBonusCode);
+             if (activeBonus) {
+                  if (activeBonus.sources && activeBonus.sources.length > 0 && !activeBonus.sources.includes(data.uuid)) {
+                      // Bonus Valid but NOT for this specific plan/size
+                      // Remove it silently or show message?
+                      // Better to remove it and maybe update UI text if visible
+                       currentDiscount = 0;
+                       currentBonusCode = null;
+                       currentBonusUuid = null;
 
-         document.getElementById('price-display')
-            .innerText = `$${Number(data?.equityPrice ?? 0).toLocaleString()}`;
+                       // Update UI to reflect removal
+                       const input = document.getElementById('bonus-code-input');
+                       const msg = document.getElementById('bonus-message');
+                       if (input) {
+                           input.value = ""; 
+                           input.classList.remove('border-green-500');
+                       }
+                       if (msg) {
+                           msg.innerText = "";
+                           msg.className = "text-xs min-h-[20px]";
+                       }
+                  }
+             }
+         }
+
+         // Calculate Final Price with Discount
+         let initialEquityPrice = Number(data?.equityPrice ?? 0);
+         let finalPrice = initialEquityPrice;
+
+         if (currentBonusCode && currentDiscount > 0) {
+             if (currentDiscountType === 'percent') {
+                 finalPrice = initialEquityPrice * (1 - (currentDiscount / 100));
+             } else {
+                 finalPrice = Math.max(0, initialEquityPrice - currentDiscount);
+             }
+         }
+         
+         // Update Price Display
+         const displayElement = document.getElementById('price-display');
+         if(currentBonusCode) {
+             // Show Strike-through for old price? Or just new price?
+             // Let's just update the number for now, maybe add logic later.
+             displayElement.innerHTML = `
+                <span class="line-through text-white/50 text-2xl mr-2">$${initialEquityPrice.toLocaleString()}</span>
+                $${finalPrice.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
+             `;
+         } else {
+             displayElement.innerText = `$${initialEquityPrice.toLocaleString()}`;
+         }
+
 
          const destination = data?.uuid ?? "default-id";
          const name = encodeURIComponent(data?.planName ?? "Challenge");
-         const equityPrice = data?.equityPrice ?? "0.00";
+         const equityPrice = finalPrice.toFixed(2); // Use final discounted price
          const planPrice = data?.price;
 
-         const dynamicLink = `https://crm.fewpips.com/financial/deposit?destination=${destination}&source=challenge&name=${name}+x+${planPrice}&price=${equityPrice}`;
+         // Updated link construction
+         let dynamicLink = `https://crm.fewpips.com/financial/deposit?destination=${destination}&source=challenge&name=${name}+x+${planPrice}&price=${equityPrice}`;
+         
+         if (currentBonusCode) {
+             dynamicLink += `&bonuses=${currentBonusUuid}`;
+         }
 
          const evalBtn = document.getElementById('start-evaluation-now');
 

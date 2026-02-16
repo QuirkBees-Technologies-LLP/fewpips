@@ -190,7 +190,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             <nav class="hidden lg:flex items-center gap-12 text-white/70">
                <a href="#" class="hover:text-white transition text-sm">Home</a>
                <a href="#" class="hover:text-white transition text-sm">Challenge</a>
-               <a href="#" class="hover:text-white transition text-sm">INSTANT Funding</a>
+               <a href="#" class="hover:text-white transition text-sm">Instant Funding</a>
                <a href="#" class="hover:text-white transition text-sm">About Us</a>
             </nav>
 
@@ -221,7 +221,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             <div class="px-6 py-8 flex flex-col gap-5 text-white/80 text-lg">
                <a href="#" class="hover:text-white">Home</a>
                <a href="#" class="hover:text-white">Challenge</a>
-               <a href="#" class="hover:text-white">INSTANT Funding</a>
+               <a href="#" class="hover:text-white">Instant Funding</a>
                <a href="#" class="hover:text-white">About Us</a>
                <a href="#" class="hover:text-white">More</a>
                <hr class="border-white/10">
@@ -595,7 +595,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
                         <button class="plan-tab price-drop">
                            <!-- <span class="badge">Price Dropped</span> -->
-                           Fewpips Instant
+                           Fewpips Instant - Coming Soon!!!
                         </button>
 
                      </div>
@@ -605,15 +605,21 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                         <div class="header-row">Account size</div>
                         <div class="table_row">Trading Coaching Course</div>
                         <div class="table_row">Profit Split Up To*</div>
-                        <div class="table_row">Phase 1 Profit Target</div>
-                        <div class="table_row">Phase 2 Profit Target</div>
+                        <div class="table_row">Profit Target - Phase 1</div>
+                        <div class="table_row">Profit Target - Phase 2</div>
                         <div class="table_row">Daily Loss Limit</div>
                         <div class="table_row">Max Drawdown (Static)</div>
-                        <div class="table_row">Consistency</div>
+                        <div class="table_row">Consistency Rule</div>
                         <div class="table_row">Leverage Up To</div>
                         <div class="table_row">Hold Trades Over Weekend</div>
                         <div class="table_row">Time Limit</div>
-                        <div class="table_row">EA's Allowed**</div>
+                        <div class="table_row group relative">
+                           EA's Allowed**
+                           <i class="fi fi-rs-info ml-1 cursor-help opacity-60"></i>
+                           <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-64 p-2 bg-black border border-white/10 text-[12px] text-white rounded shadow-lg z-50 font-normal leading-normal">
+                              Under strict compliance, the user must submit the strategy to fewpips PRIOR to trading.
+                           </div>
+                        </div>
                         <div class="table_row">Max Open Risk</div>
                         <div class="table_row">Min Trading Days</div>
                      </div>
@@ -838,7 +844,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                   <div class="plan-features">
                      <h4 class="text-white text-2xl font-bold mb-6">Trading Rules : Capitalise Indices, Commodities,
                         and Cryptocurrency CFDs.</h4>
-                     <p class="!text-white">Please change the current EAs Statement to this: </p>
+                     <!-- <p class="!text-white">Please change the current EAs Statement to this: </p> -->
                      <span class="">Expert Advisors (EAs) and automated trading bots are permitted, provided
                         they
                         adhere to our compliance framework. To ensure your strategy meets our risk
@@ -2484,7 +2490,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
          "ONE-STEP": { phases: ["Phase 1", "Funded"] },
          "TWO-STEP": { phases: ["Phase 1", "Phase 2", "Funded"] },
          "THREE-STEP": { phases: ["Phase 1", "Phase 2", "Phase 3", "Funded"] },
-         "INSTANT": { phases: ["Funded"] }
+         "INSTANT - Soon!!!": { phases: ["Funded"] }
       };
 
       // Display names for buttons only
@@ -2492,7 +2498,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
          "ONE-STEP": "Fewpips 1-Step",
          "TWO-STEP": "Fewpips 2-Step",
          "THREE-STEP": "Fewpips 3-Step",
-         "INSTANT": "Fewpips Instant"
+         "INSTANT - Soon!!!": "Fewpips Instant"
       };
 
       let allData = {};
@@ -2500,7 +2506,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
       function formatTemplates(templates) {
          const formatted = {};
-         const planNames = ["ONE-STEP", "TWO-STEP", "THREE-STEP", "INSTANT"];
+         const planNames = ["ONE-STEP", "TWO-STEP", "THREE-STEP", "INSTANT - Soon!!!"];
 
          planNames.forEach((plan) => {
             formatted[plan] = [];
@@ -2569,22 +2575,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
          const container = document.querySelector('.table-container');
          if (!container) return;
 
-         // ✅ If INSTANT → show Coming Soon and exit
-         if (planName === "INSTANT") {
-            if (container) {
-               container.innerHTML = `
-                    <div class="coming-soon-wrapper">
-                        <div class="coming-soon-box">
-                            <h2>🚀 Instant Funding</h2>
-                            <p>This plan is launching very soon.</p>
-                            <div class="coming-badge">COMING SOON</div>
-                        </div>
-                    </div>
-                `;
-            }
-            return;
-         }
-
          const planItems = allData[planName] || [];
 
          // Randomly select one index to be "Most Popular"
@@ -2596,16 +2586,22 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                <div class="header-row">Account size</div>
                <div class="table_row">Trading Coaching Course</div>
                <div class="table_row">Profit Split Up To*</div>
-               <div class="table_row">Phase 1 Profit Target</div>
-               <div class="table_row">Phase 2 Profit Target</div>
-               <div class="table_row">Phase 3 Profit Target</div>
+               <div class="table_row">Profit Target - Phase 1</div>
+               <div class="table_row">Profit Target - Phase 2</div>
+               <div class="table_row">Profit Target - Phase 3</div>
                <div class="table_row">Daily Loss Limit</div>
                <div class="table_row">Max Drawdown (Static)</div>
-               <div class="table_row">Consistency</div>
+               <div class="table_row">Consistency Rule</div>
                <div class="table_row">Leverage Up To</div>
                <div class="table_row">Hold Trades Over Weekend</div>
                <div class="table_row">Time Limit</div>
-               <div class="table_row">EA's Allowed**</div>
+               <div class="table_row group relative">
+                           EA's Allowed**
+                           <i class="fi fi-rs-info ml-1 cursor-help opacity-60"></i>
+                           <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-64 p-2 bg-black border border-white/10 text-[12px] text-white rounded shadow-lg z-50 font-normal leading-normal">
+                              Under strict compliance, the user must submit the strategy to fewpips PRIOR to trading.
+                           </div>
+                        </div>
                <div class="table_row">Max Open Risk</div>
                <div class="table_row">Min Trading Days</div>
             </div>
@@ -2619,7 +2615,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             const phase3 = item.phases[2] || {};
 
             // Formatting helpers
-            const formatPercent = (val) => val ? `${val}%` : "None";
+            const formatPercent = (val) => val ? `${Number(val)}%` : "None";
             const formatPrice = (val) => val ? `$${Number(val).toLocaleString()}` : "—";
             const formatDays = (val) => val != null ? val : "Unlimited";
 
@@ -2652,7 +2648,22 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
              `;
          }).join('');
 
-         container.innerHTML = html;
+         if(planName === "INSTANT - Soon!!!") {
+            const comingSoonElement = document.createElement("div")
+
+            comingSoonElement.innerHTML = `<div class="coming-soon-wrapper">
+                        <div class="coming-soon-box">
+                           <h2>🚀 Instant Funding</h2>
+                           <p>This plan is launching very soon.</p>
+                           <div class="coming-badge">COMING SOON</div>
+                        </div>
+                     </div>`;
+
+            container.parentNode.insertBefore(comingSoonElement , container)
+         } 
+         
+
+            container.innerHTML = html;
 
          // Lucide icons or other re-initialization if needed
          // lucide.createIcons(); 
@@ -2808,7 +2819,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                if (text.includes("1-Step")) planName = "ONE-STEP";
                if (text.includes("2-Step")) planName = "TWO-STEP";
                if (text.includes("3-Step")) planName = "THREE-STEP";
-               if (text.includes("Instant")) planName = "INSTANT";
+               if (text.includes("Instant")) planName = "INSTANT - Soon!!!";
                if (planName) {
                   renderComparisonTable(planName);
                }

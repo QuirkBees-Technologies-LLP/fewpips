@@ -603,7 +603,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 220px;
+    /* height: 220px; */
     background: linear-gradient(to top, rgba(34, 197, 94, .25), transparent);
     filter: blur(50px);
     animation: candleGlow 6s ease-in-out infinite alternate;
@@ -623,7 +623,7 @@
 
 
 .why-section {
-    background: #05070a;
+    /* background: #05070a; */
     position: relative;
 }
 
@@ -1189,7 +1189,7 @@
 .pricing-container {
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 30px;
 }
 
@@ -1222,16 +1222,15 @@
     border-top: 1px solid rgba(255, 255, 255, .08);
 }
 
-.plan-features p {
-    display: flex;
-    justify-content: space-between;
-    color: rgb(170, 171, 171);
+.plan-features .limits {
+    color: rgb(255, 255, 255);
     margin: 14px 0 0 0;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .plan-features span {
     color: rgb(170, 171, 171);
+    font-size: 14px;
 }
 
 /* hover lift */
@@ -1606,4 +1605,26 @@
         grid-template-columns: 1fr;
     }
 
+}
+
+.coming-soon-wrapper {
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.coming-soon-box h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #42ff00;
+}
+
+.coming-soon-box p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.coming-soon-box .coming-badge {
+    font-size: 40px;
 }

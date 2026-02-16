@@ -2551,6 +2551,8 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                maxWithdrawal: template?.maxWithdrawal ?? null,
 
                consistency: template?.consistency ?? null,
+
+               profitSplit: template?.plan?.traderCommission ?? null,
             });
          });
 
@@ -3134,10 +3136,17 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                     </span>
                 </div>
 
+                <div class="flex justify-between border-b border-white/10 pb-3">
+                    <span class="text-white/40">Profit Split</span>
+                    <span class="font-bold text-white">
+                        ${phaseData.profitSplit && phaseData.profitSplit > 0 && isFunded ? "Up to " + phaseData.profitSplit + "%" : "—"}
+                    </span>
+                </div>
+
                 <div class="flex justify-between">
                     <span class="text-white/40">Consistency Rule</span>
                     <span class="font-bold text-purple">
-                        ${phaseData.consistency ?? "—"}
+                        ${phaseData.consistency ? phaseData.consistency + "%" : "—"}
                     </span>
                 </div>
 

@@ -611,8 +611,13 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                         <div class="table_row">Max Drawdown (Static)</div>
                         <div class="table_row">Consistency Rule</div>
                         <div class="table_row">Leverage Up To</div>
-                        <div class="table_row">Hold Trades Over Weekend</div>
-                        <div class="table_row">Time Limit</div>
+                        <div class="table_row group relative">
+                           Hold Trades Over Weekend
+                           <i class="fi fi-rs-info ml-1 cursor-help opacity-60"></i>
+                           <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-64 p-2 bg-black border border-white/10 text-[12px] text-white rounded shadow-lg z-50 font-normal leading-normal">
+                              Yes but at a cost unless an add on for swap fee is purchased at the time of check out.
+                           </div>
+                        </div>                        <div class="table_row">Time Limit</div>
                         <div class="table_row group relative">
                            EA's Allowed**
                            <i class="fi fi-rs-info ml-1 cursor-help opacity-60"></i>
@@ -641,7 +646,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                         <div class="price-section">
                            <div class="old-price">$78</div>
                            <div class="new-price">$18</div>
-                           <div class="promo-box">Up to 77.2% w. Code: VDAY</div>
                         </div>
                      </div>
                      <div class="column labels">
@@ -662,7 +666,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                         <div class="price-section">
                            <div class="old-price">$315</div>
                            <div class="new-price">$72</div>
-                           <div class="promo-box">Up to 77.2% w. Code: VDAY</div>
                         </div>
                      </div>
                      <div class="column highlight labels">
@@ -686,7 +689,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                         <div class="price-section">
                            <div class="old-price">$510</div>
                            <div class="new-price">$116</div>
-                           <div class="promo-box">Up to 77.2% w. Code: VDAY</div>
                         </div>
                      </div>
                      <div class="column labels">
@@ -707,7 +709,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                         <div class="price-section">
                            <div class="old-price">$998</div>
                            <div class="new-price">$228</div>
-                           <div class="promo-box">Up to 77.2% w. Code: VDAY</div>
                         </div>
                      </div>
                      <div class="column labels">
@@ -728,7 +729,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                         <div class="price-section">
                            <div class="old-price">$998</div>
                            <div class="new-price">$228</div>
-                           <div class="promo-box">Up to 77.2% w. Code: VDAY</div>
                         </div>
                      </div>
                   </div>
@@ -2594,14 +2594,21 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                <div class="table_row">Consistency Rule</div>
                <div class="table_row">Leverage Up To</div>
                <div class="table_row">Hold Trades Over Weekend</div>
+               <div class="table_row group relative">
+                  Hold Trades Over Weekend
+                  <i class="fi fi-rs-info ml-1 cursor-help opacity-60"></i>
+                  <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-64 p-2 bg-black border border-white/10 text-[12px] text-white rounded shadow-lg z-50 font-normal leading-normal">
+                     Yes but at a cost unless an add on for swap fee is purchased at the time of check out.
+                  </div>
+               </div>
                <div class="table_row">Time Limit</div>
                <div class="table_row group relative">
-                           EA's Allowed**
-                           <i class="fi fi-rs-info ml-1 cursor-help opacity-60"></i>
-                           <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-64 p-2 bg-black border border-white/10 text-[12px] text-white rounded shadow-lg z-50 font-normal leading-normal">
-                              Under strict compliance, the user must submit the strategy to fewpips PRIOR to trading.
-                           </div>
-                        </div>
+                  EA's Allowed**
+                  <i class="fi fi-rs-info ml-1 cursor-help opacity-60"></i>
+                  <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-64 p-2 bg-black border border-white/10 text-[12px] text-white rounded shadow-lg z-50 font-normal leading-normal">
+                     Under strict compliance, the user must submit the strategy to fewpips PRIOR to trading.
+                  </div>
+               </div>
                <div class="table_row">Max Open Risk</div>
                <div class="table_row">Min Trading Days</div>
             </div>
@@ -2642,7 +2649,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                   <div class="price-section">
                      <div class="old-price">$${Math.round(item.equityPrice * 1.3)}</div>
                      <div class="new-price">$${Number(item.equityPrice)}</div>
-                     <div class="promo-box">Up to 77.2% w. Code: VDAY</div>
                   </div>
                </div>
              `;

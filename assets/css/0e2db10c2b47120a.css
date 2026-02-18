@@ -418,8 +418,8 @@
 }
 
 /* animated grid lines */
-.hero-bg::before {
-    /* content: "";
+/* .hero-bg::before {
+     content: "";
     position: absolute;
     inset: 0;
     background-image:
@@ -428,8 +428,8 @@
     background-size: 80px 80px;
     mask-image: radial-gradient(circle at center, black 40%, transparent 75%);
     animation: gridMove 18s linear infinite;
-    z-index: 0; */
-}
+    z-index: 0; 
+} */
 
 @keyframes gridMove {
     from {
@@ -1296,34 +1296,61 @@
 /* office badges */
 .office {
     position: absolute;
-    background: rgba(0, 0, 0, .65);
-    border: 1px solid rgba(0, 255, 150, .35);
-    backdrop-filter: blur(10px);
-    padding: 10px 16px;
-    border-radius: 12px;
-    font-size: 14px;
-    box-shadow: 0 0 25px rgba(0, 255, 150, .25);
-    transition: .3s;
+    width: 16px;
+    height: 16px;
+    background: #0fcd37;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(15, 205, 55, 0.6);
+    transition: transform 0.3s ease;
+    z-index: 10;
+}
+
+.office span {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+    border: 1px solid rgba(15, 205, 55, 0.3);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
 .office:hover {
-    transform: translateY(-6px) scale(1.05);
+    transform: scale(1.2);
+    background: #42ff00;
+}
+
+.office:hover span {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px);
 }
 
 /* positions */
 .amsterdam {
-    top: 18%;
-    left: 1%;
+    top: 24%;
+    left: 43%;
 }
 
 .warsaw {
-    top: 18%;
+    top: 23%;
     left: 47%;
 }
 
 .dubai {
     top: 40%;
-    left: 45%;
+    left: 59%;
 }
 
 /* RIGHT TEXT */
@@ -1386,10 +1413,9 @@
         flex-wrap: wrap;
     }
 
-    .office {
+    /* .office {
         display: none;
-        /* mobile ma badges hide */
-    }
+    } */
 }
 
 
@@ -2262,4 +2288,6 @@
 }
 
 .few-table-wrapper::-webkit-scrollbar-thumb {
-    background: #
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}

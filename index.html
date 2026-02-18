@@ -2929,6 +2929,13 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
          "INSTANT - Soon!!!" : {"info" : "Forex: 1:30<br />Indices: 1:5<br />Commodities: 1:7.5<br />Metals: 1:7.5<br />Crypto: 1:1<br />Future Based CFDs: 1:20" , ratio : "1:30"}
       }
 
+      const PROFIT_SPLIT_DATA = {
+         "ONE-STEP" : "90",
+         "TWO-STEP" : "90",
+         "THREE-STEP" : "90",
+         "INSTANT - Soon!!!": "70"
+      }
+
       function renderComparisonTable(planName) {
          const container = document.querySelector('.table-container');
          if (!container) return;
@@ -3524,8 +3531,14 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                     </div>
                 </div>
 
-                <div class="flex justify-between border-b border-white/10 pb-3">
-                    <span class="text-white/40">Minimum Trading Days</span>
+                 <div class="flex justify-between border-b border-white/10 pb-3">
+                     <div class="text-white/40 group relative">
+                        Minimum Trading Days
+                        <i class="fi fi-rs-info ml-1 cursor-help opacity-60"></i>
+                        <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-64 p-2 bg-black border border-white/10 text-[12px] text-white rounded shadow-lg z-50 font-normal leading-normal">
+                           To satisfy the Minimum Trading Days requirement, your lot sizes must remain consistent across all trades, each trade must be held open for a minimum of 3 minutes, and you must trade across the required number of qualifying days.
+                        </div>
+                     </div>
                     <span class="font-bold text-white">
                         ${phaseData.minTradingDays ?? "—"}
                     </span>
@@ -3534,7 +3547,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                 <div class="flex justify-between border-b border-white/10 pb-3">
                     <span class="text-white/40">Profit Split</span>
                     <span class="font-bold text-white">
-                        ${phaseData.profitSplit && phaseData.profitSplit > 0 && isFunded ? "Up to " + phaseData.profitSplit + "%" : "—"}
+                        ${phaseData.profitSplit && phaseData.profitSplit > 0 && isFunded ? "Up to " + PROFIT_SPLIT_DATA[planName] + "%" : "—"}
                     </span>
                 </div>
 

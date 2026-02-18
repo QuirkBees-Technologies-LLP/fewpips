@@ -1,0 +1,2817 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            transition: opacity ease-in 0.2s;
+        }
+
+        body[unresolved] {
+            opacity: 0;
+            display: block;
+            overflow: hidden;
+            position: relative;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta property="og:title" content="Fewpips - For Every Trader, Every Market | Best Trading Firm"> -->
+    <meta property="og:description"
+        content="Fewpips offers the best prop firm challenge accounts, where traders can trade with up to $300k simulated funds and the best conditions.">
+    <!-- <meta property="og:site_name" content="Fewpips"> -->
+    <meta property="og:locale" content="en">
+    <meta property="og:image" content="F">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <!-- <meta property="og:image:alt" content="Fewpips - For Every Trader, Every Market"> -->
+    <meta property="og:type" content="website">
+    <title>Fewpips</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="
+https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
+" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/641d154cc4aaca5f.css" data-precedence="next">
+    <link rel="stylesheet" href="./assets/css/e226a1d4781e10e4.css" data-precedence="next">
+    <link rel="stylesheet" href="./assets/css/2749c681b1ff7233.css" data-precedence="next">
+    <link rel="stylesheet" href="./assets/css/0e2db10c2b47120a.css" data-precedence="next">
+    <link rel="stylesheet" href="./assets/css/ce423d68e721ceff.css" data-precedence="next">
+    <link rel="stylesheet" href="./assets/css/c70c5174ecd6f5a0.css" data-precedence="next">
+    <link rel="stylesheet" href="./assets/css/ef46db3751d8e999.css" data-precedence="next">
+    <link rel="stylesheet" href="./assets/css/db2cdcbd652a7a7e.css" data-precedence="next">
+    <link rel="preload" as="script" fetchpriority="low" href="./assets/js/webpack-ae9795181379bfc8.js">
+    <link rel="dns-prefetch" href="//js.intercomcdn.com">
+
+    <style>
+        #fp-payout-section {
+            background: #0a0a0a;
+            color: #f0f0f0;
+            /* padding: 100px 24px; */
+            position: relative;
+            overflow: hidden;
+        }
+
+        #fp-payout-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 400px;
+            background: radial-gradient(ellipse, rgba(0, 200, 100, 0.07) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .fp-pay-inner {
+            /* max-width: 1100px; */
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Header ── */
+        .fp-pay-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #00c864;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .fp-pay-title {
+            font-size: clamp(30px, 5vw, 50px);
+            font-weight: 800;
+            line-height: 1.1;
+            color: #fff;
+            margin: 0 0 14px;
+        }
+
+        .fp-pay-title span {
+            color: #00c864;
+        }
+
+        .fp-pay-sub {
+            font-size: 15px;
+            color: #777;
+            font-weight: 300;
+            max-width: 540px;
+            line-height: 1.7;
+            margin: 0 0 16px;
+        }
+
+        /* ── Cycle Tip ── */
+        .fp-cycle-tip {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 200, 100, 0.08);
+            border: 1px solid rgba(0, 200, 100, 0.2);
+            border-radius: 50px;
+            padding: 8px 18px;
+            font-size: 13px;
+            color: #00c864;
+            margin-bottom: 56px;
+        }
+
+        .fp-cycle-tip svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+        }
+
+        /* ── Cards Grid ── */
+        .fp-pay-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            margin-bottom: 20px;
+        }
+
+        .fp-pay-card {
+            background: #111;
+            border: 1px solid #1e1e1e;
+            border-radius: 16px;
+            padding: 28px 24px;
+            position: relative;
+            transition: border-color 0.25s, transform 0.25s;
+            overflow: hidden;
+        }
+
+        .fp-pay-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            opacity: 0;
+            background: linear-gradient(135deg, rgba(0, 200, 100, 0.05), transparent);
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .fp-pay-card:hover {
+            border-color: #00c864;
+            transform: translateY(-4px);
+        }
+
+        .fp-pay-card:hover::after {
+            opacity: 1;
+        }
+
+        .fp-pay-card-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: rgba(0, 200, 100, 0.1);
+            color: #00c864;
+            border-radius: 20px;
+            padding: 4px 12px;
+            margin-bottom: 16px;
+        }
+
+        .fp-pay-card-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 20px;
+        }
+
+        .fp-pay-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #1b1b1b;
+            font-size: 13px;
+        }
+
+        .fp-pay-row:last-child {
+            border-bottom: none;
+        }
+
+        .fp-pay-row-label {
+            color: #555;
+            font-weight: 400;
+            flex-shrink: 0;
+        }
+
+        .fp-pay-row-val {
+            color: #ddd;
+            font-weight: 500;
+            text-align: right;
+            line-height: 1.4;
+        }
+
+        .fp-pay-row-val.green {
+            color: #00c864;
+            font-weight: 600;
+        }
+
+        /* ── Tier Banner ── */
+        .fp-tier-banner {
+            background: #111;
+            border: 1px solid #1e1e1e;
+            border-radius: 16px;
+            padding: 32px 36px;
+            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .fp-tier-block h4 {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #00c864;
+            margin: 0 0 12px;
+        }
+
+        .fp-tier-block p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .fp-tier-block p strong {
+            color: #ccc;
+            font-weight: 500;
+        }
+
+        /* ── Rules Strip ── */
+        .fp-rules-strip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .fp-rule-item {
+            background: #111;
+            border: 1px solid #1e1e1e;
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .fp-rule-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(0, 200, 100, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00c864;
+        }
+
+        .fp-rule-icon svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .fp-rule-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .fp-rule-desc {
+            font-size: 12.5px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* ── Logistics ── */
+        .fp-logistics {
+            background: #0d1a12;
+            border: 1px solid #1a3323;
+            border-radius: 16px;
+            padding: 28px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .fp-log-stat {
+            text-align: center;
+        }
+
+        .fp-log-stat-val {
+            font-family: 'Syne', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: #00c864;
+            display: block;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .fp-log-stat-label {
+            font-size: 11px;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .fp-log-divider {
+            width: 1px;
+            height: 40px;
+            background: #1a3323;
+            flex-shrink: 0;
+        }
+
+        /* ── CTA ── */
+        .fp-pay-cta {
+            background: linear-gradient(135deg, #0d1f15 0%, #0a0a0a 100%);
+            border: 1px solid #1e3a26;
+            border-radius: 20px;
+            padding: 36px 44px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .fp-pay-cta h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 6px;
+        }
+
+        .fp-pay-cta p {
+            font-size: 13.5px;
+            color: #555;
+            margin: 0;
+            font-weight: 300;
+        }
+
+        .fp-pay-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #00c864;
+            color: #000;
+            font-family: 'Syne', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            padding: 13px 26px;
+            border-radius: 50px;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background 0.2s, transform 0.2s;
+            flex-shrink: 0;
+        }
+
+        .fp-pay-btn:hover {
+            background: #00e070;
+            transform: scale(1.03);
+        }
+
+        .fp-pay-btn svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 700px) {
+            .fp-tier-banner {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .fp-logistics {
+                justify-content: center;
+            }
+
+            .fp-log-divider {
+                display: none;
+            }
+
+            .fp-pay-cta {
+                padding: 24px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/image/306627b3deca1408.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" type="text/css">
+
+</head>
+
+<body class="__variable_9b9fd1 __variable_c2c3d1 __className_472ac2 __variable_663d34 __variable_67edef ">
+    <header id="siteHeader" class="fixed top-4 left-0 w-full z-50 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div id="navWrapper"
+                class="nav-lines relative overflow-hidden bg-black/40 backdrop-blur-md border border-white/10 rounded-xl px-6 lg:pr-2 lg:pl-10 h-[72px] flex items-center justify-between transition-all duration-300">
+                <a href="/" class="flex items-center gap-3">
+                    <img src="./assets/image/fewpips.png" class="h-12 w-auto" alt="logo">
+                </a>
+
+                <nav class="hidden lg:flex items-center gap-12 text-white/70">
+                    <a href="index.html" class="hover:text-white transition text-sm">Home</a>
+                    <a href="index.html#challenges" class="hover:text-white transition text-sm">Challenges</a>
+                    <a href="index.html#team" class="hover:text-white transition text-sm">Team</a>
+                    <a href="index.html#affiliate-section" class="hover:text-white transition text-sm">Become a Partner</a>
+                    <a href="#faq" class="hover:text-white transition text-sm">FAQ</a>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <a href="https://crm.fewpips.com/auth/signup"
+                        class="hidden bg-gradient-to-r from-[#00ffc2] to-[#42ff00] text-black lg:flex items-center justify-center px-8 py-4 rounded-xl border border-white/20 text-sm font-semibold hover:bg-white hover:text-black transition-all duration-300"
+                        target="_blank">
+                        Get Funded
+                    </a>
+
+                    <button id="menuBtn"
+                        class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-white/10 text-white">
+                        <svg id="openIcon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="header_top_line"></div>
+            <div class="header_bottom_line"></div>
+            <div id="mobileMenu"
+                class="hidden mt-3 overflow-hidden bg-black/90 backdrop-blur-xl border border-white/10 rounded-3xl transition-all duration-300">
+                <div class="px-6 py-8 flex flex-col gap-5 text-white/80 text-lg">
+                    <a href="index.html" class="hover:text-white">Home</a>
+                    <a href="index.html#challenges" class="hover:text-white">Challenges</a>
+                    <a href="index.html#team" class="hover:text-white">Team</a>
+                    <a href="index.html#affiliate-section" class="hover:text-white">Become a Partner</a>
+                    <a href="#faq" class="hover:text-white">FAQ</a>
+                    <hr class="border-white/10">
+                    <a href="https://crm.fewpips.com/auth/signup"
+                        class="text-center py-4 rounded-xl bg-white text-black font-bold bg-gradient-to-r from-[#00ffc2] to-[#42ff00] text-black"
+                        target="_blank">Get
+                        Funded</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="faq" ></div>
+    <div class="sm:v2-container mx-auto mt-[20px] lg:mt-[200px] pb-[85px]">
+        <h2 class="text-[28px] lg:text-[52px] font-extrabold font-bernou leading-[62px] text-white text-center">
+            Frequently Asked Questions
+        </h2>
+        <p
+            class="mt-3 text-center text-sm leading-[23px] text-[rgba(255,255,255,0.60)] md:mx-auto md:w-1/2 xl:w-full  xl:text-[20px] xl:leading-[34px]">
+            Everything you need to know
+        </p>
+        <div class="space-y-3 mt-14">
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">Where are you located?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        Our registered office is in St Lucia - La Place Creole Building, Rodney Bay, Gros Islet, St.
+                        Lucia.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">How does the Fewpips model work?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        Fewpips is a premier global proprietary trading firm dedicated to backing skilled traders
+                        through various funding models. Whether you specialise in CFDs or Futures, our programs allow
+                        you to demonstrate your market expertise and access simulated funding with the potential for
+                        lifetime payouts.
+
+                        <br><br>
+
+                        With an emphasis on unmatched platform stability and a trader-centric environment, Fewpips
+                        bridges the gap between talent and capital. Here is the simple step-by-step process:
+
+                        <ul class="list-disc pl-5 mt-3 space-y-1">
+                            <li><b>Choose Your Challenge:</b> Select the program that fits your style.</li>
+                            <li><b>Prove Your Edge:</b> Complete the evaluation phases by hitting your targets.</li>
+                            <li><b>Get Funded:</b> Receive a simulated funded account based on your performance.</li>
+                            <li><b>Earn Rewards:</b> You keep a share of the gains while Fewpips manages the financial
+                                risk.</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">Is Fewpips a regulated entity?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        Fewpips is registered and governed by the laws of St. Lucia. Because our business model does not
+                        involve managing client deposits or providing public investment services, we do not fall under
+                        the umbrella of traditional financial brokerage regulations.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">Does Fewpips fall under USA or Canadian
+                        jurisdiction?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        No. Fewpips operates strictly within the St. Lucian regulatory framework. We are not subject to
+                        the jurisdiction of US or Canadian financial authorities, meaning our global services remain
+                        stable and unaffected by regulatory shifts in those specific regions.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">What does "No Time Limit" actually mean
+                        for traders?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        We believe great trading shouldn't be rushed. For all Fewpips account types, we have eliminated
+                        time pressure in both the Challenge and Funded phases. You are free to trade at your own pace
+                        until you reach your goals. The only time-related requirement is a 5-day minimum trading day
+                        rule to ensure consistency.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">How can I get in touch with the Pro
+                        Support Team?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        If you need assistance, you can connect with our specialised support staff by submitting a
+                        formal help ticket through your dashboard, by sending us an email or speaking to us on LiveChat
+                        on our website. Our team is dedicated to providing timely and professional resolutions to all
+                        trader inquiries.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">What is the "Lifetime Payout" at
+                        Fewpips?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        A Lifetime Payout signifies that once you secure a Fewpips Funded Account, that account remains
+                        yours indefinitely, provided you adhere to our risk and trading guidelines. Unlike other firms
+                        that may require periodic requalification, Fewpips allows you to continue earning from the same
+                        account for as long as it remains active.
+
+                        <br><br>
+
+                        To ensure long-term liquidity and platform stability, payouts are distributed in manageable
+                        phases:
+
+                        <ul class="list-disc pl-5 mt-3 space-y-2">
+                            <li><b>Withdrawal Cap:</b> Individual withdrawal requests are processed in increments of up
+                                to $1,000.</li>
+
+                            <li><b>The 5-Day Rule:</b> After a payout is processed, you must complete 5 active trading
+                                days (while staying compliant with all risk rules) to become eligible for your next
+                                $1,000 increment. To ensure quality trading activity, a "trading day" is defined by the
+                                duration of your positions. Whether you execute a single trade or multiple positions in
+                                a session, at least one trade must remain open for a minimum of 3 minutes for that day
+                                to be officially counted toward your 5-day requirement.</li>
+
+                            <li><b>Account Longevity:</b> Your credentials remain valid, and your account stays active
+                                as long as you do not breach Daily or Maximum Loss limits.</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">Do I need to requalify for my account
+                        after a certain period?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        No. At Fewpips, we value consistency over jumping through hoops. Once you pass the Challenge
+                        Phase and move to a Funded Account, you do not need to reapply or requalify for that specific
+                        account. As long as you manage your risk and follow the rules, the account-and its earning
+                        potential-is yours permanently.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">Which countries are currently restricted
+                        from Fewpips CFD services?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        While Fewpips strives to be a global platform, we must adhere to certain operational and
+                        regulatory constraints. Currently, we do not provide services to residents or citizens of the
+                        following regions:
+
+                        <ul class="list-disc pl-5 mt-3 space-y-1">
+                            <li>Afghanistan</li>
+                            <li>Belarus</li>
+                            <li>Central African Republic</li>
+                            <li>Cuba</li>
+                            <li>Democratic Republic of Congo</li>
+                            <li>Iran</li>
+                            <li>Libya</li>
+                            <li>Mali</li>
+                            <li>Myanmar</li>
+                            <li>North Korea</li>
+                            <li>Russia</li>
+                            <li>Sudan</li>
+                            <li>South Sudan</li>
+                            <li>Syria</li>
+                            <li>Venezuela</li>
+                            <li>Yemen</li>
+                            <li>Regions of Crimea, Donetsk, and Luhansk</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">Why are these regional restrictions in
+                        place?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        These decisions are made after a thorough review of various international factors. Our primary
+                        goal is to maintain a stable, high-performance trading environment for our users, and these
+                        restrictions ensure we remain aligned with our long-term operational objectives.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">Can US-based clients use the MetaQuotes
+                        (MT5) platform?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        Per regulatory requirements, MetaQuotes services are unavailable to clients located within the
+                        United States. Consequently, MT5 and the Fewpips Instant Account are not accessible in that
+                        region. Furthermore, clients utilising a MetaQuotes server are prohibited from using a USA-based
+                        IP address.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">Does Fewpips currently accept traders
+                        from the United States?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        At this time, Fewpips does not accept clients residing in the USA. However, we are actively
+                        working on expanding our reach and expect this to change in the future.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">What happens if my trading activity
+                        violates Fewpips rules?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        Fewpips is built on a foundation of fair play and professional integrity. If a trader’s activity
+                        is found to be in violation of our established standards—specifically after becoming eligible
+                        for a payout—the following steps are taken:
+
+                        <ul class="list-disc pl-5 mt-3 space-y-2">
+                            <li><b>Audit:</b> We conduct a comprehensive review of all trading logs associated with the
+                                payout request.</li>
+                            <li><b>Action:</b> Depending on the nature and severity of the breach, we will take
+                                appropriate measures as outlined in our Terms of Service.</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">How does Fewpips handle disputes
+                        regarding rule violations?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        We prioritise transparency. If an issue arises, we communicate directly with the trader,
+                        providing clear evidence and data to support our findings. Our goal is to ensure that all
+                        actions taken are just, evidence-based, and focused on maintaining an equitable platform for
+                        all.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">Why is maintaining a consistent strategy
+                        important?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        By enforcing high trading standards, we ensure that success is the result of genuine skill. This
+                        approach protects the community and ensures that Fewpips remains a balanced environment where
+                        disciplined traders are rewarded.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">How long does it take for Fewpips to
+                        process a payout?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        We strive to authorize and process all withdrawal requests within 5 to 7 business days. This
+                        window allows our team to conduct necessary audit checks to ensure all trading activity aligns
+                        with our compliance standards.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">Can I merge multiple accounts into
+                        one?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        No. Account merging is strictly prohibited at Fewpips, even if the accounts are for the same
+                        challenge type. Each account must be traded independently according to its specific parameters.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">What is the difference between a Fewpips
+                        Challenge and a Funded Account?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>
+                                <b>The Challenge Phase:</b> This is your evaluation stage. You are trading on a demo
+                                account with the goal of reaching a specific profit target (e.g., 10%) to prove your
+                                skills. There are no cash payouts during this phase.
+                            </li>
+
+                            <li>
+                                <b>The Funded Account:</b> Once you pass the evaluation, your focus shifts from hitting
+                                a target to maintaining consistency. There is no set profit goal to clear; instead, you
+                                trade to earn performance-based rewards (payouts) while prioritizing capital
+                                preservation.
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">Why should I choose Fewpips over other
+                        prop firms?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        Fewpips is built on a foundation of transparency and long-term trader growth. We provide a
+                        flexible environment where fairness and reliability are the priorities, allowing you to scale
+                        your trading career without the typical industry pressures.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">Are there time limits on the
+                        Challenges?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        Not at all. We have eliminated the "ticking clock." Fewpips allows you to trade at your own pace
+                        without the stress of tight deadlines, giving you the freedom to wait for the best market
+                        setups.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">What kind of support does Fewpips
+                        offer?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        You will have direct access to the Fewpips Pro Support Team. This group consists of seasoned
+                        professionals ready to provide expert guidance and technical assistance whenever you need it.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">Which trading platforms can I
+                        use?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        Currently, we provide full support for MT5. However, we are in the process of expanding our
+                        infrastructure and will soon introduce a variety of additional platforms to ensure every trader
+                        has access to their preferred tools.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">How competitive are the commission
+                        rates?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        Fewpips offers some of the most competitive commission structures in the industry. Our goal is
+                        to minimise your overhead costs, ensuring that more of your trading gains stay where they
+                        belong—in your pocket.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">Does Fewpips have any "hidden"
+                        rules?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        Absolutely not. We pride ourselves on being one of the most transparent firms in the market.
+                        Every rule, policy, and requirement is clearly detailed in our documentation and this FAQ. There
+                        are no fine-print traps or surprise clauses; you can trade with the confidence that the rules
+                        are exactly as stated.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Accordion Item -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button" aria-expanded="false">
+                    <span class="text-white font-medium text-[16px] font-Inter">How does Fewpips support trader
+                        potential?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        By removing time constraints and offering low-cost trading, we empower traders to focus on
+                        strategy rather than survival. We believe that by providing a stable, rule-clear environment, we
+                        help talented individuals reach their full professional potential.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Commission Charges -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">What are the commission charges at
+                        Fewpips?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        At Fewpips, a commission is a standard transaction fee applied to trades executed within our
+                        simulated funding environment. These fees represent the cost of trade processing and are
+                        automatically deducted on a per-trade basis.
+
+                        <br><br>
+
+                        For CFD (Forex) trading, these costs are based on trading volume to ensure a transparent and
+                        equitable pricing structure for all participants.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Commission Rates -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">How are commission rates
+                        determined?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        Commission rates at Fewpips vary depending on the specific trading symbol and asset class. We
+                        maintain a competitive fee structure to ensure your profit potential is maximised.
+
+                        <div class="few-table-wrapper">
+                            <table class="few-table">
+                                <thead>
+                                    <tr>
+                                        <th>Model</th>
+                                        <th>Forex</th>
+                                        <th>Commodities (Inc Metals)</th>
+                                        <th>Indices</th>
+                                        <th>Future Based CFDs</th>
+                                        <th>Crypto</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>Fewpips 1-Step</td>
+                                        <td>$3 per $100K Lot (one side)</td>
+                                        <td>$3 per $100K Lot (one side)</td>
+                                        <td>$3 per $100K Lot (one side)</td>
+                                        <td>$3 per $100K Lot (one side)</td>
+                                        <td>0.04% of Notional Value</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Fewpips 2-Step</td>
+                                        <td>$3 per $100K Lot (one side)</td>
+                                        <td>$3 per $100K Lot (one side)</td>
+                                        <td>$3 per $100K Lot (one side)</td>
+                                        <td>$3 per $100K Lot (one side)</td>
+                                        <td>0.04% of Notional Value</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Fewpips 3-Step</td>
+                                        <td>$3 per $100K Lot (one side)</td>
+                                        <td>$3 per $100K Lot (one side)</td>
+                                        <td>$3 per $100K Lot (one side)</td>
+                                        <td>$3 per $100K Lot (one side)</td>
+                                        <td>0.04% of Notional Value</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Fewpips Instant</td>
+                                        <td>$3 per $100K Lot (one side)</td>
+                                        <td>$3 per $100K Lot (one side)</td>
+                                        <td>$3 per $100K Lot (one side)</td>
+                                        <td>$3 per $100K Lot (one side)</td>
+                                        <td>0.04% of Notional Value</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crypto Commission Calculation -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">How do I calculate Crypto
+                        commissions?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        For Cryptocurrency pairs, the commission is calculated based on the total value of the position
+                        at the time of opening.
+
+                        <br><br>
+
+                        <b>The Formula:</b>
+                        <div class="bg-black/40 border border-white/10 rounded-lg px-4 py-3 mt-3 text-white">
+                            <code>Commission = Lot Size × Contract Size × Opening Price × 0.04%</code>
+                        </div>
+
+                        <br>
+
+                        <b>Example (ETH/USD):</b>
+                        If you open a 1-lot position at a price of 2722.12:
+
+                        <div
+                            class="bg-black/40 border border-white/10 rounded-lg px-4 py-3 mt-2 text-green-400 font-semibold">
+                            1 × 1 × 2722.12 × 0.0004 = $1.08
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Metals Commission Calculation -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">How do I calculate Commodities (Metals)
+                        commissions?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        Commissions for precious metals are based on a percentage of the contract value.
+
+                        <br><br>
+
+                        <b>The Formula:</b>
+                        <div class="bg-black/40 border border-white/10 rounded-lg px-4 py-3 mt-3 text-white">
+                            <code>Commission = Lot Size × Contract Size × Opening Price × 0.0016%</code>
+                        </div>
+
+                        <br>
+
+                        <b>Example 1 (Gold - XAU/USD):</b>
+                        <div
+                            class="bg-black/40 border border-white/10 rounded-lg px-4 py-3 mt-2 text-green-400 font-semibold">
+                            1 × 100 × 4466.22 × 0.000016 = $7.14
+                        </div>
+
+                        <b class="block mt-4">Example 2 (Silver - XAG/USD):</b>
+                        <div
+                            class="bg-black/40 border border-white/10 rounded-lg px-4 py-3 mt-2 text-green-400 font-semibold">
+                            1 × 5000 × 78.316 × 0.000016 = $6.26
+                        </div>
+
+                        <b class="block mt-4">Example 3 (Platinum - XPT/USD):</b>
+                        <div
+                            class="bg-black/40 border border-white/10 rounded-lg px-4 py-3 mt-2 text-green-400 font-semibold">
+                            1 × 100 × 2322.64 × 0.000016 = $3.71
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Same Commission Question -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">Are commissions the same for Challenge
+                        and Funded accounts?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        Yes. To ensure consistency and a realistic trading experience, the commission structure remains
+                        identical across both the Challenge Phase and the Fewpips Funded Account.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Hidden Fees -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">Are there any hidden fees besides
+                        commissions?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        No. Fewpips operates with a "no surprise" policy. All costs associated with your
+                        trading—including spreads and commissions—are reflected directly in your trading platform.
+                    </div>
+                </div>
+            </div>
+
+            <!-- VPN / VPS -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">Am I permitted to use a VPN or
+                        VPS?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        Yes, traders are welcome to use a VPN across all Fewpips Challenge and Funded Accounts. The use
+                        of a VPS is also permitted; however, please ensure you select this as an Add-On during your
+                        checkout process.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Expert Advisors -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">Are Expert Advisors (EAs) allowed at
+                        Fewpips?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        Fewpips supports the use of EAs, provided they comply with our ethical trading standards. To
+                        maintain a fair environment, the following strategies are strictly prohibited:
+
+                        <ul class="list-disc pl-5 mt-4 space-y-3">
+
+                            <li>
+                                <b>High-Frequency Trading (HFT):</b>
+                                Using ultra-high-speed execution to open and close hundreds of trades per second.
+                            </li>
+
+                            <li>
+                                <b>Latency Arbitrage:</b>
+                                Exploiting millisecond delays between price feeds to gain an unfair advantage.
+                            </li>
+
+                            <li>
+                                <b>Tick Manipulation:</b>
+                                Attempting to disrupt the platform's data feed or exploiting errors in how price "ticks"
+                                are recorded.
+                            </li>
+
+                            <li>
+                                <b>Extreme Grid/Martingale:</b>
+                                Employing "net" strategies that place excessive buy/sell orders at every level.
+                            </li>
+
+                            <li>
+                                <b>Multi-IP Replication:</b>
+                                Using different names and IP addresses to mask that the same individual is managing
+                                multiple accounts.
+                            </li>
+
+                            <li>
+                                <b>Copy Trading:</b>
+                                Mirroring trades across multiple accounts (your own or others') simultaneously.
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instant Account Commission -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">What are the commission charges for the
+                        Instant Account?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        The Fewpips Instant Account features a transparent fee structure. For Forex, Commodities, and
+                        Indices, the commission is $3 per $100K lot (per side). For Cryptocurrencies, the rate is 0.04%
+                        based on the Notional Value.
+
+                        <br><br>
+                        <b>Quick Breakdown:</b>
+
+                        <ul class="list-disc pl-5 mt-3 space-y-2">
+                            <li><b>Forex / Commodities / Indices:</b> $3 per $100K lot (one side).</li>
+                            <li><b>Crypto:</b> 0.04% per lot price (applied at opening and closing).</li>
+                        </ul>
+
+                        <br>
+
+                        <b>Example (EURUSD):</b>
+                        <div
+                            class="bg-black/40 border border-white/10 rounded-lg px-4 py-3 mt-2 text-green-400 font-semibold">
+                            A 1-lot trade results in a $7 total commission ($3.50 per side).
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- EA Instant Account -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">Can I use EAs on the Instant
+                        Account?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        Yes, the same EA guidelines apply to the Instant Account as our other programs. Automated
+                        trading is permitted as long as it avoids the prohibited strategies (HFT, Arbitrage,
+                        Grid/Martingale, etc.) listed above and as long as you submit your strategy and receive approval
+                        from Fewpips to use EAs.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Registration -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">What details are required for my
+                        Dashboard registration?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        You must register using your legal name exactly as it appears on your government-issued ID
+                        (Passport or National ID). Accuracy is vital, as mismatched names may lead to KYC (Know Your
+                        Customer) rejection and loss of funded account eligibility.
+
+                        <br><br>
+
+                        Please also ensure your address and country match your official documentation.
+
+                        <div
+                            class="bg-yellow-500/10 border border-yellow-400/30 text-yellow-300 rounded-lg px-4 py-3 mt-4">
+                            <b>Note:</b> We allow minor spelling corrections if requested promptly.
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Tradable Assets -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">What assets can I trade at
+                        Fewpips?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        Traders have access to a comprehensive suite of instruments via the MT5 platform:
+
+                        <ul class="list-disc pl-5 mt-4 space-y-2">
+                            <li><b>Forex:</b> Over 30 major and minor pairs (e.g., EURUSD, GBPJPY, USDCAD).</li>
+                            <li><b>Indices:</b> Global markets including US30, NAS100, GER30, and HK50.</li>
+                            <li><b>Commodities:</b> BRENT, WTI, Gold (XAUUSD), Silver, and Copper.</li>
+                            <li><b>Cryptocurrencies:</b> A wide range of digital assets including BTC, ETH, SOL, and
+                                XRP.</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Account Sizes -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">What account sizes are available?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        Fewpips offers diverse starting capital options to suit your experience level:
+
+                        <ul class="list-disc pl-5 mt-4 space-y-2">
+                            <li><b>Standard Challenges:</b> $5k, $10k, $25k, $50k, $100k, and $200k.</li>
+                            <li><b>Instant Accounts:</b> $3k, $5k, $10k, $25k, and $50k.</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Payment Methods -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">Which payment methods do you
+                        accept?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        We prioritise secure and fast transactions. We currently accept several stablecoins:
+
+                        <ul class="list-disc pl-5 mt-4 space-y-2">
+                            <li>USDT (BEP20, TRC20, and ERC20).</li>
+                        </ul>
+
+                        <div class="bg-blue-500/10 border border-blue-400/30 text-blue-300 rounded-lg px-4 py-3 mt-4">
+                            Additional methods are being integrated and will be available soon.
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- KYC Process -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">When do I need to complete the KYC
+                        process?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        Identity verification must be completed before you are eligible to receive a payout from any
+                        Fewpips Funded or Instant Account. You will be asked to provide a photo of your Passport,
+                        National ID, or Permanent Residence Permit.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Active Trading Day -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">What qualifies as an "Active Trading
+                        Day"?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        To meet our 5-day minimum trading requirement, a day is only validated if it contains at least
+                        one trade held open for 3 minutes or more.
+
+                        <ul class="list-disc pl-5 mt-4 space-y-2">
+                            <li>
+                                <b>The Intent:</b> This rule prevents "flick-trading" (opening/closing in seconds) just
+                                to pass the time requirements.
+                            </li>
+                            <li>
+                                <b>Validation:</b> As long as one trade meets the 3-minute threshold, that entire day
+                                counts as active, regardless of any other shorter trades you place.
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- End of Cycle Rules -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">What happens if I haven't met the rules
+                        by the end of my cycle?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        <ul class="list-disc pl-5 space-y-3">
+
+                            <li>
+                                <b>In Profit:</b> If you haven't reached the 5-day minimum or met the consistency
+                                threshold, your cycle simply extends. You can continue trading until all criteria are
+                                satisfied.
+                            </li>
+
+                            <li>
+                                <b>In Loss:</b> If the account is in a loss at the end of the cycle, you must continue
+                                trading until you return to profit to request a payout, provided no maximum loss limits
+                                were breached.
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Server Time -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">What is the official Fewpips server
+                        time?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        Our platforms operate on MT5, using a standardised clock to ensure consistency for daily resets,
+                        loss limit calculations, and swap charges.
+
+                        <ul class="list-disc pl-5 mt-4 space-y-2">
+                            <li><b>Daylight Savings (Summer):</b> GMT +3</li>
+                            <li><b>Standard Time (Winter):</b> GMT +2</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daily Loss Limit -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">How is the Maximum Daily Loss Limit
+                        calculated?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        The Daily Loss Limit is based on a percentage of your <b>initial account balance</b>.
+                        It includes both realised and unrealised (floating) losses, as well as commissions and swap
+                        fees.
+                        If your total loss for the day exceeds these thresholds, the account is considered breached.
+
+                        <!-- TABLE -->
+                        <div class="few-table-wrapper">
+                            <table class="few-table">
+                                <thead>
+                                    <tr>
+                                        <th>Account Type</th>
+                                        <th>Daily Loss Limit</th>
+                                        <th>Example ($100K Account)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Fewpips 3-Step</td>
+                                        <td>5%</td>
+                                        <td>$5,000 Limit</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fewpips 2-Step</td>
+                                        <td>4%</td>
+                                        <td>$4,000 Limit</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fewpips 1-Step</td>
+                                        <td>4%</td>
+                                        <td>$4,000 Limit</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fewpips Instant</td>
+                                        <td>3%</td>
+                                        <td>$3,000 Limit</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- NOTE BOX -->
+                        <div
+                            class="bg-yellow-500/10 border border-yellow-400/30 text-yellow-300 rounded-lg px-4 py-3 mt-6">
+                            <b>Note on Profit:</b> If you are in profit for the day, your daily buffer increases.
+                            For example, if you have a 4% limit on a $100K account and you make $2,000 in profit, your
+                            allowed loss for that specific day becomes $6,000 ($4,000 base + $2,000 profit).
+                            The limit resets to the base percentage at <b>00:00 server time</b>.
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Maximum Total Loss -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">What is the Maximum (Total) Loss
+                        Limit?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        This is the <b>"hard stop"</b> for your account. It represents the maximum amount your balance
+                        or equity can drop below your starting capital.
+
+                        <ul class="list-disc pl-5 mt-4 space-y-2">
+                            <li><b>3-Step Challenges:</b> 6% ($94,000 threshold on a $100k account).</li>
+                            <li><b>2-Step Challenge:</b> 8% ($92,000 threshold on a $100k account).</li>
+                            <li><b>1-Step Challenges:</b> 6% ($94,000 threshold on a $100k account).</li>
+                            <li><b>Instant Account:</b> 5% ($95,000 threshold on a $100k account).</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Funded Account Eligibility -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">When do I receive my Fewpips Funded
+                        Account?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        You are eligible for a Fewpips Funded Account as soon as you successfully hit the profit target
+                        of your chosen challenge while remaining compliant with all trading and risk management rules as
+                        well as passing all the phases.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Affiliate Program -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">Does Fewpips have an Affiliate
+                        program?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        Absolutely. We offer a rewarding Affiliate program that allows you to earn commissions by
+                        introducing new talented traders to the Fewpips community.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Multiple Accounts -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">How many accounts can I manage at
+                        once?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        Traders can manage multiple accounts simultaneously, provided the total aggregate simulated
+                        capital does not exceed <b>$300,000</b>. You may distribute this capital across as many
+                        individual accounts as you prefer, as long as the combined total remains within this limit.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Crypto Payment -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">How do I pay via Cryptocurrency?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        We accept multiple USDT variants for your convenience. You must ensure you select the correct
+                        network during the transaction:
+
+                        <ul class="list-disc pl-5 mt-4 space-y-2">
+                            <li>USDT BEP20</li>
+                            <li>USDT ERC20</li>
+                            <li>USDT TRC20</li>
+                        </ul>
+
+                        <div class="bg-red-500/10 border border-red-400/30 text-red-300 rounded-lg px-4 py-3 mt-5">
+                            <b>Important:</b> Please verify the network carefully; Fewpips is not responsible for funds
+                            lost due to incorrect network selection.
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add-On Feature -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">What is the Fewpips Add-On
+                        feature?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        Our Add-On feature allows you to customise your trading plan at the point of purchase. These
+                        optional upgrades provide greater flexibility, higher profit potential, and faster access to
+                        rewards — allowing you to tailor the Fewpips experience to your specific trading style.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Swap Free -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">How does the Swap-Free Add-On
+                        work?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        Traders can choose between a standard account or a Swap-Free version:
+
+                        <ul class="list-disc pl-5 mt-4 space-y-2">
+                            <li><b>Standard:</b> Involves interest earned or paid for holding positions overnight.</li>
+                            <li><b>Swap-Free:</b> Ideal for traders who wish to avoid interest charges (religious or
+                                strategic reasons).</li>
+                        </ul>
+
+                        <div
+                            class="bg-emerald-500/10 border border-emerald-400/30 text-emerald-300 rounded-lg px-4 py-3 mt-5">
+                            <b>Cost:</b> Selecting this Add-On adds a 10% fee to your Challenge price.<br>
+                            Example: A $100k Challenge priced at $569.00 would adjust to $625.90.
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 95% Lifetime Reward -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">What is the "95% Lifetime Reward"
+                        Add-On?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        By default, Fewpips Funded Accounts begin with an 80% profit share.
+                        Selecting this Add-On locks in a massive <b>95% share of all future profits</b> for the lifetime
+                        of that account.
+
+                        <div
+                            class="bg-purple-500/10 border border-purple-400/30 text-purple-300 rounded-lg px-4 py-3 mt-5">
+                            <b>Cost:</b> +25% fee for 1-Step/2-Step/3-Step accounts, or +30% for Instant Accounts.<br>
+                            Example: A $100k 2-Step Challenge ($569.00) becomes $739.70.
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- No Minimum Trading Days -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">How does the "No Minimum Trading Days"
+                        Add-On benefit me?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        Normally, traders must complete at least 5 trading days to pass a phase.
+                        This Add-On removes that requirement entirely — you get funded immediately once the profit
+                        target is reached.
+
+                        <div class="bg-blue-500/10 border border-blue-400/30 text-blue-300 rounded-lg px-4 py-3 mt-5">
+                            <b>Cost:</b> +25% for 1-Step/2-Step/3-Step accounts, +20% for Instant Accounts.<br>
+                            Example: A $10k 2-Step Challenge ($89.00) becomes $111.25.
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 150% Reward -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">What is the "150% Reward" Add-On?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        Normally traders receive a 100% refund of their challenge fee after passing.
+                        With this Add-On, Fewpips pays <b>150% of your initial fee</b> as a Passing Reward at your first
+                        or third payout.
+
+                        <ul class="list-disc pl-5 mt-4 space-y-2">
+                            <li><b>Availability:</b> Only for 1-Step and 2-Step accounts.</li>
+                        </ul>
+
+                        <div
+                            class="bg-yellow-500/10 border border-yellow-400/30 text-yellow-300 rounded-lg px-4 py-3 mt-5">
+                            <b>Cost:</b> Adds a 10% fee to your Challenge price.<br>
+                            Example: A $50k Challenge ($369.00) becomes $405.90.
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bi-Weekly Reward -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">How does the "Bi-Weekly Reward" Add-On
+                        shorten my payout cycle?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        Standard accounts usually require a 21-day wait for the first payout.
+                        This Add-On allows you to bypass that cycle, enabling you to request your performance rewards
+                        every <b>14 days (two weeks)</b>.
+
+                        <div
+                            class="bg-emerald-500/10 border border-emerald-400/30 text-emerald-300 rounded-lg px-4 py-3 mt-5">
+                            <b>Cost:</b> +25% fee for 2-Step accounts, or +15% for Instant Accounts.<br>
+                            Example: A $15k 2-Step Challenge ($119.00) becomes $148.75.
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- IBAN -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">What is the IBAN for Fewpips?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        An International Bank Account Number (IBAN) is a standardized global code used to identify bank
+                        accounts across national borders. It ensures cross-border payments are processed efficiently and
+                        reduces the risk of errors.
+
+                        <div class="bg-blue-500/10 border border-blue-400/30 text-blue-300 rounded-lg px-4 py-3 mt-5">
+                            <b>Important:</b> Fewpips primarily processes payments through secure Payment Service
+                            Providers (PSPs) and Cryptocurrency.
+                            If bank transfers are available in your region, the IBAN will be provided directly on your
+                            deposit invoice during checkout.
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- IBAN vs Account Number -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">What is the difference between a
+                        standard account number and an IBAN?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><b>Account Number:</b> Used internally by a specific bank within a single country.</li>
+                            <li><b>IBAN:</b> An international format that includes country code, bank identifier, check
+                                digits, and the account number for global transfers.</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- IBAN Length -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">How long should an IBAN be?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        IBAN length depends on the country, typically ranging from 14 to 34 characters. The most common
+                        format is between 20 and 24 characters, and each country follows a fixed structure.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- SWIFT/BIC -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">Do I still need a SWIFT/BIC code if I
+                        have an IBAN?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+                        Yes. The IBAN identifies your specific account, while the SWIFT/BIC code identifies the bank and
+                        branch. Most international transfers require both for accurate routing.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- IBAN Mismatch Help -->
+            <div
+                class="accordion-item border border-white/20 rounded-[12px] overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-300">
+                <button
+                    class="accordion-header w-full px-[24px] py-[20px] flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                    type="button">
+                    <span class="text-white font-medium text-[16px] font-Inter">What should I do if my bank requires a
+                        different IBAN length than provided?</span>
+                    <svg class="w-6 h-6 text-white transition-transform duration-300 accordion-chevron"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </button>
+
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                    <div
+                        class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
+
+                        If there is a mismatch, follow these steps:
+
+                        <ol class="list-decimal pl-5 space-y-2 mt-4">
+                            <li>Re-check your invoice to ensure no characters were missed.</li>
+                            <li>Contact the Fewpips Pro Support Team for verification.</li>
+                            <li>Provide the BIC/SWIFT code along with the IBAN.</li>
+                            <li>If issues persist, consider using Cryptocurrency payment methods for near-instant
+                                processing.</li>
+                        </ol>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW ADD -->
+
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', function () {
+                const item = this.closest('.accordion-item');
+                const content = item.querySelector('.accordion-content');
+                const chevron = this.querySelector('.accordion-chevron');
+                const isOpen = this.getAttribute('aria-expanded') === 'true';
+
+                document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        const otherContent = otherItem.querySelector('.accordion-content');
+                        const otherButton = otherItem.querySelector('.accordion-header');
+                        const otherChevron = otherButton.querySelector('.accordion-chevron');
+                        otherContent.style.maxHeight = '0px';
+                        otherButton.setAttribute('aria-expanded', 'false');
+                        otherChevron.style.transform = 'rotate(0deg)';
+                    }
+                });
+
+                if (isOpen) {
+                    content.style.maxHeight = '0px';
+                    this.setAttribute('aria-expanded', 'false');
+                    chevron.style.transform = 'rotate(0deg)';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    this.setAttribute('aria-expanded', 'true');
+                    chevron.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+    </script>
+
+
+    <section class="relative z-0 pt-10 tab:pt-0 bg-ebony">
+        <footer role="contentinfo" aria-label="Site footer">
+            <div
+                class="relative flex min-h-[50vh] flex-col justify-between xl:min-h-[767px]  xl:overflow-hidden 2xl:min-h-[990px]">
+                <div class="v2-container">
+                    <div
+                        class="w-full mx-auto py-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-10">
+                        <div>
+                            <h1 class="text-white font-bold text-[32px] leading-[120%] font-bernou">Fewpips
+
+                            </h1>
+                        </div>
+                        <div class="flex items-center gap-x-4"><a href="#"><img alt="social-icon" loading="lazy"
+                                    width="45" height="45" data-nimg="1"
+                                    class="cursor-pointer w-[40px] h-[40px] scale-[102%]" style="color:transparent"
+                                    src="https://dirslur24ie1a.cloudfront.net/fundednext/new-lander/fb-icon.svg"></a><a
+                                href="https://www.instagram.com/_fewpips/"><img alt="social-icon" loading="lazy"
+                                    width="45" height="45" data-nimg="1"
+                                    class="cursor-pointer w-[40px] h-[40px] scale-[102%]" style="color:transparent"
+                                    src="https://dirslur24ie1a.cloudfront.net/fundednext/new-lander/insta-icon.svg"></a>
+
+                            <a href="https://t.co/yET4tmu5tE"><img alt="social-icon" loading="lazy" width="45"
+                                    height="45" data-nimg="1" class="cursor-pointer w-[40px] h-[40px] scale-[102%]"
+                                    style="color:transparent"
+                                    src="https://dirslur24ie1a.cloudfront.net/fundednext/new-lander/twitter-icon.svg"></a><a
+                                href="https://www.youtube.com/@Fewpips"><img alt="social-icon" loading="lazy" width="45"
+                                    height="45" data-nimg="1" class="cursor-pointer w-[40px] h-[40px] scale-[102%]"
+                                    style="color:transparent"
+                                    src="https://dirslur24ie1a.cloudfront.net/fundednext/new-lander/yt-icon.svg"></a>
+                        </div>
+                    </div>
+                    <div class="relative flex w-full flex-wrap justify-center gap-y-[30px] text-white xl:min-h-[400px]">
+                        <div
+                            class="pt-10 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-10 w-full border-t-[0.5px] border-[#ffffff17]">
+                            <div class="">
+                                <div class="flex flex-col items-start">
+                                    <p class="mb-8 text-base text-white font-[600] text-[16px]">Markets</p>
+                                    <div class="flex flex-col gap-y-[10px]">
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="CFD Challenge" title="CFD Challenge"
+                                            data-category="Privacy &amp; Policy" href="cfd-challenge-rules.html"
+                                            target="_blank">CFD Challenge Rules</a>
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="CFD Funded" title="CFD Funded"
+                                            data-category="Privacy &amp; Policy" href="cfd-funded-rules.html"
+                                            target="_blank">CFD Funded Rules</a>
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] no-translate"
+                                            aria-label="Fewpips Futures" title="Fewpips Futures" data-category="Markets"
+                                            href="#">Fewpips Futures <span class="text-primary">Comming Soon</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="flex flex-col items-start">
+                                    <p class="mb-8 text-base text-white font-[600] text-[16px]">Education</p>
+                                    <div class="flex flex-col gap-y-[10px]">
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Dashboard Tour" title="Dashboard Tour" data-category="Education"
+                                            rel="noopener noreferrer" href="#">Dashboard
+                                            Tour</a>
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Economic Calendar" title="Economic Calendar"
+                                            data-category="Education" href="https://crm.fewpips.com/"
+                                            target="_blank">Economic Calendar</a>
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Prop Trading Position Size and Profit Calculator"
+                                            title="Calculate your trading positions and potential profits"
+                                            data-category="Education" href="https://crm.fewpips.com/"
+                                            target="_blank">Calculator</a>
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Trading Guide" title="Trading Guide" data-category="Education"
+                                            href="">Trading Guide</a>
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Fewpips Trading Blog and Educational Resources"
+                                            title="Read latest prop trading articles and guides"
+                                            data-category="Education" href="">Blog</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="flex flex-col items-start">
+                                    <p class="mb-8 text-base text-white font-[600] text-[16px]">Important Links</p>
+                                    <div class="flex flex-col gap-y-[10px]">
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Fewpips Prop Trading Frequently Asked Questions"
+                                            title="Access Fewpips comprehensive trading FAQ"
+                                            data-category="Important Links" rel="noopener noreferrer"
+                                            href="#faq">FAQ</a>
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Affiliate Partner" title="Affiliate Partner"
+                                            data-category="Important Links" href="#platform">Trading Platform</a>
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Global Events" title="Global Events"
+                                            data-category="Important Links" href="#team">Global Team</a>
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Risk Parameters" title="Risk Parameters"
+                                            data-category="Important Links"
+                                            href="/Fewpips Terms & Conditions.html#risk">Risk Parameters</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="flex flex-col items-start">
+                                    <p class="mb-8 text-base text-white font-[600] text-[16px]">Privacy &amp; Policy</p>
+                                    <div class="flex flex-col gap-y-[10px]">
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Terms of Service" title="Terms of Service"
+                                            data-category="Privacy &amp; Policy" href="Fewpips Terms & Conditions.html"
+                                            target="_blank">Terms and conditions</a>
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="CFD Challenge" title="CFD Challenge"
+                                            data-category="Privacy &amp; Policy" href="cfd-challenge-rules.html"
+                                            target="_blank">CFD Challenge Rules</a>
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="CFD Funded" title="CFD Funded"
+                                            data-category="Privacy &amp; Policy" href="cfd-funded-rules.html"
+                                            target="_blank">CFD Funded Rules</a>
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Payout" title="Payout" data-category="Privacy &amp; Policy"
+                                            href="payout-days-trading-cycles.html" target="_blank">Payout Days & Trading
+                                            Cycles</a>
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Challenge Terms" title="Challenge Terms"
+                                            data-category="Privacy &amp; Policy" href="cfd-challenge-terms.html"
+                                            target="_blank">CFD Challenge Terms</a>
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="AML Policy" title="AML Policy"
+                                            data-category="Privacy &amp; Policy" href="cfd-funded-terms.html"
+                                            target="_blank">CFD Funded Terms</a>
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Cookie Policy" title="Cookie Policy"
+                                            data-category="Privacy &amp; Policy" href="cookie-policy.html"
+                                            target="_blank">Cookie
+                                            Policy</a>
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Affiliate T&amp;C" title="Affiliate T&amp;C"
+                                            data-category="Privacy &amp; Policy" rel="noopener noreferrer"
+                                            href="Anti-Money Laundering Policy.html" target="_blank">Anti-Money
+                                            Laundering Policy</a>
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Privacy Policy" title="Privacy Policy"
+                                            data-category="Privacy &amp; Policy" href="privacy-policy.html"
+                                            target="_blank">Privacy
+                                            Policy</a>
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Verification" title="Verification"
+                                            data-category="Privacy &amp; Policy" href="verification-policy.html"
+                                            target="_blank">Verification Policy</a>
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Instant Account Terms" title="Instant Account Terms"
+                                            data-category="Privacy &amp; Policy" href="instant-account-terms.html"
+                                            target="_blank">Instant Account Terms</a>
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="IB Terms And Conditions" title="IB Terms And Conditions"
+                                            data-category="Privacy &amp; Policy" href="ib-terms-and-conditions.html"
+                                            target="_blank">Fewpips IB Program</a>
+
+                                        <!-- <a
+                                 class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                 aria-label="Subscribe to newsletter" title="Subscribe to newsletter"
+                                 data-category="Privacy &amp; Policy" href="/email-notification">Subscribe to
+                                 newsletter</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="flex flex-col items-start">
+                                    <p class="mb-8 text-base text-white font-[600] text-[16px]">Community</p>
+                                    <div class="flex flex-col gap-y-[10px]"><a
+                                            class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Join Local Community" title="Join Local Community"
+                                            data-category="Community" rel="noopener noreferrer"
+                                            href="https://www.instagram.com/_fewpips/" target="_blank">Join Local
+                                            Community</a><a
+                                            class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Join Discord" title="Join Discord" data-category="Community"
+                                            rel="noopener noreferrer" href="https://discord.gg/aVRkQQJE"
+                                            target="_blank">Join
+                                            Discord</a><a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Join X" title="Join X" data-category="Community"
+                                            rel="noopener noreferrer" href="https://t.co/yET4tmu5tE"
+                                            target="_blank">Join X</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative z-[999] mx-auto py-10 xl:max-w-[1216px]">
+                        <div class="mb-10"></div>
+                        <p class="mb-[60px] text-justify text-xs leading-6 text-[#ffffff66] hidden">
+                            <strong>Risk
+                                Disclosure:</strong> Futures trading carries significant risks and is not appropriate
+                            for all investors. An investor could potentially lose more than the initial investment. Only
+                            those with the financial capacity to bear these risks should engage in futures
+                            trading.<br><strong>Performance and CFTC Rule 4.41:</strong> <!-- -->All performance results
+                            discussed are hypothetical and do not represent actual trading. Unlike live trading results,
+                            hypothetical results do not account for financial risk and are designed with hindsight. As
+                            per CFTC Rule 4.41, these results are provided for illustrative purposes only and do not
+                            guarantee future returns.<br><strong>Legal and Compliance:</strong> The content on this site
+                            is provided for general information purposes only and does not constitute financial advice
+                            or a solicitation to buy or sell any futures contracts. Fewpips adheres strictly to
+                            regulatory standards to maintain the highest integrity in our trading
+                            programs.<br><strong>Corporate Information:</strong> <!-- -->Fewpips is operated by
+                            GrowthNext F.Z.E., a registered company under the laws of the UAE, with additional
+                            operations managed from Limassol, Cyprus. Our services include advanced trading simulation
+                            challenges designed to evaluate and develop trading skills.<br><strong>Contact and
+                                Support:</strong> For further assistance or to address any inquiries, please contact our
+                            support team through the Contact Us page.<br><b>Copyright and Legal Notice:</b> The website
+                            and its content are owned by GrowthNext F.Z.E.© 2026 Fewpips. All rights reserved.
+                        </p>
+                        <p class="mb-[60px] text-justify text-xs leading-6 text-[#ffffff66] block">
+                            Risk
+                            Disclosure: Fewpips operates as a simulation-based evaluation platform. All trading is
+                            conducted in
+                            a simulated
+                            environment using virtual funds. No real market execution occurs. Performance-based rewards
+                            are
+                            contractual payments based on simulated results and do not represent actual trading profits.
+                            Fewpips does not offer investment advice, brokerage services, or access to real financial
+                            markets.
+
+                            Trading involves substantial risk and is not suitable for all individuals. Past simulated
+                            performance is not indicative of future results.
+                        </p>
+                        <p class="text-center text-sm text-[#ffffff4d]">
+                            Fewpips-Copyright © <!-- -->2026
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="sr-only">
+                <p>Access Fewpips comprehensive prop trading programs, educational resources, trading tools, and
+                    community features.
+                </p>
+            </div>
+        </footer>
+    </section>
+    <div id="modal-root"></div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/custom.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".tab-btn").click(function () {
+                var tabId = $(this).data("tab");
+                $(".tab-btn").removeClass("active bg-white text-[#16084D]");
+                $(this).addClass("active bg-white text-[#16084D]");
+
+                $(".tab-content").removeClass("active none").hide();
+                $("#" + tabId).addClass("active").fadeIn();
+            });
+        });
+    </script>
+    <script>
+
+        /* Accordion Script */
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const items = document.querySelectorAll(".faq-item");
+
+            items.forEach(item => {
+                const btn = item.querySelector(".faq-question");
+
+                btn.addEventListener("click", () => {
+
+                    /* close others */
+                    items.forEach(other => {
+                        if (other !== item) {
+                            other.classList.remove("active");
+                        }
+                    });
+
+                    /* toggle current */
+                    item.classList.toggle("active");
+
+                });
+            });
+
+        });
+
+    </script>
+    <script>
+
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const openIcon = document.getElementById('openIcon');
+        const closeIcon = document.getElementById('closeIcon');
+
+        menuBtn.addEventListener('click', () => {
+            // Toggle Menu Visibility
+            mobileMenu.classList.toggle('hidden');
+
+            // Toggle Icons
+            openIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Optional: Close menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                openIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+    </script>
+</body>

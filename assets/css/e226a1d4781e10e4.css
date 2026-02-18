@@ -9352,7 +9352,7 @@ input[type=number] {
 }
 
 .text-primary {
-	color: hsl(var(--primary))
+	color: #0fcd37;
 }
 
 .text-primary-foreground {

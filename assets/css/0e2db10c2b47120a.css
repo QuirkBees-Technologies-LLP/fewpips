@@ -389,12 +389,29 @@
 }
 
 .home_content {
-    margin-inline: 100px;
+    margin-inline: auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 50px;
+    position: relative;
+    max-width: 1400px;
+}
+
+.scroll-down-btn {
+    position: absolute;
+    right: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 1200px) {
+    .scroll-down-btn {
+        position: static;
+        transform: none;
+        margin-top: 30px;
+    }
 }
 
 @media (max-width:1024px) {

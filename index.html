@@ -2838,26 +2838,26 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
       const AUTH_TOKEN = 'pk_live_734f28105c2a0d2ad1588e2067fed29af743a3735321fb5a2ee4b42fbc07f325';
 
       const PLAN_CONFIG = {
-         "ONE-STEP": { phases: ["Phase 1", "Funded"] },
-         "TWO-STEP": { phases: ["Phase 1", "Phase 2", "Funded"] },
-         "THREE-STEP": { phases: ["Phase 1", "Phase 2", "Phase 3", "Funded"] },
-         "INSTANT - Soon!!!": { phases: ["Funded"] }
+         "Fewpips 1-Step": { phases: ["Phase 1", "Funded"] },
+         "Fewpips 2-Step": { phases: ["Phase 1", "Phase 2", "Funded"] },
+         "Fewpips 3-Step": { phases: ["Phase 1", "Phase 2", "Phase 3", "Funded"] },
+         "Fewpips Instant - Coming soon!": { phases: ["Funded"] }
       };
 
       // Display names for buttons only
       const PLAN_DISPLAY_NAMES = {
-         "ONE-STEP": "Fewpips 1-Step",
-         "TWO-STEP": "Fewpips 2-Step",
-         "THREE-STEP": "Fewpips 3-Step",
-         "INSTANT - Soon!!!": "Fewpips Instant"
+         "Fewpips 1-Step": "Fewpips 1-Step",
+         "Fewpips 2-Step": "Fewpips 2-Step",
+         "Fewpips 3-Step": "Fewpips 3-Step",
+         "Fewpips Instant - Coming soon!": "Fewpips Instant - Coming soon!"
       };
 
       let allData = {};
-      let activePlan = "THREE-STEP";
+      let activePlan = "Fewpips 3-Step";
 
       function formatTemplates(templates) {
          const formatted = {};
-         const planNames = ["ONE-STEP", "TWO-STEP", "THREE-STEP", "INSTANT - Soon!!!"];
+         const planNames = ["Fewpips 1-Step", "Fewpips 2-Step", "Fewpips 3-Step", "Fewpips Instant - Coming soon!"];
 
          planNames.forEach((plan) => {
             formatted[plan] = [];
@@ -2923,17 +2923,17 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
       }
 
       const STEPS_LEVERAGE_DATA = {
-         "ONE-STEP" : {"info" : "Forex: 1:30<br />Indices: 1:5<br />Commodities: 1:10<br />Metals: 1:5<br />Crypto: 1:1<br />Future Based CFDs: 1:20" , ratio : "1:30"},
-         "TWO-STEP" : {"info" : "Forex: 1:100<br />Indices: 1:15<br />Commodities: 1:15<br />Metals: 1:10<br />Crypto: 1:1<br />Future Based CFDs: 1:20" , ratio : "1:100"},
-         "THREE-STEP" : {"info" : "Forex: 1:100<br />Indices: 1:15<br />Commodities: 1:15<br />Metals: 1:10<br />Crypto: 1:1<br />Future Based CFDs: 1:20" , ratio : "1:100"},
-         "INSTANT - Soon!!!" : {"info" : "Forex: 1:30<br />Indices: 1:5<br />Commodities: 1:7.5<br />Metals: 1:7.5<br />Crypto: 1:1<br />Future Based CFDs: 1:20" , ratio : "1:30"}
+         "Fewpips 1-Step" : {"info" : "Forex: 1:30<br />Indices: 1:5<br />Commodities: 1:10<br />Metals: 1:5<br />Crypto: 1:1<br />Future Based CFDs: 1:20" , ratio : "1:30"},
+         "Fewpips 2-Step" : {"info" : "Forex: 1:100<br />Indices: 1:15<br />Commodities: 1:15<br />Metals: 1:10<br />Crypto: 1:1<br />Future Based CFDs: 1:20" , ratio : "1:100"},
+         "Fewpips 3-Step" : {"info" : "Forex: 1:100<br />Indices: 1:15<br />Commodities: 1:15<br />Metals: 1:10<br />Crypto: 1:1<br />Future Based CFDs: 1:20" , ratio : "1:100"},
+         "Fewpips Instant - Coming soon!" : {"info" : "Forex: 1:30<br />Indices: 1:5<br />Commodities: 1:7.5<br />Metals: 1:7.5<br />Crypto: 1:1<br />Future Based CFDs: 1:20" , ratio : "1:30"}
       }
 
       const PROFIT_SPLIT_DATA = {
-         "ONE-STEP" : "90",
-         "TWO-STEP" : "90",
-         "THREE-STEP" : "90",
-         "INSTANT - Soon!!!": "70"
+         "Fewpips 1-Step" : "90",
+         "Fewpips 2-Step" : "90",
+         "Fewpips 3-Step" : "90",
+         "Fewpips Instant - Coming soon!": "70"
       }
 
       function renderComparisonTable(planName) {
@@ -2944,8 +2944,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
          // Randomly select one index to be "Most Popular"
          const popularIndex = planItems.findIndex(item => item.price === '50000.00');
-
-         console.log("data :: " , allData , planName , planItems , popularIndex )
 
          // 1. Render Labels Column
          let html = `
@@ -3039,7 +3037,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             existingComingSoon.forEach(el => el.remove());
          }
 
-         if (planName === "INSTANT - Soon!!!") {
+         if (planName === "Fewpips Instant - Coming soon!") {
             const comingSoonElement = document.createElement("div");
             comingSoonElement.innerHTML = `
                <div class="coming-soon-wrapper">
@@ -3084,7 +3082,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                const bonusData = await bonusResponse.json();
                if (bonusData && bonusData.data) {
                   activeBonuses = bonusData.data;
-                  console.log("Active Bonuses loaded:", activeBonuses.length);
                }
             } catch (bonusErr) {
                console.warn("Failed to load bonuses:", bonusErr);
@@ -3094,9 +3091,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
             // Initialize comparison part
             initComparisonTabs();
-            renderComparisonTable("THREE-STEP"); // Default
-
-            console.log("Calling updatePlan with:", activePlan);
+            renderComparisonTable("Fewpips 3-Step"); // Default
             updatePlan(activePlan);
 
          } catch (err) {
@@ -3163,8 +3158,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             currentBonusCode = bonus.code;
             currentBonusUuid = bonus.uuid;
 
-            console.log("Bonus Applied:", bonus);
-
             // Update UI
             msg.innerText = `Code applied: ${bonus.description || bonus.code}`;
             msg.classList.add('text-green-500');
@@ -3207,10 +3200,10 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
                let planName = "";
 
-               if (text.includes("1-Step")) planName = "ONE-STEP";
-               if (text.includes("2-Step")) planName = "TWO-STEP";
-               if (text.includes("3-Step")) planName = "THREE-STEP";
-               if (text.includes("Instant")) planName = "INSTANT - Soon!!!";
+               if (text.includes("1-Step")) planName = "Fewpips 1-Step";
+               if (text.includes("2-Step")) planName = "Fewpips 2-Step";
+               if (text.includes("3-Step")) planName = "Fewpips 3-Step";
+               if (text.includes("Instant")) planName = "Fewpips Instant - Coming soon!";
                if (planName) {
                   renderComparisonTable(planName);
                }
@@ -3219,8 +3212,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
       }
 
       function renderPlanButtons() {
-
-         console.log("renderPlanButtons called");
          const container = document.getElementById('plan-container');
          if (!container) {
             console.error("Plan container not found");
@@ -3295,8 +3286,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
          const percentString = `${percentage}%`;
          trackFill.style.width = percentString;
          thumb.style.left = percentString;
-         console.log("total steps", totalSteps, index, percentage, percentString)
-
          // Update Dots Active State
          steps.forEach((step, i) => {
             if (i <= index) step.classList.add('active');
@@ -3320,13 +3309,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
       function updatePlan(planName) {
          try {
-            console.log("updatePlan called for:", planName);
             activePlan = planName;
-
-            // Optional: clear discount on plan change? 
-            // For now, let's keep it if it's a global promo code, 
-            // OR reset it if we think it might not apply.
-            // Let's reset for safety unless user re-applies.
             currentDiscount = 0;
             currentBonusCode = null;
             currentBonusUuid = null;
@@ -3352,7 +3335,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             }
 
             const planItems = allData[planName] || [];
-            console.log(`Plan items for ${planName}:`, planItems);
 
             const select = document.getElementById('amount-select');
             if (!select) {

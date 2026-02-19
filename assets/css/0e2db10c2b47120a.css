@@ -2149,7 +2149,6 @@
 }
 
 .fp-log-stat-val {
-    font-family: 'Syne', sans-serif;
     font-size: 22px;
     font-weight: 800;
     color: #0fcd37;
@@ -2186,7 +2185,6 @@
 }
 
 .fp-pay-cta h3 {
-    font-family: 'Syne', sans-serif;
     font-size: 20px;
     font-weight: 700;
     color: #fff;
@@ -2206,7 +2204,6 @@
     gap: 10px;
     background: linear-gradient(to right, #00ffc2, #42ff00);
     color: #000;
-    font-family: 'Syne', sans-serif;
     font-size: 16px;
     font-weight: 700;
     padding: 13px 26px;
@@ -2307,4 +2304,47 @@
 .few-table-wrapper::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 4px;
+}
+
+.faq-table {
+    border-collapse: collapse;
+    min-width: 600px;
+    color: #e5e7eb;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.faq-table th {
+    background: rgba(255,255,255,0.08);
+    font-weight: 600;
+    padding: 12px 14px;
+    border: 1px solid rgba(255,255,255,0.15);
+    text-align: left;
+}
+
+.faq-table td {
+    padding: 12px 14px;
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+.faq-table tr:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+.tp-widget-wrapper .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(to right, #00ffc2, #42ff00);
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 13px 26px;
+    border-radius: 10px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s, transform 0.2s;
+    flex-shrink: 0;
 }

@@ -21,12 +21,22 @@
         content="Fewpips offers the best prop firm challenge accounts, where traders can trade with up to $300k simulated funds and the best conditions.">
     <!-- <meta property="og:site_name" content="Fewpips"> -->
     <meta property="og:locale" content="en">
-    <meta property="og:image" content="F">
+    <meta property="og:image" content="https://fewpips.com/assets/image/og-banner.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <!-- <meta property="og:image:alt" content="Fewpips - For Every Trader, Every Market"> -->
+    <meta name="keywords"
+        content="prop firm, funded trading account, forex funded account, prop firm challenge, forex prop firm, funded trader program, Fewpips">
+    <meta name="author" content="Fewpips">
+    <meta name="publisher" content="Fewpips">
+    <meta name="application-name" content="Fewpips">
+    <meta name="title" content="Prop Firm Challenge & Funded Trading Accounts | Fewpips">
+    <meta name="description"
+        content="Fewpips offers the best prop firm challenge accounts, where traders can trade with up to $300k simulated funds and the best conditions.">
+    <meta property="og:image:alt" content="Fewpips Prop Firm - Funded Trader Program">
     <meta property="og:type" content="website">
     <title>Fewpips</title>
+    <link rel="canonical" href="https://fewpips.com/">
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./assets/image/favicon.ico">
     <link rel="shortcut icon" href="./assets/image/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="./assets/image/favicon.png">
@@ -42,383 +52,130 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
     <link rel="stylesheet" href="./assets/css/c70c5174ecd6f5a0.css" data-precedence="next">
     <link rel="stylesheet" href="./assets/css/ef46db3751d8e999.css" data-precedence="next">
     <link rel="stylesheet" href="./assets/css/db2cdcbd652a7a7e.css" data-precedence="next">
+
     <link rel="preload" as="script" fetchpriority="low" href="./assets/js/webpack-ae9795181379bfc8.js">
+    <!-- TrustBox script -->
+    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+    <!-- End TrustBox script -->
     <link rel="dns-prefetch" href="//js.intercomcdn.com">
 
-    <style>
-        #fp-payout-section {
-            background: #0a0a0a;
-            color: #f0f0f0;
-            /* padding: 100px 24px; */
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* #fp-payout-section::before {
-            content: '';
-            position: absolute;
-            top: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 800px;
-            height: 400px;
-            background: radial-gradient(ellipse, rgba(0, 200, 100, 0.07) 0%, transparent 70%);
-            pointer-events: none;
-        } */
-
-        .fp-pay-inner {
-            /* max-width: 1100px; */
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ── Header ── */
-        .fp-pay-label {
-            font-size: 16px;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #00c864;
-            margin-bottom: 14px;
-            display: block;
-        }
-
-        .fp-pay-title {
-            font-size: clamp(30px, 5vw, 50px);
-            font-weight: 800;
-            line-height: 1.1;
-            color: #fff;
-            margin: 0 0 14px;
-        }
-
-        .fp-pay-title span {
-            color: #00c864;
-        }
-
-        .fp-pay-sub {
-            font-size: 15px;
-            color: #777;
-            font-weight: 300;
-            max-width: 540px;
-            line-height: 1.7;
-            margin: 0 0 16px;
-        }
-
-        /* ── Cycle Tip ── */
-        .fp-cycle-tip {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(0, 200, 100, 0.08);
-            border: 1px solid rgba(0, 200, 100, 0.2);
-            border-radius: 50px;
-            padding: 8px 18px;
-            font-size: 13px;
-            color: #00c864;
-            margin-bottom: 56px;
-        }
-
-        .fp-cycle-tip svg {
-            width: 14px;
-            height: 14px;
-            flex-shrink: 0;
-        }
-
-        /* ── Cards Grid ── */
-        .fp-pay-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 18px;
-            margin-bottom: 20px;
-        }
-
-        .fp-pay-card {
-            background: #111;
-            border: 1px solid #1e1e1e;
-            border-radius: 16px;
-            padding: 28px 24px;
-            position: relative;
-            transition: border-color 0.25s, transform 0.25s;
-            overflow: hidden;
-        }
-
-        .fp-pay-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 16px;
-            opacity: 0;
-            background: linear-gradient(135deg, rgba(0, 200, 100, 0.05), transparent);
-            transition: opacity 0.3s;
-            pointer-events: none;
-        }
-
-        .fp-pay-card:hover {
-            border-color: #00c864;
-            transform: translateY(-4px);
-        }
-
-        .fp-pay-card:hover::after {
-            opacity: 1;
-        }
-
-        .fp-pay-card-tag {
-            display: inline-block;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            background: rgba(0, 200, 100, 0.1);
-            color: #00c864;
-            border-radius: 20px;
-            padding: 4px 12px;
-            margin-bottom: 16px;
-        }
-
-        .fp-pay-card-name {
-            font-size: 18px;
-            font-weight: 700;
-            color: #fff;
-            margin: 0 0 20px;
-        }
-
-        .fp-pay-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 10px 0;
-            border-bottom: 1px solid #1b1b1b;
-            font-size: 13px;
-        }
-
-        .fp-pay-row:last-child {
-            border-bottom: none;
-        }
-
-        .fp-pay-row-label {
-            color: #555;
-            font-weight: 400;
-            flex-shrink: 0;
-        }
-
-        .fp-pay-row-val {
-            color: #ddd;
-            font-weight: 500;
-            text-align: right;
-            line-height: 1.4;
-        }
-
-        .fp-pay-row-val.green {
-            color: #00c864;
-            font-weight: 600;
-        }
-
-        /* ── Tier Banner ── */
-        .fp-tier-banner {
-            background: #111;
-            border: 1px solid #1e1e1e;
-            border-radius: 16px;
-            padding: 32px 36px;
-            margin-bottom: 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-        }
-
-        .fp-tier-block h4 {
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: #00c864;
-            margin: 0 0 12px;
-        }
-
-        .fp-tier-block p {
-            font-size: 13px;
-            color: #666;
-            line-height: 1.7;
-            margin: 0;
-        }
-
-        .fp-tier-block p strong {
-            color: #ccc;
-            font-weight: 500;
-        }
-
-        /* ── Rules Strip ── */
-        .fp-rules-strip {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 14px;
-            margin-bottom: 20px;
-        }
-
-        .fp-rule-item {
-            background: #111;
-            border: 1px solid #1e1e1e;
-            border-radius: 12px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .fp-rule-icon {
-            width: 32px;
-            height: 32px;
-            background: rgba(0, 200, 100, 0.1);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #00c864;
-        }
-
-        .fp-rule-icon svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        .fp-rule-title {
-            font-family: 'Syne', sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        .fp-rule-desc {
-            font-size: 12.5px;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        /* ── Logistics ── */
-        .fp-logistics {
-            background: #0d1a12;
-            border: 1px solid #1a3323;
-            border-radius: 16px;
-            padding: 28px 32px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .fp-log-stat {
-            text-align: center;
-        }
-
-        .fp-log-stat-val {
-            font-family: 'Syne', sans-serif;
-            font-size: 22px;
-            font-weight: 800;
-            color: #00c864;
-            display: block;
-            line-height: 1;
-            margin-bottom: 6px;
-        }
-
-        .fp-log-stat-label {
-            font-size: 11px;
-            color: #555;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .fp-log-divider {
-            width: 1px;
-            height: 40px;
-            background: #1a3323;
-            flex-shrink: 0;
-        }
-
-        /* ── CTA ── */
-        .fp-pay-cta {
-            background: linear-gradient(135deg, #0d1f15 0%, #0a0a0a 100%);
-            border: 1px solid #1e3a26;
-            border-radius: 20px;
-            padding: 36px 44px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .fp-pay-cta h3 {
-            font-family: 'Syne', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            color: #fff;
-            margin: 0 0 6px;
-        }
-
-        .fp-pay-cta p {
-            font-size: 13.5px;
-            color: #555;
-            margin: 0;
-            font-weight: 300;
-        }
-
-        .fp-pay-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #00c864;
-            color: #000;
-            font-family: 'Syne', sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            padding: 13px 26px;
-            border-radius: 50px;
-            text-decoration: none;
-            white-space: nowrap;
-            transition: background 0.2s, transform 0.2s;
-            flex-shrink: 0;
-        }
-
-        .fp-pay-btn:hover {
-            background: #00e070;
-            transform: scale(1.03);
-        }
-
-        .fp-pay-btn svg {
-            width: 15px;
-            height: 15px;
-        }
-
-        /* ── Responsive ── */
-        @media (max-width: 700px) {
-            .fp-tier-banner {
-                grid-template-columns: 1fr;
-                gap: 24px;
+    <style id="_goober">
+        @keyframes go2264125279 {
+            from {
+                transform: scale(0) rotate(45deg);
+                opacity: 0;
             }
 
-            .fp-logistics {
-                justify-content: center;
+            to {
+                transform: scale(1) rotate(45deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes go3020080000 {
+            from {
+                transform: scale(0);
+                opacity: 0;
             }
 
-            .fp-log-divider {
-                display: none;
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes go463499852 {
+            from {
+                transform: scale(0) rotate(90deg);
+                opacity: 0;
             }
 
-            .fp-pay-cta {
-                padding: 24px;
-                flex-direction: column;
-                align-items: flex-start;
+            to {
+                transform: scale(1) rotate(90deg);
+                opacity: 1;
             }
+        }
+
+        @keyframes go1268368563 {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes go1310225428 {
+            from {
+                transform: scale(0) rotate(45deg);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1) rotate(45deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes go651618207 {
+            0% {
+                height: 0;
+                width: 0;
+                opacity: 0;
+            }
+
+            40% {
+                height: 0;
+                width: 6px;
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+                height: 10px;
+            }
+        }
+
+        @keyframes go901347462 {
+            from {
+                transform: scale(0.6);
+                opacity: 0.4;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .go4109123758 {
+            z-index: 9999;
+        }
+
+        .go4109123758>* {
+            pointer-events: auto;
         }
     </style>
 
     <!-- <link rel="stylesheet" type="text/css" href="./assets/image/306627b3deca1408.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./assets/css/responsive.css" type="text/css">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Fewpips",
+  "url": "https://fewpips.com",
+  "logo": "https://fewpips.com/assets/image/logo.png",
+  "sameAs": [
+    "https://twitter.com/fewpips",
+    "https://instagram.com/fewpips",
+    "https://discord.gg/fewpips"
+  ]
+}
+</script>
+
 
 </head>
 
@@ -432,10 +189,9 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                 </a>
                 <nav class="hidden lg:flex items-center gap-12 text-white/70">
                     <a href="index.html" class="hover:text-white transition text-sm">Home</a>
-                    <a href="index.html#challenges" class="hover:text-white transition text-sm">Challenges</a>
-                    <a href="index.html#team" class="hover:text-white transition text-sm">Team</a>
-                    <a href="index.html#affiliate-section" class="hover:text-white transition text-sm">Become a
-                        Partner</a>
+                    <a href="#about" class="hover:text-white transition text-sm">About</a>
+                    <a href="#challenges" class="hover:text-white transition text-sm">Challenges</a>
+                    <a href="#affiliate-section" class="hover:text-white transition text-sm">Become a Partner</a>
                     <a href="#faq" class="hover:text-white transition text-sm">FAQ</a>
                 </nav>
 
@@ -467,9 +223,9 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                 class="hidden mt-3 overflow-hidden bg-black/90 backdrop-blur-xl border border-white/10 rounded-3xl transition-all duration-300">
                 <div class="px-6 py-8 flex flex-col gap-5 text-white/80 text-lg">
                     <a href="index.html" class="hover:text-white">Home</a>
-                    <a href="index.html#challenges" class="hover:text-white">Challenges</a>
-                    <a href="index.html#team" class="hover:text-white">Team</a>
-                    <a href="index.html#affiliate-section" class="hover:text-white">Become a Partner</a>
+                    <a href="#about" class="hover:text-white">About</a>
+                    <a href="#challenges" class="hover:text-white">Challenges</a>
+                    <a href="#affiliate-section" class="hover:text-white">Become a Partner</a>
                     <a href="#faq" class="hover:text-white">FAQ</a>
                     <hr class="border-white/10">
                     <a href="https://crm.fewpips.com/auth/signup"
@@ -6474,10 +6230,10 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                                             aria-label="Trading Guide" title="Trading Guide" data-category="Education"
                                             href="">Trading Guide</a>
 
-                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                        <!-- <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
                                             aria-label="Fewpips Trading Blog and Educational Resources"
                                             title="Read latest prop trading articles and guides"
-                                            data-category="Education" href="">Blog</a>
+                                            data-category="Education" href="">Blog</a> -->
                                     </div>
                                 </div>
                             </div>
@@ -6586,20 +6342,30 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                             <div class="">
                                 <div class="flex flex-col items-start">
                                     <p class="mb-8 text-base text-white font-[600] text-[16px]">Community</p>
-                                    <div class="flex flex-col gap-y-[10px]"><a
-                                            class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
-                                            aria-label="Join Local Community" title="Join Local Community"
-                                            data-category="Community" rel="noopener noreferrer"
-                                            href="https://www.instagram.com/_fewpips/" target="_blank">Join Local
-                                            Community</a><a
-                                            class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                    <div class="flex flex-col gap-y-[10px]">
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Join Instagram" title="Join Instagram" data-category="Community"
+                                            rel="noopener noreferrer" href="https://www.instagram.com/_fewpips/"
+                                            target="_blank">Join Instagram</a>
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Join YouTube" title="Join YouTube" data-category="Community"
+                                            rel="noopener noreferrer" href="https://www.youtube.com/@Fewpips"
+                                            target="_blank">Join YouTube</a>
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
+                                            aria-label="Join Facebook" title="Join Facebook" data-category="Community"
+                                            rel="noopener noreferrer" href="https://www.facebook.com/share/17E1YRcZXx/"
+                                            target="_blank">Join Facebook</a>
+
+                                        <a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
                                             aria-label="Join Discord" title="Join Discord" data-category="Community"
                                             rel="noopener noreferrer" href="https://discord.gg/aVRkQQJE"
                                             target="_blank">Join
                                             Discord</a><a class="text-[14px] font-normal text-[rgba(255,255,255,0.60)] "
                                             aria-label="Join X" title="Join X" data-category="Community"
                                             rel="noopener noreferrer" href="https://t.co/yET4tmu5tE"
-                                            target="_blank">Join X</a></div>
+                                            target="_blank">Join X</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -6628,18 +6394,42 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                             and its content are owned by GrowthNext F.Z.E.© 2026 Fewpips. All rights reserved.
                         </p>
                         <p class="mb-[60px] text-justify text-xs leading-6 text-[#ffffff66] block">
-                            Risk
-                            Disclosure: Fewpips operates as a simulation-based evaluation platform. All trading is
-                            conducted in
-                            a simulated
-                            environment using virtual funds. No real market execution occurs. Performance-based rewards
-                            are
-                            contractual payments based on simulated results and do not represent actual trading profits.
-                            Fewpips does not offer investment advice, brokerage services, or access to real financial
-                            markets.
-
-                            Trading involves substantial risk and is not suitable for all individuals. Past simulated
-                            performance is not indicative of future results.
+                            Fewpips operates exclusively as a simulation-based evaluation platform designed to assess
+                            trading
+                            proficiency and risk management skills. All trading activities on this platform are
+                            conducted by
+                            participants using virtual funds within a simulated environment. These activities do not
+                            involve
+                            real-world financial instruments or actual market execution, and participants are never
+                            exposed to real
+                            financial risk.
+                            Fewpips is not a broker-dealer, exchange, or investment advisor. We do not accept, manage,
+                            or hold
+                            client deposits. All subscription fees paid are strictly for access to our evaluation
+                            programs and related
+                            tools. No content provided by Fewpips should be construed as investment advice, a
+                            solicitation to buy
+                            or sell assets, or a recommendation for any specific financial product. Participants are
+                            solely
+                            responsible for ensuring that their use of FewPips services is compliant with the local laws
+                            and
+                            regulations of their country of residence.
+                            Any rewards distributed to participants are contractual payments based on simulated
+                            performance
+                            and do not represent actual trading profits derived from live market orders. No
+                            representation is being
+                            made that any account will, or is likely to, achieve profits or losses similar to those
+                            shown or implied.
+                            Fewpips does not offer its services to residents to restricted jurisdictions. Trading in
+                            financial markets
+                            involves a substantial risk of loss and is not suitable for every individual. Past simulated
+                            performance
+                            is not a guarantee or indicator of future results.
+                            Evaluation fees are not deposits. Fewpips services do not carry the protections associated
+                            with
+                            regulated banking institutions. Participants are encouraged to seek independent legal, tax,
+                            or financial
+                            counsel before participating in this program.
                         </p>
                         <p class="text-center text-sm text-[#ffffff4d]">
                             Fewpips-Copyright © <!-- -->2026

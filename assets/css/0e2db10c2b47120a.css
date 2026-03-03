@@ -3430,6 +3430,13 @@ body {
     .param-card {
         grid-template-columns: 1fr;
         gap: 8px;
+        padding-inline: 25px !important;
+    }
+    .ea-step {
+        padding-inline: 25px !important;
+    }
+    .prohibited-group {
+        padding-inline: 25px !important;
     }
 }
 

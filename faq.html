@@ -1669,55 +1669,36 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                     <div
                         class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
 
-                        The Daily Loss Limit is based on a percentage of your <b>initial account balance</b>.
-                        It includes both realised and unrealised (floating) losses, as well as commissions and swap
-                        fees.
-                        If your total loss for the day exceeds these thresholds, the account is considered breached.
+                        The Daily Loss Limit is calculated using the formula: 
 
-                        <!-- TABLE -->
-                        <div class="few-table-wrapper">
-                            <table class="few-table">
-                                <thead>
-                                    <tr>
-                                        <th>Account Type</th>
-                                        <th>Daily Loss Limit</th>
-                                        <th>Example ($100K Account)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Fewpips 3-Step</td>
-                                        <td>5%</td>
-                                        <td>$5,000 Limit</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Fewpips 2-Step</td>
-                                        <td>4%</td>
-                                        <td>$4,000 Limit</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Fewpips 1-Step</td>
-                                        <td>4%</td>
-                                        <td>$4,000 Limit</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Fewpips Instant</td>
-                                        <td>3%</td>
-                                        <td>$3,000 Limit</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <p style="margin-top: 10px;">Start-of-day equity - the lowest floating equity of the day must not exceed the allowed percentage. </p>
+                        <p style="margin-top: 10px;">This rule applies to both open (floating) and closed trades. </p>
 
-                        <!-- NOTE BOX -->
-                        <div
-                            class="bg-yellow-500/10 border border-yellow-400/30 text-yellow-300 rounded-lg px-4 py-3 mt-6">
-                            <b>Note on Profit:</b> If you are in profit for the day, your daily buffer increases.
-                            For example, if you have a 4% limit on a $100K account and you make $2,000 in profit, your
-                            allowed loss for that specific day becomes $6,000 ($4,000 base + $2,000 profit).
-                            The limit resets to the base percentage at <b>00:00 server time</b>.
-                        </div>
+                        <h4 style="margin-block: 10px; color: #fff;">Here are the Daily Loss Limits for each account type:</h4>
+                        <ol>
+                            <li>1. 1-Step: 4%</li>
+                            <li>2. 2-Step: 4%</li>
+                            <li>3. 3-Step: 5%</li>
+                            <li>4. Instant: N/A</li>
+                        </ol>
 
+                        <h4 style="margin-block: 10px; color: #fff;">Example: </h4>
+
+                        <p style="margin-block: 10px;">For a $100,000 Fewpips 1-Step Account:</p>
+
+                        <p style="margin-block: 10px;">The daily loss limit is 4%, which equals $4,000.</p>
+
+                        <ul>
+                            <li>
+                                * If the trader starts the day at $100,000, the trader cannot lose more than $4,000 in total during that day.
+                            </li>
+                            <li style="margin-block: 10px;">
+                                * If the trader first makes a $2,000 profit, the daily limit increases to $6,000 for that day ($4,000 + $2,000 profit). If the total loss reaches that amount, including open trades, the account will be breached.
+                            </li>
+                            <li>
+                                * If the account is $100,000 with a 4% Daily Loss Limit and a 10% Maximum Loss Limit, and the trader loses $4,000 in one day, they will breach the Daily Loss Limit making the trader breach the account. 
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1741,15 +1722,55 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                     <div
                         class="px-[24px] py-[20px] text-white/70 font-Inter text-[14px] leading-[24px] border-t border-white/10">
 
-                        This is the <b>"hard stop"</b> for your account. It represents the maximum amount your balance
-                        or equity can drop below your starting capital.
+                        The Maximum Loss Limit (MLL) is a trailing loss limit that moves up as the account makes
+                        profits, but it never moves down after losses, and it can never go above the starting balance.
 
-                        <ul class="list-disc pl-5 mt-4 space-y-2">
-                            <li><b>3-Step Challenges:</b> 6% ($94,000 threshold on a $100k account).</li>
-                            <li><b>2-Step Challenge:</b> 8% ($92,000 threshold on a $100k account).</li>
-                            <li><b>1-Step Challenges:</b> 6% ($94,000 threshold on a $100k account).</li>
-                            <li><b>Instant Account:</b> 5% ($95,000 threshold on a $100k account).</li>
+                        <p style="margin-top: 10px;">On the Fewpips Instant Account, the MLL is a trailing Maximum Loss
+                            Limit.</p>
+
+                        <h4 style="margin-block: 10px; color: #fff;">Key points:</h4>
+                        <ul>
+                            <li>* It only increases with profit.</li>
+                            <li>* It never decreases with losses.</li>
+                            <li>* It is capped at the initial account balance.</li>
+                            <li>* Withdrawals do not reset or reduce the MLL; it stays at the highest level it has ever
+                                reached.</li>
                         </ul>
+
+                        <h4 style="margin-block: 10px; color: #fff;">Example: </h4>
+
+                        <p>For a $10,000 Fewpips Instant Account (7% trailing Maximum Loss Limit).</p>
+
+                        <p style="margin-block: 10px;">Start: Equity $10,000 → Maximum Loss Limit breach point = $9,300
+                            (7% below $10,000).
+
+                        <ul>
+                            <li>
+                                * After +$200 profit: Equity $10,200 → Maximum Loss Limit moves up to $9,500.
+                            </li>
+                            <li>
+                                * Then -$100 loss: Equity $10,100 → Maximum Loss Limit stays at $9,500 (it never moves
+                                down).
+                            </li>
+                            <li>
+                                * Then +$300 profit: Equity $10,400 → Maximum Loss Limit moves up to $9,700
+                            </li>
+                            <li>
+                                * Then +$400 profit: Equity $10,700 → Maximum Loss Limit reaches $10,000 (capped at the
+                                initial balance).
+                            </li>
+                        </ul>
+                        </p>
+
+
+                        <!-- NOTE BOX -->
+                        <div
+                            class="bg-yellow-500/10 border border-yellow-400/30 text-yellow-300 rounded-lg px-4 py-3 mt-6">
+                            If the equity is $10,500 and your MLL is $10,000, you have a $500 buffer. If you withdraw
+                            $300, your equity drops to $10,200, but the MLL stays at $10,000. The buffer just shrank
+                            from $500 to $200. If the equity ever touches or goes below the active Maximum Loss Limit,
+                            it is a breach.
+                        </div>
 
                     </div>
                 </div>
@@ -6364,29 +6385,8 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                     </div>
                     <div class="relative z-[999] mx-auto py-10 xl:max-w-[1216px]">
                         <div class="mb-10"></div>
-                        <p class="mb-[60px] text-justify text-xs leading-6 text-[#ffffff66] hidden">
-                            <strong>Risk
-                                Disclosure:</strong> Futures trading carries significant risks and is not appropriate
-                            for all investors. An investor could potentially lose more than the initial investment. Only
-                            those with the financial capacity to bear these risks should engage in futures
-                            trading.<br><strong>Performance and CFTC Rule 4.41:</strong> <!-- -->All performance results
-                            discussed are hypothetical and do not represent actual trading. Unlike live trading results,
-                            hypothetical results do not account for financial risk and are designed with hindsight. As
-                            per CFTC Rule 4.41, these results are provided for illustrative purposes only and do not
-                            guarantee future returns.<br><strong>Legal and Compliance:</strong> The content on this site
-                            is provided for general information purposes only and does not constitute financial advice
-                            or a solicitation to buy or sell any futures contracts. Fewpips adheres strictly to
-                            regulatory standards to maintain the highest integrity in our trading
-                            programs.<br><strong>Corporate Information:</strong> <!-- -->Fewpips is operated by
-                            GrowthNext F.Z.E., a registered company under the laws of the UAE, with additional
-                            operations managed from Limassol, Cyprus. Our services include advanced trading simulation
-                            challenges designed to evaluate and develop trading skills.<br><strong>Contact and
-                                Support:</strong> For further assistance or to address any inquiries, please contact our
-                            support team through the Contact Us page.<br><b>Copyright and Legal Notice:</b> The website
-                            and its content are owned by GrowthNext F.Z.E.© 2026 Fewpips. All rights reserved.
-                        </p>
                         <h3 class="mb-2">Disclaimer:</h3>
-                        <p class="mb-[60px] text-justify text-xs leading-6 text-[#ffffff66] block">
+                        <p class="mb-[60px] text-justify text-xs leading-6 text-[#ffffff66]">
                             Fewpips operates exclusively as a simulation-based evaluation platform designed to assess
                             trading
                             proficiency and risk management skills. All trading activities on this platform are
@@ -6454,48 +6454,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
     <!-- End of LiveChat code -->
     <script>
-        $(document).ready(function () {
-            $(".tab-btn").click(function () {
-                var tabId = $(this).data("tab");
-                $(".tab-btn").removeClass("active bg-white text-[#16084D]");
-                $(this).addClass("active bg-white text-[#16084D]");
-
-                $(".tab-content").removeClass("active none").hide();
-                $("#" + tabId).addClass("active").fadeIn();
-            });
-        });
-    </script>
-    <script>
-
-        /* Accordion Script */
-
-        document.addEventListener("DOMContentLoaded", function () {
-
-            const items = document.querySelectorAll(".faq-item");
-
-            items.forEach(item => {
-                const btn = item.querySelector(".faq-question");
-
-                btn.addEventListener("click", () => {
-
-                    /* close others */
-                    items.forEach(other => {
-                        if (other !== item) {
-                            other.classList.remove("active");
-                        }
-                    });
-
-                    /* toggle current */
-                    item.classList.toggle("active");
-
-                });
-            });
-
-        });
-
-    </script>
-    <script>
-
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         const openIcon = document.getElementById('openIcon');

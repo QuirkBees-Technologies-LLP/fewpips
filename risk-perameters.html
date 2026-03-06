@@ -268,37 +268,180 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                     adhere to
                     the following drawdown limits.</p>
 
+                <div class="limit">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="section-title">Maximum Daily Loss</div>
+
+                            <p class="body-text">
+                                The Daily Loss Limit is calculated using the formula: <strong>Start-of-day equity
+                                    minus the lowest floating equity of the day must not exceed the allowed
+                                    percentage.</strong>
+                            </p>
+                            <p class="body-text">This rule applies to both open (floating) and closed trades.</p>
+                            <p class="body-text muted">
+                                The trading day resets at <strong>00:00 GMT+2 / GMT+3</strong> (depending on
+                                Daylight Saving Time). This is when the start-of-day equity snapshot is taken and
+                                your daily limit is recalculated.
+                            </p>
+
+                            <table class="rules-table">
+                                <thead>
+                                    <tr>
+                                        <th>Account Type</th>
+                                        <th>Daily Loss Limit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1-Step</td>
+                                        <td>4%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2-Step</td>
+                                        <td>4%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3-Step</td>
+                                        <td>5%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Instant</td>
+                                        <td class="na">N/A</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <!-- Example box -->
+                            <div class="example-box">
+                                <div class="example-label">Example — $100,000 FewPips 1-Step Account</div>
+                                <p class="example-lead">
+                                    The daily loss limit is <span class="hl-green">4%</span>, which equals <span
+                                        class="hl-white">$4,000</span>.
+                                </p>
+
+                                <div class="steps-list">
+                                    <div class="step-item">
+                                        <span class="step-arrow">→</span>
+                                        <span>Trader starts the day at <strong>$100,000</strong>. Max loss = <strong
+                                                class="profit">$4,000</strong>.</span>
+                                    </div>
+                                    <div class="step-item">
+                                        <span class="step-arrow">→</span>
+                                        <span>Trader profits <span class="profit">+$2,000</span>. Daily limit
+                                            increases to <strong>$6,000</strong> (the $4,000 floor moves up with
+                                            equity).</span>
+                                    </div>
+                                    <div class="step-item">
+                                        <span class="step-arrow">→</span>
+                                        <span>If total loss (including open trades) hits the daily limit, the
+                                            account is breached.</span>
+                                    </div>
+                                </div>
+
+                                <div class="alert-box">
+                                    <span class="alert-label">Important:</span>
+                                    If an account at $100,000 with a 4% Daily Loss Limit and 10% Maximum Loss Limit
+                                    loses $4,000 in one day, the Daily Loss Limit is breached — the account is
+                                    disabled regardless of the overall Maximum Loss Limit level.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="section-title">Maximum Loss Limit</div>
+
+                            <p class="body-text">
+                                The Maximum Loss Limit (MLL) is a <strong>trailing loss limit</strong> that
+                                moves up as the account makes profits, but never moves down after losses, and it
+                                can never exceed the initial starting balance.
+                            </p>
+
+                            <ul class="bullet-list">
+                                <li>
+                                    <span class="bullet-dot"></span>
+                                    <span>It <span class="hl-green">only increases</span> with profit.</span>
+                                </li>
+                                <li>
+                                    <span class="bullet-dot"></span>
+                                    <span>It <strong>never decreases</strong> with losses.</span>
+                                </li>
+                                <li>
+                                    <span class="bullet-dot"></span>
+                                    <span>It is <strong>capped at the initial account balance</strong> — it
+                                        cannot go higher.</span>
+                                </li>
+                                <li>
+                                    <span class="bullet-dot"></span>
+                                    <span>Withdrawals do <strong>not</strong> reset or reduce the Maximum Loss Limit. It stays
+                                        at the highest level it has ever reached.</span>
+                                </li>
+                                <li>
+                                    <span class="bullet-dot"></span>
+                                    <span>If equity ever <span class="hl-yellow">touches or falls below</span>
+                                        the active Maximum Loss Limit, it is a breach and the account is automatically
+                                        disabled.</span>
+                                </li>
+                            </ul>
+
+                            <!-- Example box -->
+                            <div class="example-box">
+                                <div class="example-label">Example — $10,000 FewPips Instant Account (7%
+                                    Trailing Maximum Loss Limit)</div>
+                                <p class="example-lead">
+                                    Starting equity <span class="hl-white">$10,000</span>. Initial Maximum Loss Limit breach
+                                    point = <span class="hl-green">$9,300</span> (7% below $10,000).
+                                </p>
+
+                                <div class="steps-list">
+                                    <div class="step-item">
+                                        <span class="step-arrow">→</span>
+                                        <span><span class="profit">+$200 profit</span>: Equity $10,200 → Maximum Loss Limit
+                                            moves up to <strong>$9,500</strong></span>
+                                    </div>
+                                    <div class="step-item">
+                                        <span class="step-arrow">→</span>
+                                        <span><span class="loss">-$100 loss</span>: Equity $10,100 → Maximum Loss Limit stays
+                                            at <strong>$9,500</strong> (never moves down)</span>
+                                    </div>
+                                    <div class="step-item">
+                                        <span class="step-arrow">→</span>
+                                        <span><span class="profit">+$300 profit</span>: Equity $10,400 → Maximum Loss Limit
+                                            moves up to <strong>$9,700</strong></span>
+                                    </div>
+                                    <div class="step-item">
+                                        <span class="step-arrow">→</span>
+                                        <span><span class="profit">+$400 profit</span>: Equity $10,700 → Maximum Loss Limit
+                                            reaches <strong>$10,000</strong> — capped at initial balance</span>
+                                    </div>
+                                </div>
+
+                                <div class="withdraw-block">
+                                    <strong>Withdrawal scenario:</strong> Equity $10,500 with Maximum Loss Limit at $10,000 =
+                                    $500 buffer. A $300 withdrawal drops equity to $10,200 — Maximum Loss Limit stays at
+                                    $10,000. Buffer shrinks to $200. If equity drops to $10,000 or below, it's a
+                                    breach.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
                 <div class="core-limits-inner">
                     <div class="param-cards reveal">
-                        <div class="param-card">
-                            <div class="param-name">Maximum Daily Loss</div>
-                            <div class="param-desc">
-                                Calculated at the start of each trading day (00:00 GMT+2/3, depending on Daylight
-                                Savings)
-                                based
-                                on whichever is higher:
-                                <ol>
-                                    <li>The Starting Balance of the day.</li>
-                                    <li>The Starting Equity of the day.</li>
-                                </ol>
-                            </div>
-                        </div>
-                        <div class="param-card">
-                            <div class="param-name">Maximum Loss Limit</div>
-                            <div class="param-desc">The Maximum Loss Limit (MLL) is based on the highest equity level
-                                your
-                                account reaches, not just the initial starting balance. The MLL is calculated as a
-                                percentage of
-                                that highest equity. If your account equity falls below this threshold, it results in a
-                                breach
-                                and the account is automatically disabled.</div>
-                        </div>
                         <div class="param-card">
                             <div class="param-name">Minimum Trading Days</div>
                             <div class="param-desc">To prevent windfall passing, users must trade for at least 5 days
                                 (does not
                                 need to be consecutive). To register a trading day, you must open a trade for at least 3
                                 minutes.</div>
+                        </div>
+                        <div class="account_limit" style="padding-top: 20px;">
+                            <img src="./assets/image/account_limit.jpg" alt="">
                         </div>
                     </div>
 
@@ -316,9 +459,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                             <div class="core-stat-num">GMT<span
                                     style="font-size:1.4rem; margin-left:8px; color:#7a9e80">+2/3</span></div>
                             <div class="core-stat-label">Daily Reset Time (00:00, DST Dependent)</div>
-                        </div>
-                        <div class="account_limit">
-                            <img src="./assets/image/account_limit.jpg" alt="">
                         </div>
                     </div>
                 </div>

@@ -3823,3 +3823,56 @@ body {
         transform: translateY(0);
     }
 }
+
+.toggle-group {
+    display: inline-flex;
+    background: #111118;
+    border-radius: 10px;
+    padding: 4px;
+    gap: 2px;
+}
+
+.toggle-btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.3px;
+}
+
+.toggle-btn.active {
+    background: #0fcd37;
+    color: #000;
+}
+
+.toggle-btn.inactive {
+    background: transparent;
+    color: #ccc;
+}
+
+.toggle-btn.inactive:hover {
+    background: rgba(255, 255, 255, 0.07);
+    color: #fff;
+}
+
+.badge {
+    background: #0fcd37;
+    color: #000;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 2px 5px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.toggle-btn.active .badge {
+    background: rgba(0, 0, 0, 0.2);
+    color: #000;
+}

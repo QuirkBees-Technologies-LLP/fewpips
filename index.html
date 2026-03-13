@@ -2046,7 +2046,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
       const AUTH_TOKEN = 'pk_live_734f28105c2a0d2ad1588e2067fed29af743a3735321fb5a2ee4b42fbc07f325';
 
       const PLAN_CONFIG = {
-         "Instant Account Now Live!": { phases: ["Funded"] },
+         "Fewpips Instant - Most Popular!": { phases: ["Funded"] },
          "Fewpips 1-Step": { phases: ["Phase 1", "Funded"] },
          "Fewpips 2-Step": { phases: ["Phase 1", "Phase 2", "Funded"] },
          "Fewpips 3-Step": { phases: ["Phase 1", "Phase 2", "Phase 3", "Funded"] },
@@ -2054,7 +2054,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
       // Display names for buttons only
       const PLAN_DISPLAY_NAMES = {
-         "Instant Account Now Live!": "Instant Account Now Live!",
+         "Fewpips Instant - Most Popular!": "Instant Account Now Live!",
          "Fewpips 1-Step": "Fewpips 1-Step",
          "Fewpips 2-Step": "Fewpips 2-Step",
          "Fewpips 3-Step": "Fewpips 3-Step",
@@ -2065,7 +2065,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
       function formatTemplates(templates) {
          const formatted = {};
-         const planNames = ["Instant Account Now Live!", "Fewpips 1-Step", "Fewpips 2-Step", "Fewpips 3-Step"];
+         const planNames = ["Fewpips Instant - Most Popular!", "Fewpips 1-Step", "Fewpips 2-Step", "Fewpips 3-Step"];
 
          planNames.forEach((plan) => {
             formatted[plan] = [];
@@ -2131,7 +2131,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
       }
 
       const STEPS_LEVERAGE_DATA = {
-         "Instant Account Now Live!": {
+         "Fewpips Instant - Most Popular!": {
             info: "Forex: 1:30<br />Indices: 1:5<br />Commodities: 1:7.5<br />Metals: 1:7.5<br />Crypto: 1:1",
             ratio: "1:30"
          },
@@ -2151,7 +2151,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
       const PROFIT_SPLIT_DATA = {
          "Fewpips 1-Step": "90",
-         "Instant Account Now Live!": "70",
+         "Fewpips Instant - Most Popular!": "70",
          "Fewpips 2-Step": "90",
          "Fewpips 3-Step": "90",
       }
@@ -2257,7 +2257,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             existingComingSoon.forEach(el => el.remove());
          }
 
-         if (planName === "Instant Account Now Live!") {
+         if (planName === "Fewpips Instant - Most Popular!") {
             const comingSoonElement = document.createElement("div");
             comingSoonElement.innerHTML = `
                <div class="coming-soon-wrapper">
@@ -2287,6 +2287,10 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                headers: { 'Authorization': `Bearer ${AUTH_TOKEN}` }
             });
             const templates = await response.json();
+
+            // get a list of unique plan names
+            const uniquePlanNames = [...new Set(templates.map(t => t.plan.name.en))];
+            console.log(uniquePlanNames);
             allData = formatTemplates(templates);
 
             // 2. Fetch Active Bonuses
@@ -2420,7 +2424,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
                let planName = "";
 
-               if (text.includes("Instant")) planName = "Instant Account Now Live!";
+               if (text.includes("Instant")) planName = "Fewpips Instant - Most Popular!";
                if (text.includes("1-Step")) planName = "Fewpips 1-Step";
                if (text.includes("2-Step")) planName = "Fewpips 2-Step";
                if (text.includes("3-Step")) planName = "Fewpips 3-Step";

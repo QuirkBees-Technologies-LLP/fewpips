@@ -976,11 +976,7 @@
     overflow: auto;
 }
 
-@media screen and (max-width: 1465px) {
-    .table-container {
-        justify-content: unset;
-    }
-}
+@media screen and (max-width: 1465px) {}
 
 /* Column Styles */
 .column {
@@ -2098,8 +2094,8 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 8px;
+    /* justify-content: space-between; */
+    gap: 10px;
 }
 
 .fp-rule-icon {
@@ -3875,4 +3871,48 @@ body {
 .toggle-btn.active .badge {
     background: rgba(0, 0, 0, 0.2);
     color: #000;
+}
+
+.info-icon {
+    position: relative;
+    margin-left: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #9ca3af;
+}
+
+.tooltip-box {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0b1f17;
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 400;
+    width: 180px;
+    line-height: 1.6;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    text-align: left;
+}
+
+/* Tooltip Arrow */
+.tooltip-box::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #0b1f17 transparent transparent transparent;
+}
+
+.info-icon:hover .tooltip-box {
+    opacity: 1;
+    visibility: visible;
 }

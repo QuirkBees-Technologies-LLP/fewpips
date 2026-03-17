@@ -2808,11 +2808,11 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                     <span class="text-white/40">Maximum Daily Loss</span>
                     <div class="text-right">
                         <p class="font-bold text-white">
-                            $${((price * phaseData.maxDailyLoss) / 100).toLocaleString()}
+                            ${phaseData.maxDailyLoss > 0 ? `$${((price * phaseData.maxDailyLoss) / 100).toLocaleString()}` : "-"}
                         </p>
-                        <p class="text-purple text-xs">
-                            ${phaseData.maxDailyLoss}%
-                        </p>
+                        ${phaseData.maxDailyLoss > 0 ? `<p class="text-purple text-xs">
+                            ${phaseData.maxDailyLoss + "%"}
+                        </p>` : ""}
                     </div>
                 </div>` : ""}
 

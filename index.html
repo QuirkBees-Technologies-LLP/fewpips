@@ -606,7 +606,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                      <div class="column labels">
                         <div class="header-row">Account size</div>
                         <div class="table_row">Trading Coaching Course</div>
-                        <div class="table_row">Profit Split Up To</div>
+                        <div class="table_row group">Profit Split Up To</div>
                         <div class="table_row">Profit Target - Phase 1</div>
                         <div class="table_row">Profit Target - Phase 2</div>
                         <div class="table_row">Profit Target - Phase 3</div>
@@ -767,7 +767,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
          </div>
       </div>
       </div>
-      <div class="mt-[20px] lg:mt-[100px] pb-[85px] bg-ebony">
+      <!-- <div class="mt-[20px] lg:mt-[100px] pb-[85px] bg-ebony">
          <h2 class="text-[28px] lg:text-[52px] font-extrabold font-bernou leading-[62px] text-white text-center">
             Trading Rules
          </h2>
@@ -778,7 +778,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
          <div class="container mt-[50px]">
             <div class="rules-card relative overflow-visible">
 
-               <!-- LEFT CONTENT -->
                <div class="rules-content">
                   <ul class="lg:list-disc lg:pl-5">
                      <li class="text-[20px] leading-[130%] text-white font-bernou mb-5">
@@ -793,7 +792,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                   </ul>
                </div>
 
-               <!-- RIGHT IMAGE -->
                <div class="rules-image">
                   <img src="./assets/image/rules.png" alt="trader">
                </div>
@@ -801,7 +799,157 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             </div>
 
          </div>
+      </div> -->
+      <section class="instruments-section mt-[20px] lg:mt-[100px] relative overflow-hidden">
+         <div class="md:v2-container pb-[40px] lg:pb-[80px] xl:pt-0 relative z-[1]">
+            <!-- Header -->
+            <p class="fp-pay-label text-center">Instruments</p>
+            <h2 class="text-[28px] text-center lg:text-[52px] font-extrabold text-white max-lg:text-center ">
+               90 Instruments Across 4 Asset Classes</h2>
+
+            <!-- Tabs -->
+            <div class="instruments-tabs mt-[50px]" id="tabs">
+               <button class="tab-btn active" data-cat="forex">Forex </button>
+               <button class="tab-btn" data-cat="indices">Indices </button>
+               <button class="tab-btn" data-cat="crypto">Crypto </button>
+               <button class="tab-btn" data-cat="commodities">Commodities </button>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="instruments-grid" id="instruments-grid"></div>
+         </div>
+
+      </section>
+      <script>
+         const instruments = {
+            forex: [
+               ["AUDCAD", "AUD / CAD", "Available Now"],
+               ["AUDCHF", "AUD / CHF", "Available Now"],
+               ["AUDJPY", "AUD / JPY", "Available Now"],
+               ["AUDNZD", "AUD / NZD", "Available Now"],
+               ["AUDUSD", "AUD / USD", "Available Now"],
+               ["CADCHF", "CAD / CHF", "Available Now"],
+               ["CADJPY", "CAD / JPY", "Available Now"],
+               ["CHFJPY", "CHF / JPY", "Available Now"],
+               ["EURAUD", "EUR / AUD", "Available Now"],
+               ["EURCAD", "EUR / CAD", "Available Now"],
+               ["EURCHF", "EUR / CHF", "Available Now"],
+               ["EURGBP", "EUR / GBP", "Available Now"],
+               ["EURJPY", "EUR / JPY", "Available Now"],
+               ["EURNOK", "EUR / NOK", "Available Now"],
+               ["EURNZD", "EUR / NZD", "Available Now"],
+               ["EURPLN", "EUR / PLN", "Available Now"],
+               ["EURSEK", "EUR / SEK", "Available Now"],
+               ["EURTRY", "EUR / TRY", "Available Now"],
+               ["EURUSD", "EUR / USD", "Available Now"],
+               ["GBPAUD", "GBP / AUD", "Available Now"],
+               ["GBPCAD", "GBP / CAD", "Available Now"],
+               ["GBPCHF", "GBP / CHF", "Available Now"],
+               ["GBPJPY", "GBP / JPY", "Available Now"],
+               ["GBPNZD", "GBP / NZD", "Available Now"],
+               ["GBPUSD", "GBP / USD", "Available Now"],
+               ["NZDCAD", "NZD / CAD", "Available Now"],
+               ["USDCAD", "USD / CAD", "Available Now"],
+               ["USDCHF", "USD / CHF", "Available Now"],
+               ["USDCNH", "USD / CNH", "Available Now"],
+               ["USDJPY", "USD / JPY", "Available Now"]
+            ],
+            indices: [
+               ["CHNIND", "China Index", "Available Now"],
+               ["EU50", "Euro Stoxx 50", "Available Now"],
+               ["FRA40", "France 40 (CAC)", "Available Now"],
+               ["GER30", "Germany 30 (DAX)", "Available Now"],
+               ["ITA40", "Italy 40", "Available Now"],
+               ["SPA35", "Spain 35 (IBEX)", "Available Now"],
+               ["SUI20", "Switzerland 20 (SMI)", "Available Now"],
+               ["UK100", "UK 100 (FTSE)", "Available Now"],
+               ["US2000", "Russell 2000", "Available Now"],
+               ["US30", "Dow Jones", "Available Now"],
+               ["US500", "S&P 500", "Available Now"],
+               ["USDIDX", "US Dollar Index", "Available Now"],
+               ["HK50", "Hong Kong 50", "Available Now"],
+               ["JPN225", "Japan 225 (Nikkei)", "Available Now"],
+               ["NAS100", "NASDAQ 100", "Available Now"]
+            ],
+            crypto: [
+               ["ADAUSD", "Cardano / USD", "Available Now"],
+               ["ALGUSD", "Algorand / USD", "Available Now"],
+               ["ATOUSD", "Tezos / USD", "Available Now"],
+               ["AVEUSD", "Aave / USD", "Available Now"],
+               ["AVXUSD", "Avalanche / USD", "Available Now"],
+               ["BCHUSD", "Bitcoin Cash / USD", "Available Now"],
+               ["BNBUSD", "BNB / USD", "Available Now"],
+               ["BSVUSD", "BSV / USD", "Available Now"],
+               ["BTCUSD", "Bitcoin / USD", "Available Now"],
+               ["CHZUSD", "Chiliz / USD", "Available Now"],
+               ["CKEUSD", "CKB / USD", "Available Now"],
+               ["CROUSD", "Cronos / USD", "Available Now"],
+               ["DOGUSD", "Dogecoin / USD", "Available Now"],
+               ["DOTUSD", "Polkadot / USD", "Available Now"],
+               ["DSHUSD", "Dash / USD", "Available Now"],
+               ["ENJUSD", "Enjin / USD", "Available Now"],
+               ["ETHUSD", "Ethereum / USD", "Available Now"],
+               ["FTMUSD", "Fantom / USD", "Available Now"],
+               ["LNKUSD", "Chainlink / USD", "Available Now"],
+               ["LTCUSD", "Litecoin / USD", "Available Now"],
+               ["MELUSD", "Melody / USD", "Available Now"],
+               ["MNAUSD", "Mina / USD", "Available Now"],
+               ["MTCUSD", "Polygon (MATIC) / USD", "Available Now"],
+               ["ONEUSD", "Harmony / USD", "Available Now"],
+               ["SHBUSD", "Shiba Inu / USD", "Available Now"],
+               ["SNDUSD", "SND / USD", "Available Now"],
+               ["SNXUSD", "Synthetix / USD", "Available Now"],
+               ["SOLUSD", "Solana / USD", "Available Now"],
+               ["THTUSD", "Theta / USD", "Available Now"],
+               ["TRPUSD", "TRP / USD", "Available Now"],
+               ["TRXUSD", "Tron / USD", "Available Now"],
+               ["UNIUSD", "Uniswap / USD", "Available Now"],
+               ["WAVUSD", "Waves / USD", "Available Now"],
+               ["XEMUSD", "NEM / USD", "Available Now"],
+               ["XLMUSD", "Stellar / USD", "Available Now"],
+               ["XMRUSD", "Monero / USD", "Available Now"],
+               ["XRPUSD", "Ripple / USD", "Available Now"],
+               ["XTZUSD", "Tezos / USD", "Available Now"],
+               ["YFIUSD", "Yearn.Finance / USD", "Available Now"]
+            ],
+            commodities: [
+               ["BRENT", "Brent Crude Oil", "Available Now"],
+               ["NGAS", "Natural Gas", "Available Now"],
+               ["WTI", "WTI Crude Oil", "Available Now"],
+               ["COPPER", "Copper", "Available Now"],
+               ["XPTUSD", "Platinum / USD", "Available Now"],
+               ["XAUUSD", "Gold / USD", "Available Now"]
+            ]
+         };
+
+         function renderGrid(cat) {
+            const grid = document.getElementById('instruments-grid');
+            const list = instruments[cat];
+
+            grid.style.animation = 'none';
+            void grid.offsetHeight;
+            grid.style.animation = '';
+
+            grid.innerHTML = list.map(([ticker, name, date]) => `
+      <div class="instrument-card">
+         <div class="card-ticker">${ticker}</div>
+         <div class="card-name">${name}</div>
+         <!-- <div class="card-date">${date}</div> -->
       </div>
+    `).join('');
+         }
+
+         document.getElementById('tabs').addEventListener('click', function (e) {
+            const btn = e.target.closest('.tab-btn');
+            if (!btn) return;
+            document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+            renderGrid(btn.dataset.cat);
+         });
+
+         renderGrid('forex');
+      </script>
+
       <!-- <section id="parameters" class="mt-[20px] lg:mt-[100px] pb-[85px] bg-ebony">
          <h2 class="text-[28px] lg:text-[52px] font-extrabold font-bernou leading-[62px] text-white text-center">
             Risk Parameters
@@ -1167,15 +1315,15 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                   </div>
                   <div class="fp-pay-row">
                      <span class="fp-pay-row-label">Tier 1 Split</span>
-                     <span class="fp-pay-row-val green">70%</span>
+                     <span class="fp-pay-row-val green">70% - First 3 successful withdrawals</span>
                   </div>
                   <div class="fp-pay-row">
                      <span class="fp-pay-row-label">Tier 2 Split</span>
-                     <span class="fp-pay-row-val green">80%</span>
+                     <span class="fp-pay-row-val green">80% - Graduate after your 3rd successful withdrawal.</span>
                   </div>
                   <div class="fp-pay-row">
                      <span class="fp-pay-row-label">Tier 3 Split</span>
-                     <span class="fp-pay-row-val green">90%</span>
+                     <span class="fp-pay-row-val green">90% - Graduate after your 6th successful withdrawal</span>
                   </div>
                </div>
 
@@ -2062,7 +2210,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
       const AUTH_TOKEN = 'pk_live_734f28105c2a0d2ad1588e2067fed29af743a3735321fb5a2ee4b42fbc07f325';
 
       const PLAN_CONFIG = {
-         "Instant Account Now Live!": { phases: ["Funded"] },
+         "Fewpips Instant - Most popular": { phases: ["Funded"] },
          "Fewpips 1-Step": { phases: ["Phase 1", "Funded"] },
          "Fewpips 2-Step": { phases: ["Phase 1", "Phase 2", "Funded"] },
          "Fewpips 3-Step": { phases: ["Phase 1", "Phase 2", "Phase 3", "Funded"] },
@@ -2070,7 +2218,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
       // Display names for buttons only
       const PLAN_DISPLAY_NAMES = {
-         "Instant Account Now Live!": "Instant Account Now Live!",
+         "Fewpips Instant - Most popular": "Fewpips Instant - Most popular",
          "Fewpips 1-Step": "Fewpips 1-Step",
          "Fewpips 2-Step": "Fewpips 2-Step",
          "Fewpips 3-Step": "Fewpips 3-Step",
@@ -2081,7 +2229,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
       function formatTemplates(templates) {
          const formatted = {};
-         const planNames = ["Instant Account Now Live!", "Fewpips 1-Step", "Fewpips 2-Step", "Fewpips 3-Step"];
+         const planNames = ["Fewpips Instant - Most popular", "Fewpips 1-Step", "Fewpips 2-Step", "Fewpips 3-Step"];
 
          planNames.forEach((plan) => {
             formatted[plan] = [];
@@ -2147,7 +2295,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
       }
 
       const STEPS_LEVERAGE_DATA = {
-         "Instant Account Now Live!": {
+         "Fewpips Instant - Most popular": {
             info: "Forex: 1:30<br />Indices: 1:5<br />Commodities: 1:7.5<br />Metals: 1:7.5<br />Crypto: 1:1",
             ratio: "1:30"
          },
@@ -2167,7 +2315,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
       const PROFIT_SPLIT_DATA = {
          "Fewpips 1-Step": "90",
-         "Instant Account Now Live!": "70",
+         "Fewpips Instant - Most popular": "70",
          "Fewpips 2-Step": "90",
          "Fewpips 3-Step": "90",
       }
@@ -2186,7 +2334,23 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             <div class="column labels">
                <div class="header-row">Account size</div>
                <div class="table_row">Trading Coaching Course</div>
-               <div class="table_row">Profit Split Up To</div>
+               <div class="table_row group relative">Profit Split Up To
+                           <i class="fi fi-rs-info ml-1 cursor-help opacity-60"></i>
+                           <div
+                              class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-64 p-2 bg-black border border-white/10 text-[12px] text-white rounded shadow-lg z-50 font-normal leading-normal">
+                              <ul>
+                                 <li>
+                                    Tier 1 Split: 70% - First 3 successful withdrawals.
+                                 </li>
+                                 <li style="margin-block:10px">
+                                    Tier 2 Split: 80% - Graduate after your 3rd successful withdrawal.
+                                 </li>
+                                 <li>
+                                    Tier 3 Split: 90% - Graduate after your 6th successful withdrawal.
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
                <div class="table_row">Profit Target - Phase 1</div>
                <div class="table_row">Profit Target - Phase 2</div>
                <div class="table_row">Profit Target - Phase 3</div>
@@ -2273,7 +2437,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             existingComingSoon.forEach(el => el.remove());
          }
 
-         if (planName === "Instant Account Now Live!") {
+         if (planName === "Fewpips Instant - Most popular") {
             const comingSoonElement = document.createElement("div");
             comingSoonElement.innerHTML = `
                <div class="coming-soon-wrapper">
@@ -2436,7 +2600,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
                let planName = "";
 
-               if (text.includes("Instant")) planName = "Instant Account Now Live!";
+               if (text.includes("Instant")) planName = "Fewpips Instant - Most popular";
                if (text.includes("1-Step")) planName = "Fewpips 1-Step";
                if (text.includes("2-Step")) planName = "Fewpips 2-Step";
                if (text.includes("3-Step")) planName = "Fewpips 3-Step";

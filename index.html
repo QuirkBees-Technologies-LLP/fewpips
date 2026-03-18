@@ -606,7 +606,16 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                      <div class="column labels">
                         <div class="header-row">Account size</div>
                         <div class="table_row">Trading Coaching Course</div>
-                        <div class="table_row group">Profit Split Up To</div>
+                        <div class="table_row group relative">
+                           Profit Split Up To
+                           <i class="fi fi-rs-info ml-1 cursor-help opacity-60"></i>
+                           <div
+                              class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-72 p-2 bg-black border border-white/10 text-[12px] text-white rounded shadow-lg z-50 font-normal leading-normal">
+                              Tier 1 Split: 70% - First 3 successful withdrawals.<br>
+                              Tier 2 Split: 80% - Graduate after your 3rd successful withdrawal.<br>
+                              Tier 3 Split: 90% - Graduate after your 6th successful withdrawal.
+                           </div>
+                        </div>
                         <div class="table_row">Profit Target - Phase 1</div>
                         <div class="table_row">Profit Target - Phase 2</div>
                         <div class="table_row">Profit Target - Phase 3</div>
@@ -754,7 +763,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                   class="mb-[60px] mt-[30px] lg:mt-[30px] gap-[5px] flex flex-col items-center sm:gap-10 v2-container">
                   <!-- <p class="text-[14px] font-bold text-white">Add-ons for Stella</p> -->
                   <div class="flex flex-wrap items-center justify-center ">
-                     <ul class="flex list-disc flex-wrap justify-center pl-3 space-x-5 sm:space-x-10">
+                     <ul id="addons-list" class="flex list-disc flex-wrap justify-center pl-3 space-x-5 sm:space-x-10">
                         <li class="mt-2 sm:mt-0 text-[15px] text-[#0fcd37] font-bold list-none">Add-ons you can get</li>
                         <li class="mt-2 sm:mt-0 text-[14px] text-white/75">Lifetime Rewards 95%</li>
                         <li class="mt-2 sm:mt-0 text-[14px] text-white/75">150% Rewards</li>
@@ -2210,7 +2219,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
       const AUTH_TOKEN = 'pk_live_734f28105c2a0d2ad1588e2067fed29af743a3735321fb5a2ee4b42fbc07f325';
 
       const PLAN_CONFIG = {
-         "Fewpips Instant - Most popular": { phases: ["Funded"] },
+         "Fewpips Instant - Most Popular!": { phases: ["Funded"] },
          "Fewpips 1-Step": { phases: ["Phase 1", "Funded"] },
          "Fewpips 2-Step": { phases: ["Phase 1", "Phase 2", "Funded"] },
          "Fewpips 3-Step": { phases: ["Phase 1", "Phase 2", "Phase 3", "Funded"] },
@@ -2218,7 +2227,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
       // Display names for buttons only
       const PLAN_DISPLAY_NAMES = {
-         "Fewpips Instant - Most popular": "Fewpips Instant - Most popular",
+         "Fewpips Instant - Most Popular!": "Instant Account Now Live!",
          "Fewpips 1-Step": "Fewpips 1-Step",
          "Fewpips 2-Step": "Fewpips 2-Step",
          "Fewpips 3-Step": "Fewpips 3-Step",
@@ -2229,7 +2238,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
       function formatTemplates(templates) {
          const formatted = {};
-         const planNames = ["Fewpips Instant - Most popular", "Fewpips 1-Step", "Fewpips 2-Step", "Fewpips 3-Step"];
+         const planNames = ["Fewpips Instant - Most Popular!", "Fewpips 1-Step", "Fewpips 2-Step", "Fewpips 3-Step"];
 
          planNames.forEach((plan) => {
             formatted[plan] = [];
@@ -2295,7 +2304,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
       }
 
       const STEPS_LEVERAGE_DATA = {
-         "Fewpips Instant - Most popular": {
+         "Fewpips Instant - Most Popular!": {
             info: "Forex: 1:30<br />Indices: 1:5<br />Commodities: 1:7.5<br />Metals: 1:7.5<br />Crypto: 1:1",
             ratio: "1:30"
          },
@@ -2315,9 +2324,98 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
       const PROFIT_SPLIT_DATA = {
          "Fewpips 1-Step": "90",
-         "Fewpips Instant - Most popular": "70",
+         "Fewpips Instant - Most Popular!": "70",
          "Fewpips 2-Step": "90",
          "Fewpips 3-Step": "90",
+      }
+
+      const ADDONS_DATA = {
+         "Fewpips Instant - Most Popular!": [
+            { name: "Swap-Free",  price: "(Price + 10%)",
+               desc: "Removes overnight interest charges (swaps). Essential for traders who hold positions for several days or weeks and for those requiring Sharia-compliant accounts." },
+            { name: "EA",         price: "(Price + $5 on $3K, $5K, $10K) and (Price + $30 on $25K and $50K Accounts)",
+               desc: "Grants permission to use automated trading robots or algorithms. Without this, some firms may disqualify accounts that show automated activity." },
+            { name: "VPS",        price: "(Price + $5 on $3K, $5K, $10K) and (Price + $30 on $25K and $50K Accounts)",
+               desc: "Provides a remote server to run your trading platform 24/7 without interruption. Crucial for EA traders to ensure their bots don't go offline if their personal computer shuts down." }
+         ],
+
+         "Fewpips 1-Step": [
+            { name: "Swap-Free",              price: "(Price + 10%)",
+               desc: "Removes overnight interest charges (swaps). Essential for traders who hold positions for several days or weeks and for those requiring Sharia-compliant accounts." },
+            { name: "No minimum trading days", price: "(Price + 25%)",
+               desc: "Normally firms require you to trade for a set number of days (e.g. 5) before passing an evaluation. This add-on lets you advance to the next stage immediately once you hit your profit target." },
+            { name: "Lifetime reward 95%",     price: "(Price + 25%)",
+               desc: "Increases your Profit Split. Instead of a standard split (like 80/20), you keep 95% of all profits generated on the funded account for the life of that account." },
+            { name: "150% Reward",            price: "(Price + 10%)",
+               desc: "Typically applies to the first payout. When you receive your first reward, you get your initial fee back plus an extra 50% bonus (totaling 1.5x your initial fee)." },
+            { name: "Double up",              price: "(Price + 40%)",
+               desc: "A high-tier add-on that allows you to double your initial account size or maximum drawdown limits under specific conditions, effectively giving you more buying power to trade with." },
+            { name: "EA",                     price: "(Price + $5 on $5K, $10K, $25K) and (Price + $30 on $50K and $100K Accounts)",
+               desc: "Grants permission to use automated trading robots or algorithms. Without this, some firms may disqualify accounts that show automated activity." },
+            { name: "VPS",                    price: "(Price + $5 on $5K, $10K, $25K) and (Price + $30 on $50K and $100K Accounts)",
+               desc: "Provides a remote server to run your trading platform 24/7 without interruption. Crucial for EA traders to ensure their bots don't go offline if their personal computer shuts down." }
+         ],
+
+         "Fewpips 2-Step": [
+            { name: "Swap-Free",              price: "(Price + 10%)",
+               desc: "Removes overnight interest charges (swaps). Essential for traders who hold positions for several days or weeks and for those requiring Sharia-compliant accounts." },
+            { name: "Lifetime reward 95%",     price: "(Price + 30%)",
+               desc: "Increases your Profit Split. Instead of a standard split (like 80/20), you keep 95% of all profits generated on the funded account for the life of that account." },
+            { name: "No minimum trading days", price: "(Price + 25%)",
+               desc: "Normally firms require you to trade for a set number of days (e.g. 5) before passing an evaluation. This add-on lets you advance to the next stage immediately once you hit your profit target." },
+            { name: "150% Reward",            price: "(Price + 10%)",
+               desc: "Typically applies to the first payout. When you receive your first reward, you get your initial fee back plus an extra 50% bonus (totaling 1.5x your initial fee)." },
+            { name: "Bi-Weekly rewards",      price: "(Price + 25%)",
+               desc: "Get your profit payouts processed every two weeks instead of the standard monthly cycle." },
+            { name: "Double up",              price: "(Price + 40%)",
+               desc: "A high-tier add-on that allows you to double your initial account size or maximum drawdown limits under specific conditions, effectively giving you more buying power to trade with." },
+            { name: "EA",                     price: "(Price + $5 on $5K, $10K, $25K) and (Price + $30 on $50K and $100K Accounts)",
+               desc: "Grants permission to use automated trading robots or algorithms. Without this, some firms may disqualify accounts that show automated activity." },
+            { name: "VPS",                    price: "(Price + $5 on $5K, $10K, $25K) and (Price + $30 on $50K and $100K Accounts)",
+               desc: "Provides a remote server to run your trading platform 24/7 without interruption. Crucial for EA traders to ensure their bots don't go offline if their personal computer shuts down." }
+         ],
+
+         "Fewpips 3-Step": [
+            { name: "Swap-Free",              price: "(Price + 10%)",
+               desc: "Removes overnight interest charges (swaps). Essential for traders who hold positions for several days or weeks and for those requiring Sharia-compliant accounts." },
+            { name: "Lifetime reward 95%",     price: "(Price + 30%)",
+               desc: "Increases your Profit Split. Instead of a standard split (like 80/20), you keep 95% of all profits generated on the funded account for the life of that account." },
+            { name: "No minimum trading days", price: "(Price + 25%)",
+               desc: "Normally firms require you to trade for a set number of days (e.g. 5) before passing an evaluation. This add-on lets you advance to the next stage immediately once you hit your profit target." },
+            { name: "150% Reward",            price: "(Price + 10%)",
+               desc: "Typically applies to the first payout. When you receive your first reward, you get your initial fee back plus an extra 50% bonus (totaling 1.5x your initial fee)." },
+            { name: "Bi-Weekly rewards",      price: "(Price + 25%)",
+               desc: "Get your profit payouts processed every two weeks instead of the standard monthly cycle." },
+            { name: "Double up",              price: "(Price + 40%)",
+               desc: "A high-tier add-on that allows you to double your initial account size or maximum drawdown limits under specific conditions, effectively giving you more buying power to trade with." },
+            { name: "EA",                     price: "(Price + $5 on $10K, $25K, $50K) and (Price + $30 on $100K and $200K Accounts)",
+               desc: "Grants permission to use automated trading robots or algorithms. Without this, some firms may disqualify accounts that show automated activity." },
+            { name: "VPS",                    price: "(Price + $5 on $10K, $25K, $50K) and (Price + $30 on $100K and $200K Accounts)",
+               desc: "Provides a remote server to run your trading platform 24/7 without interruption. Crucial for EA traders to ensure their bots don't go offline if their personal computer shuts down." }
+         ]
+         };
+
+      function renderAddons(planName) {
+         const addonsList = document.getElementById('addons-list');
+         if (!addonsList) return;
+
+         const planAddons = ADDONS_DATA[planName] || [];
+         let html = '<li class="mt-2 sm:mt-0 text-[15px] text-[#0fcd37] font-bold list-none">Add-ons you can get</li>';
+
+         planAddons.forEach(addon => {
+            html += `
+               <li class="mt-2 sm:mt-0 text-[14px] text-white/75 flex items-center gap-1 group relative">
+                  <span class="text-[#0fcd37] text-lg leading-none">•</span>
+                  <span class="font-bold text-white">${addon.name}</span>
+                  <span class="text-white/40">${addon.price}</span>
+                  <i class="fi fi-rs-info ml-1 cursor-help opacity-60"></i>
+                  <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-64 p-2 bg-black border border-white/10 text-[12px] text-white rounded shadow-lg z-50 font-normal leading-normal">
+                     ${addon.desc}
+                  </div>
+               </li>`;
+         });
+
+         addonsList.innerHTML = html;
       }
 
       function renderComparisonTable(planName) {
@@ -2334,23 +2432,15 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             <div class="column labels">
                <div class="header-row">Account size</div>
                <div class="table_row">Trading Coaching Course</div>
-               <div class="table_row group relative">Profit Split Up To
-                           <i class="fi fi-rs-info ml-1 cursor-help opacity-60"></i>
-                           <div
-                              class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-64 p-2 bg-black border border-white/10 text-[12px] text-white rounded shadow-lg z-50 font-normal leading-normal">
-                              <ul>
-                                 <li>
-                                    Tier 1 Split: 70% - First 3 successful withdrawals.
-                                 </li>
-                                 <li style="margin-block:10px">
-                                    Tier 2 Split: 80% - Graduate after your 3rd successful withdrawal.
-                                 </li>
-                                 <li>
-                                    Tier 3 Split: 90% - Graduate after your 6th successful withdrawal.
-                                 </li>
-                              </ul>
-                           </div>
-                        </div>
+               <div class="table_row group relative">
+                  Profit Split Up To
+                  <i class="fi fi-rs-info ml-1 cursor-help opacity-60"></i>
+                  <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-72 p-2 bg-black border border-white/10 text-[12px] text-white rounded shadow-lg z-50 font-normal leading-normal">
+                     Tier 1 Split: 70% - First 3 successful withdrawals.<br>
+                     Tier 2 Split: 80% - Graduate after your 3rd successful withdrawal.<br>
+                     Tier 3 Split: 90% - Graduate after your 6th successful withdrawal.
+                  </div>
+               </div>
                <div class="table_row">Profit Target - Phase 1</div>
                <div class="table_row">Profit Target - Phase 2</div>
                <div class="table_row">Profit Target - Phase 3</div>
@@ -2399,7 +2489,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             const phase3 = item.phases[2] || {};
 
             // Formatting helpers
-            const formatPercent = (val) => val ? `${Number(val)}%` : "None";
+            const formatPercent = (val) => val && Number(val) !== 0 ? `${Number(val)}%` : "-";
             const formatPrice = (val) => val ? `$${Number(val).toLocaleString()}` : "-";
             const formatDays = (val) => val != null ? val : "Unlimited";
 
@@ -2437,19 +2527,19 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             existingComingSoon.forEach(el => el.remove());
          }
 
-         if (planName === "Fewpips Instant - Most popular") {
-            const comingSoonElement = document.createElement("div");
-            comingSoonElement.innerHTML = `
-               <div class="coming-soon-wrapper">
-                  <div class="coming-soon-box">
-                     <h2>🚀 Instant Funding</h2>
-                     <p>This plan is launching very soon.</p>
-                     <div class="coming-badge">COMING SOON</div>
-                  </div>
-               </div>
-            `;
-            container.parentNode.insertBefore(comingSoonElement, container);
-         }
+         // if (planName === "Fewpips Instant - Most Popular!") {
+         //    const comingSoonElement = document.createElement("div");
+         //    comingSoonElement.innerHTML = `
+         //       <div class="coming-soon-wrapper">
+         //          <div class="coming-soon-box">
+         //             <h2>🚀 Instant Funding</h2>
+         //             <p>This plan is launching very soon.</p>
+         //             <div class="coming-badge">COMING SOON</div>
+         //          </div>
+         //       </div>
+         //    `;
+         //    container.parentNode.insertBefore(comingSoonElement, container);
+         // }
 
 
          container.innerHTML = html;
@@ -2467,6 +2557,10 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                headers: { 'Authorization': `Bearer ${AUTH_TOKEN}` }
             });
             const templates = await response.json();
+
+            // get a list of unique plan names
+            const uniquePlanNames = [...new Set(templates.map(t => t.plan.name.en))];
+            console.log(uniquePlanNames);
             allData = formatTemplates(templates);
 
             // 2. Fetch Active Bonuses
@@ -2491,7 +2585,8 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
             // Initialize comparison part
             initComparisonTabs();
-            renderComparisonTable("Fewpips 3-Step"); // Default
+            renderComparisonTable("Fewpips 1-Step"); // Default as per initial active tab
+            renderAddons("Fewpips 1-Step");
             updatePlan(activePlan);
 
          } catch (err) {
@@ -2600,12 +2695,13 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
                let planName = "";
 
-               if (text.includes("Instant")) planName = "Fewpips Instant - Most popular";
+               if (text.includes("Instant")) planName = "Fewpips Instant - Most Popular!";
                if (text.includes("1-Step")) planName = "Fewpips 1-Step";
                if (text.includes("2-Step")) planName = "Fewpips 2-Step";
                if (text.includes("3-Step")) planName = "Fewpips 3-Step";
                if (planName) {
                   renderComparisonTable(planName);
+                  renderAddons(planName);
                }
             });
          });
@@ -2883,9 +2979,9 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                     <span class="text-white/40">Profit target</span>
                     <div class="text-right">
                         <p class="font-bold text-white">${profitAmount}</p>
-                        <p class="text-purple text-xs">
-                            ${isFunded ? "-" : profitPercent + "%"}
-                        </p>
+                        ${!isFunded? `<p class="text-purple text-xs">
+                            ${profitPercent + "%"}
+                        </p>` : ""}
                     </div>
                 </div>
 
@@ -2893,11 +2989,11 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                     <span class="text-white/40">Maximum Daily Loss</span>
                     <div class="text-right">
                         <p class="font-bold text-white">
-                            $${((price * phaseData.maxDailyLoss) / 100).toLocaleString()}
+                            ${phaseData.maxDailyLoss > 0 ? `$${((price * phaseData.maxDailyLoss) / 100).toLocaleString()}` : "-"}
                         </p>
-                        <p class="text-purple text-xs">
-                            ${phaseData.maxDailyLoss}%
-                        </p>
+                        ${phaseData.maxDailyLoss > 0 ? `<p class="text-purple text-xs">
+                            ${phaseData.maxDailyLoss + "%"}
+                        </p>` : ""}
                     </div>
                 </div>` : ""}
 
@@ -2927,7 +3023,15 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                 </div>
 
                 <div class="flex justify-between border-b border-white/10 pb-3">
-                    <span class="text-white/40">Profit Split</span>
+                    <div class="text-white/40 group relative">
+                        Profit Split
+                        <i class="fi fi-rs-info ml-1 cursor-help opacity-60"></i>
+                        <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-72 p-2 bg-black border border-white/10 text-[12px] text-white rounded shadow-lg z-50 font-normal leading-normal">
+                           Tier 1 Split: 70% - First 3 successful withdrawals.<br>
+                           Tier 2 Split: 80% - Graduate after your 3rd successful withdrawal.<br>
+                           Tier 3 Split: 90% - Graduate after your 6th successful withdrawal.
+                        </div>
+                    </div>
                     <span class="font-bold text-white">
                         ${phaseData.profitSplit && phaseData.profitSplit > 0 && isFunded ? "Up to " + PROFIT_SPLIT_DATA[planName] + "%" : "-"}
                     </span>

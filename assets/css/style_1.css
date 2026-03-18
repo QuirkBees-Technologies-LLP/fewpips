@@ -1595,6 +1595,8 @@
     border: 1px solid rgba(0, 255, 140, .25);
     transition: .35s;
     overflow: hidden;
+    justify-content: center;
+    align-items: center;
 }
 
 /* glow effect */
@@ -4030,7 +4032,7 @@ body {
 /* ── Cards Grid ── */
 .instruments-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 12px;
     max-width: 1200px;
     margin: 0 auto;
@@ -4060,7 +4062,7 @@ body {
     gap: 0;
     transition: border-color 0.18s, background 0.18s;
     cursor: default;
-    min-height: 100px;
+    min-height: 80px;
 }
 
 .instrument-card:hover {

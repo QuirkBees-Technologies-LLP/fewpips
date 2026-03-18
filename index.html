@@ -2331,88 +2331,185 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
       const ADDONS_DATA = {
          "Fewpips Instant - Most Popular!": [
-            { name: "Swap-Free",  price: "(Price + 10%)",
-               desc: "Removes overnight interest charges (swaps). Essential for traders who hold positions for several days or weeks and for those requiring Sharia-compliant accounts." },
-            { name: "EA",         price: "(Price + $5 on $3K, $5K, $10K) and (Price + $30 on $25K and $50K Accounts)",
-               desc: "Grants permission to use automated trading robots or algorithms. Without this, some firms may disqualify accounts that show automated activity." },
-            { name: "VPS",        price: "(Price + $5 on $3K, $5K, $10K) and (Price + $30 on $25K and $50K Accounts)",
-               desc: "Provides a remote server to run your trading platform 24/7 without interruption. Crucial for EA traders to ensure their bots don't go offline if their personal computer shuts down." }
+            {
+               name: "Swap-Free", price: "+10%",
+               descprice: "+10%",
+               desc: "Removes overnight interest charges (swaps). Essential for traders who hold positions for several days or weeks and for those requiring Sharia-compliant accounts."
+            },
+            {
+               name: "EA", price: "+$5 / +$30",
+               descprice: "+$5 on $3K, $5K, $10K · +$30 on $25K, $50K",
+               desc: "Grants permission to use automated trading robots or algorithms. Without this, some firms may disqualify accounts that show automated activity."
+            },
+            {
+               name: "VPS", price: "+$5 / +$30",
+               descprice: "+$5 on $3K, $5K, $10K · +$30 on $25K, $50K",
+               desc: "Provides a remote server to run your trading platform 24/7 without interruption. Crucial for EA traders to ensure their bots don't go offline if their personal computer shuts down."
+            }
          ],
 
          "Fewpips 1-Step": [
-            { name: "Swap-Free",              price: "(Price + 10%)",
-               desc: "Removes overnight interest charges (swaps). Essential for traders who hold positions for several days or weeks and for those requiring Sharia-compliant accounts." },
-            { name: "No minimum trading days", price: "(Price + 25%)",
-               desc: "Normally firms require you to trade for a set number of days (e.g. 5) before passing an evaluation. This add-on lets you advance to the next stage immediately once you hit your profit target." },
-            { name: "Lifetime reward 95%",     price: "(Price + 25%)",
-               desc: "Increases your Profit Split. Instead of a standard split (like 80/20), you keep 95% of all profits generated on the funded account for the life of that account." },
-            { name: "150% Reward",            price: "(Price + 10%)",
-               desc: "Typically applies to the first payout. When you receive your first reward, you get your initial fee back plus an extra 50% bonus (totaling 1.5x your initial fee)." },
-            { name: "Double up",              price: "(Price + 40%)",
-               desc: "A high-tier add-on that allows you to double your initial account size or maximum drawdown limits under specific conditions, effectively giving you more buying power to trade with." },
-            { name: "EA",                     price: "(Price + $5 on $5K, $10K, $25K) and (Price + $30 on $50K and $100K Accounts)",
-               desc: "Grants permission to use automated trading robots or algorithms. Without this, some firms may disqualify accounts that show automated activity." },
-            { name: "VPS",                    price: "(Price + $5 on $5K, $10K, $25K) and (Price + $30 on $50K and $100K Accounts)",
-               desc: "Provides a remote server to run your trading platform 24/7 without interruption. Crucial for EA traders to ensure their bots don't go offline if their personal computer shuts down." }
+            {
+               name: "Swap-Free", price: "+10%",
+               descprice: "+10%",
+               desc: "Removes overnight interest charges (swaps). Essential for traders who hold positions for several days or weeks and for those requiring Sharia-compliant accounts."
+            },
+            {
+               name: "No minimum trading days", price: "+25%",
+               descprice: "+25%",
+               desc: "Normally firms require you to trade for a set number of days (e.g. 5) before passing an evaluation. This add-on lets you advance to the next stage immediately once you hit your profit target."
+            },
+            {
+               name: "Lifetime reward 95%", price: "+25%",
+               descprice: "+25%",
+               desc: "Increases your Profit Split. Instead of a standard split (like 80/20), you keep 95% of all profits generated on the funded account for the life of that account."
+            },
+            {
+               name: "150% Reward", price: "+10%",
+               descprice: "+10%",
+               desc: "Typically applies to the first payout. When you receive your first reward, you get your initial fee back plus an extra 50% bonus (totaling 1.5x your initial fee)."
+            },
+            {
+               name: "Double up", price: "+40%",
+               descprice: "+40%",
+               desc: "A high-tier add-on that allows you to double your initial account size or maximum drawdown limits under specific conditions, effectively giving you more buying power to trade with."
+            },
+            {
+               name: "EA", price: "+$5 / +$30",
+               descprice: "+$5 on $5K, $10K, $25K · +$30 on $50K, $100K",
+               desc: "Grants permission to use automated trading robots or algorithms. Without this, some firms may disqualify accounts that show automated activity."
+            },
+            {
+               name: "VPS", price: "+$5 / +$30",
+               descprice: "+$5 on $5K, $10K, $25K · +$30 on $50K, $100K",
+               desc: "Provides a remote server to run your trading platform 24/7 without interruption. Crucial for EA traders to ensure their bots don't go offline if their personal computer shuts down."
+            }
          ],
 
          "Fewpips 2-Step": [
-            { name: "Swap-Free",              price: "(Price + 10%)",
-               desc: "Removes overnight interest charges (swaps). Essential for traders who hold positions for several days or weeks and for those requiring Sharia-compliant accounts." },
-            { name: "Lifetime reward 95%",     price: "(Price + 30%)",
-               desc: "Increases your Profit Split. Instead of a standard split (like 80/20), you keep 95% of all profits generated on the funded account for the life of that account." },
-            { name: "No minimum trading days", price: "(Price + 25%)",
-               desc: "Normally firms require you to trade for a set number of days (e.g. 5) before passing an evaluation. This add-on lets you advance to the next stage immediately once you hit your profit target." },
-            { name: "150% Reward",            price: "(Price + 10%)",
-               desc: "Typically applies to the first payout. When you receive your first reward, you get your initial fee back plus an extra 50% bonus (totaling 1.5x your initial fee)." },
-            { name: "Bi-Weekly rewards",      price: "(Price + 25%)",
-               desc: "Get your profit payouts processed every two weeks instead of the standard monthly cycle." },
-            { name: "Double up",              price: "(Price + 40%)",
-               desc: "A high-tier add-on that allows you to double your initial account size or maximum drawdown limits under specific conditions, effectively giving you more buying power to trade with." },
-            { name: "EA",                     price: "(Price + $5 on $5K, $10K, $25K) and (Price + $30 on $50K and $100K Accounts)",
-               desc: "Grants permission to use automated trading robots or algorithms. Without this, some firms may disqualify accounts that show automated activity." },
-            { name: "VPS",                    price: "(Price + $5 on $5K, $10K, $25K) and (Price + $30 on $50K and $100K Accounts)",
-               desc: "Provides a remote server to run your trading platform 24/7 without interruption. Crucial for EA traders to ensure their bots don't go offline if their personal computer shuts down." }
+            {
+               name: "Swap-Free", price: "+10%",
+               descprice: "+10%",
+               desc: "Removes overnight interest charges (swaps). Essential for traders who hold positions for several days or weeks and for those requiring Sharia-compliant accounts."
+            },
+            {
+               name: "No minimum trading days", price: "+25%",
+               descprice: "+25%",
+               desc: "Normally firms require you to trade for a set number of days (e.g. 5) before passing an evaluation. This add-on lets you advance to the next stage immediately once you hit your profit target."
+            },
+            {
+               name: "Lifetime reward 95%", price: "+30%",
+               descprice: "+30%",
+               desc: "Increases your Profit Split. Instead of a standard split (like 80/20), you keep 95% of all profits generated on the funded account for the life of that account."
+            },
+            {
+               name: "150% Reward", price: "+10%",
+               descprice: "+10%",
+               desc: "Typically applies to the first payout. When you receive your first reward, you get your initial fee back plus an extra 50% bonus (totaling 1.5x your initial fee)."
+            },
+            {
+               name: "Bi-Weekly rewards", price: "+25%",
+               descprice: "+25%",
+               desc: "Get your profit payouts processed every two weeks instead of the standard monthly cycle."
+            },
+            {
+               name: "Double up", price: "+40%",
+               descprice: "+40%",
+               desc: "A high-tier add-on that allows you to double your initial account size or maximum drawdown limits under specific conditions, effectively giving you more buying power to trade with."
+            },
+            {
+               name: "EA", price: "+$5 / +$30",
+               descprice: "+$5 on $5K, $10K, $25K · +$30 on $50K, $100K",
+               desc: "Grants permission to use automated trading robots or algorithms. Without this, some firms may disqualify accounts that show automated activity."
+            },
+            {
+               name: "VPS", price: "+$5 / +$30",
+               descprice: "+$5 on $5K, $10K, $25K · +$30 on $50K, $100K",
+               desc: "Provides a remote server to run your trading platform 24/7 without interruption. Crucial for EA traders to ensure their bots don't go offline if their personal computer shuts down."
+            }
          ],
 
          "Fewpips 3-Step": [
-            { name: "Swap-Free",              price: "(Price + 10%)",
-               desc: "Removes overnight interest charges (swaps). Essential for traders who hold positions for several days or weeks and for those requiring Sharia-compliant accounts." },
-            { name: "Lifetime reward 95%",     price: "(Price + 30%)",
-               desc: "Increases your Profit Split. Instead of a standard split (like 80/20), you keep 95% of all profits generated on the funded account for the life of that account." },
-            { name: "No minimum trading days", price: "(Price + 25%)",
-               desc: "Normally firms require you to trade for a set number of days (e.g. 5) before passing an evaluation. This add-on lets you advance to the next stage immediately once you hit your profit target." },
-            { name: "150% Reward",            price: "(Price + 10%)",
-               desc: "Typically applies to the first payout. When you receive your first reward, you get your initial fee back plus an extra 50% bonus (totaling 1.5x your initial fee)." },
-            { name: "Bi-Weekly rewards",      price: "(Price + 25%)",
-               desc: "Get your profit payouts processed every two weeks instead of the standard monthly cycle." },
-            { name: "Double up",              price: "(Price + 40%)",
-               desc: "A high-tier add-on that allows you to double your initial account size or maximum drawdown limits under specific conditions, effectively giving you more buying power to trade with." },
-            { name: "EA",                     price: "(Price + $5 on $10K, $25K, $50K) and (Price + $30 on $100K and $200K Accounts)",
-               desc: "Grants permission to use automated trading robots or algorithms. Without this, some firms may disqualify accounts that show automated activity." },
-            { name: "VPS",                    price: "(Price + $5 on $10K, $25K, $50K) and (Price + $30 on $100K and $200K Accounts)",
-               desc: "Provides a remote server to run your trading platform 24/7 without interruption. Crucial for EA traders to ensure their bots don't go offline if their personal computer shuts down." }
+            {
+               name: "Swap-Free", price: "+10%",
+               descprice: "+10%",
+               desc: "Removes overnight interest charges (swaps). Essential for traders who hold positions for several days or weeks and for those requiring Sharia-compliant accounts."
+            },
+            {
+               name: "No minimum trading days", price: "+25%",
+               descprice: "+25%",
+               desc: "Normally firms require you to trade for a set number of days (e.g. 5) before passing an evaluation. This add-on lets you advance to the next stage immediately once you hit your profit target."
+            },
+            {
+               name: "Lifetime reward 95%", price: "+30%",
+               descprice: "+30%",
+               desc: "Increases your Profit Split. Instead of a standard split (like 80/20), you keep 95% of all profits generated on the funded account for the life of that account."
+            },
+            {
+               name: "150% Reward", price: "+10%",
+               descprice: "+10%",
+               desc: "Typically applies to the first payout. When you receive your first reward, you get your initial fee back plus an extra 50% bonus (totaling 1.5x your initial fee)."
+            },
+            {
+               name: "Bi-Weekly rewards", price: "+25%",
+               descprice: "+25%",
+               desc: "Get your profit payouts processed every two weeks instead of the standard monthly cycle."
+            },
+            {
+               name: "Double up", price: "+40%",
+               descprice: "+40%",
+               desc: "A high-tier add-on that allows you to double your initial account size or maximum drawdown limits under specific conditions, effectively giving you more buying power to trade with."
+            },
+            {
+               name: "EA", price: "+$5 / +$30",
+               descprice: "+$5 on $10K, $25K, $50K · +$30 on $100K, $200K",
+               desc: "Grants permission to use automated trading robots or algorithms. Without this, some firms may disqualify accounts that show automated activity."
+            },
+            {
+               name: "VPS", price: "+$5 / +$30",
+               descprice: "+$5 on $10K, $25K, $50K · +$30 on $100K, $200K",
+               desc: "Provides a remote server to run your trading platform 24/7 without interruption. Crucial for EA traders to ensure their bots don't go offline if their personal computer shuts down."
+            }
          ]
-         };
+      };
+
+      function getAvailablePlans(addonName) {
+         const plans = [];
+         for (const [plan, addons] of Object.entries(ADDONS_DATA)) {
+            if (addons.some(a => a.name === addonName)) {
+               const short = plan.replace('Fewpips ', '').replace(' - Most Popular!', '');
+               plans.push(short);
+            }
+         }
+         return plans;
+      }
 
       function renderAddons(planName) {
          const addonsList = document.getElementById('addons-list');
          if (!addonsList) return;
 
          const planAddons = ADDONS_DATA[planName] || [];
-         let html = '<li class="mt-2 sm:mt-0 text-[15px] text-[#0fcd37] font-bold list-none">Add-ons you can get</li>';
+         let html = '<li class="mt-2 sm:mt-0 text-[15px] text-[#0fcd37] font-bold list-none mr-5">Add-ons you can get</li>';
 
          planAddons.forEach(addon => {
+            const availablePlans = getAvailablePlans(addon.name);
+            const plansHTML = availablePlans.map(p =>
+               `<span style="font-size:11px;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:999px;padding:2px 10px;display:inline-block;">${p}</span>`
+            ).join('');
+
             html += `
-               <li class="mt-2 sm:mt-0 text-[14px] text-white/75 flex items-center gap-1 group relative">
-                  <span class="text-[#0fcd37] text-lg leading-none">•</span>
-                  <span class="font-bold text-white">${addon.name}</span>
-                  <span class="text-white/40">${addon.price}</span>
-                  <i class="fi fi-rs-info ml-1 cursor-help opacity-60"></i>
-                  <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-64 p-2 bg-black border border-white/10 text-[12px] text-white rounded shadow-lg z-50 font-normal leading-normal">
-                     ${addon.desc}
-                  </div>
-               </li>`;
+         <li class="addon-pill-item mt-2 sm:mt-0 text-[14px] text-white/75 flex items-center gap-1 group relative">
+            <span class="font-bold text-white">${addon.name}</span>
+            <span class="text-white/40">${addon.price}</span>
+            <i class="fi fi-rs-info ml-1 cursor-help"></i>
+            <div class="addon-tooltip">
+               <div style="font-size:14px;font-weight:700;color:#ffffff;margin-bottom:2px;">${addon.name}</div>
+               <div style="font-size:12px;color:#0fcd37;font-weight:600;margin-bottom:8px;">Price ${addon.descprice}</div>
+               <div style="font-size:12px;color:rgba(255,255,255,0.65);line-height:1.6;margin-bottom:10px;">${addon.desc}</div>
+               <div style="font-size:10px;letter-spacing:0.08em;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:6px;">AVAILABLE ON</div>
+               <div style="display:flex;flex-wrap:wrap;gap:5px;">${plansHTML}</div>
+            </div>
+         </li>`;
          });
 
          addonsList.innerHTML = html;
@@ -2979,7 +3076,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                     <span class="text-white/40">Profit target</span>
                     <div class="text-right">
                         <p class="font-bold text-white">${profitAmount}</p>
-                        ${!isFunded? `<p class="text-purple text-xs">
+                        ${!isFunded ? `<p class="text-purple text-xs">
                             ${profitPercent + "%"}
                         </p>` : ""}
                     </div>

@@ -4116,3 +4116,87 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* addons.css */
+
+#addons-list {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   gap: 8px;
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+
+/* "Add-ons you can get" label - first li */
+/* #addons-list li:first-child {
+   width: 100%;
+   margin-bottom: 4px;
+} */
+
+/* Each addon pill li */
+#addons-list li.addon-pill-item {
+   margin: 0 !important;
+   background: #15231d;
+   border: 1px solid #2b2f36;
+   border-radius: 10px;
+   padding: 6px 14px;
+   display: flex;
+   align-items: center;
+   gap: 5px;
+   position: relative;
+   cursor: default;
+   transition: border-color 0.2s;
+   cursor: pointer;
+}
+
+#addons-list li.addon-pill-item:hover {
+   border-color: rgba(255, 255, 255, 0.28);
+}
+
+/* Tooltip hidden by default */
+#addons-list li.addon-pill-item .addon-tooltip {
+   position: absolute;
+   bottom: calc(100% + 10px);
+   left: 50%;
+   transform: translateX(-50%);
+   width: 270px;
+   background: #15231d;
+   border: 1px solid #2b2f36;
+   border-radius: 10px;
+   padding: 14px 16px;
+   z-index: 999;
+   pointer-events: none;
+   opacity: 0;
+   visibility: hidden;
+   transition: opacity 0.18s ease, visibility 0.18s ease;
+   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* Tooltip arrow */
+#addons-list li.addon-pill-item .addon-tooltip::after {
+   content: '';
+   position: absolute;
+   top: 100%;
+   left: 50%;
+   transform: translateX(-50%);
+   border: 6px solid transparent;
+   border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Show tooltip on hover */
+#addons-list li.addon-pill-item:hover .addon-tooltip {
+   opacity: 1;
+   visibility: visible;
+}
+
+/* Info icon hover */
+#addons-list li.addon-pill-item .fi-rs-info {
+   opacity: 0.5;
+   transition: opacity 0.2s;
+}
+
+#addons-list li.addon-pill-item:hover .fi-rs-info {
+   opacity: 0.9;
+}

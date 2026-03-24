@@ -2214,9 +2214,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
    </section>
    <script>
 
-      const API_URL = 'https://api.Fewpips.com/api/v1/challenges/templates';
-
-      const AUTH_TOKEN = 'pk_live_734f28105c2a0d2ad1588e2067fed29af743a3735321fb5a2ee4b42fbc07f325';
+      const API_URL = 'https://fewpips-be-gncshwbbgrfagzbh.westus2-01.azurewebsites.net/api/challenges/templates';
 
       const PLAN_CONFIG = {
          "Fewpips Instant - Most Popular!": { phases: ["Funded"] },
@@ -2650,10 +2648,9 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
          try {
 
             // 1. Fetch Templates
-            const response = await fetch(API_URL, {
-               headers: { 'Authorization': `Bearer ${AUTH_TOKEN}` }
-            });
-            const templates = await response.json();
+            const response = await fetch(API_URL);
+            const json = await response.json();
+            const templates = json.data;
 
             // get a list of unique plan names
             const uniquePlanNames = [...new Set(templates.map(t => t.plan.name.en))];
@@ -2663,13 +2660,8 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             // 2. Fetch Active Bonuses
             // Using a separate try-catch so bonus failure doesn't break the whole app
             try {
-               // Construct bonus API URL assuming it's on the same base
-               // API_URL is .../challenges/templates
-               // We want .../bonuses?isActive=true
-               const bonusUrl = API_URL.replace('/challenges/templates', '/bonuses?isActive=true');
-               const bonusResponse = await fetch(bonusUrl, {
-                  headers: { 'Authorization': `Bearer ${AUTH_TOKEN}` }
-               });
+               const bonusUrl = 'https://fewpips-be-gncshwbbgrfagzbh.westus2-01.azurewebsites.net/api/challenges/bonuses';
+               const bonusResponse = await fetch(bonusUrl);
                const bonusData = await bonusResponse.json();
                if (bonusData && bonusData.data) {
                   activeBonuses = bonusData.data;

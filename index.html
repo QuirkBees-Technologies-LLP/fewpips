@@ -2210,7 +2210,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
       const AUTH_TOKEN = 'pk_live_734f28105c2a0d2ad1588e2067fed29af743a3735321fb5a2ee4b42fbc07f325';
 
       const PLAN_CONFIG = {
-         "Fewpips Instant - Most popular": { phases: ["Funded"] },
+         "Fewpips Instant - Most Popular!": { phases: ["Funded"] },
          "Fewpips 1-Step": { phases: ["Phase 1", "Funded"] },
          "Fewpips 2-Step": { phases: ["Phase 1", "Phase 2", "Funded"] },
          "Fewpips 3-Step": { phases: ["Phase 1", "Phase 2", "Phase 3", "Funded"] },
@@ -2467,6 +2467,10 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                headers: { 'Authorization': `Bearer ${AUTH_TOKEN}` }
             });
             const templates = await response.json();
+
+            // get a list of unique plan names
+            const uniquePlanNames = [...new Set(templates.map(t => t.plan.name.en))];
+            console.log(uniquePlanNames);
             allData = formatTemplates(templates);
 
             // 2. Fetch Active Bonuses

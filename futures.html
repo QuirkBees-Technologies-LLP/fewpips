@@ -542,20 +542,11 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                   <!-- PLAN TABS -->
                   <div class="plan-switcher-wrapper">
                      <div class="plan-switcher">
-                        <button class="plan-tab price-drop">
-                           <!-- <span class="badge">Price Dropped</span> -->
-                           Fewpips Instant - Most popular
+                        <button class="plan-tab">
+                           Instant Account
                         </button>
                         <button class="plan-tab active">
-                           Fewpips 1-Step
-                        </button>
-
-                        <button class="plan-tab">
-                           Fewpips 2-Step
-                        </button>
-
-                        <button class="plan-tab">
-                           Fewpips 3-Step
+                           1-Step
                         </button>
                      </div>
                   </div>
@@ -566,7 +557,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                         <div class="table_row group">Profit Split Up To</div>
                         <div class="table_row">Profit Target - Phase 1</div>
                         <div class="table_row">Profit Target - Phase 2</div>
-                        <div class="table_row">Profit Target - Phase 3</div>
                         <div class="table_row">Daily Loss Limit</div>
                         <div class="table_row">Max Drawdown</div>
                         <div class="table_row">Consistency Rule</div>
@@ -1938,31 +1928,29 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
    </section>
    <script>
 
-      const API_URL = 'https://api.Fewpips.com/api/v1/challenges/templates';
+      const API_URL = 'https://fewpips-be-gncshwbbgrfagzbh.westus2-01.azurewebsites.net/api/challenges/templates';
 
-      const AUTH_TOKEN = 'pk_live_734f28105c2a0d2ad1588e2067fed29af743a3735321fb5a2ee4b42fbc07f325';
-
+      // CORRECT - should be futures plans only
       const PLAN_CONFIG = {
-         "Fewpips Instant - Most Popular!": { phases: ["Funded"] },
-         "Fewpips 1-Step": { phases: ["Phase 1", "Funded"] },
-         "Fewpips 2-Step": { phases: ["Phase 1", "Phase 2", "Funded"] },
-         "Fewpips 3-Step": { phases: ["Phase 1", "Phase 2", "Phase 3", "Funded"] },
+         "Fewpips Future Based CFDs - Instant Account": { phases: ["Funded"] },
+         "Fewpips Future Based CFDs - 1-Step": { phases: ["Phase 1", "Funded"] },
       };
 
       // Display names for buttons only
       const PLAN_DISPLAY_NAMES = {
-         "Fewpips Instant - Most popular": "Fewpips Instant - Most popular",
-         "Fewpips 1-Step": "Fewpips 1-Step",
-         "Fewpips 2-Step": "Fewpips 2-Step",
-         "Fewpips 3-Step": "Fewpips 3-Step",
+         "Fewpips Future Based CFDs - Instant Account": "Instant Account",
+         "Fewpips Future Based CFDs - 1-Step": "1-Step",
       };
 
       let allData = {};
-      let activePlan = "Fewpips 3-Step";
+      let activePlan = "Fewpips Future Based CFDs - 1-Step";
 
       function formatTemplates(templates) {
          const formatted = {};
-         const planNames = ["Fewpips Instant - Most popular", "Fewpips 1-Step", "Fewpips 2-Step", "Fewpips 3-Step"];
+         const planNames = [
+            "Fewpips Future Based CFDs - Instant Account",
+            "Fewpips Future Based CFDs - 1-Step"
+          ];
 
          planNames.forEach((plan) => {
             formatted[plan] = [];
@@ -1976,6 +1964,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             const price = template?.equity?.price;
             const uuid = template?.uuid;
 
+            if (template?.group?.name?.en !== 'Futures') return;
             if (!planName || !price || !formatted.hasOwnProperty(planName)) return;
 
             if (!tempMap[planName]) tempMap[planName] = {};
@@ -2028,29 +2017,19 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
       }
 
       const STEPS_LEVERAGE_DATA = {
-         "Fewpips Instant - Most popular": {
-            info: "Forex: 1:30<br />Indices: 1:5<br />Commodities: 1:7.5<br />Metals: 1:7.5<br />Crypto: 1:1",
-            ratio: "1:30"
+         "Fewpips Future Based CFDs - Instant Account": {
+            info: "Indices: 1:10<br />Metals: 1:10<br />Energies: 1:10<br />Commodities: 1:10",
+            ratio: "1:10"
          },
-         "Fewpips 1-Step": {
-            info: "Forex: 1:30<br />Indices: 1:5<br />Commodities: 1:10<br />Metals: 1:5<br />Crypto: 1:1",
-            ratio: "1:30"
-         },
-         "Fewpips 2-Step": {
-            info: "Forex: 1:100<br />Indices: 1:15<br />Commodities: 1:15<br />Metals: 1:10<br />Crypto: 1:1",
-            ratio: "1:100"
-         },
-         "Fewpips 3-Step": {
-            info: "Forex: 1:100<br />Indices: 1:15<br />CommoSdities: 1:15<br />Metals: 1:10<br />Crypto: 1:1",
-            ratio: "1:100"
+         "Fewpips Future Based CFDs - 1-Step": {
+            info: "Indices: 1:10<br />Metals: 1:10<br />Energies: 1:10<br />Commodities: 1:10",
+            ratio: "1:10"
          }
       };
 
       const PROFIT_SPLIT_DATA = {
-         "Fewpips 1-Step": "90",
-         "Fewpips Instant - Most popular": "70",
-         "Fewpips 2-Step": "90",
-         "Fewpips 3-Step": "90",
+         "Fewpips Future Based CFDs - Instant Account": "80",
+         "Fewpips Future Based CFDs - 1-Step": "80"
       }
 
       function renderComparisonTable(planName) {
@@ -2060,7 +2039,9 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
          const planItems = allData[planName] || [];
 
          // Randomly select one index to be "Most Popular"
-         const popularIndex = planItems.findIndex(item => item.price === '50000.00');
+         const popularIndex = planItems.findIndex(item =>
+            Number(item.price) === 50000
+         );
 
          // 1. Render Labels Column
          let html = `
@@ -2086,7 +2067,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                         </div>
                <div class="table_row">Profit Target - Phase 1</div>
                <div class="table_row">Profit Target - Phase 2</div>
-               <div class="table_row">Profit Target - Phase 3</div>
                <div class="table_row">Daily Loss Limit</div>
                <div class="table_row">Maximum Drawdown</div>
                <div class="table_row">Consistency Rule</div>
@@ -2129,7 +2109,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             const isPopular = index === popularIndex;
             const phase1 = item.phases[0] || {};
             const phase2 = item.phases[1] || {};
-            const phase3 = item.phases[2] || {};
 
             // Formatting helpers
             const formatPercent = (val) => val ? `${Number(val)}%` : "None";
@@ -2146,7 +2125,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                   <div class="table_row">90%</div>
                   <div class="table_row">${formatPercent(phase1.profitTarget)}</div>
                   <div class="table_row">${phase2.profitTarget != null ? formatPercent(phase2.profitTarget) : '-'}</div>
-                  <div class="table_row">${phase3.profitTarget != null ? formatPercent(phase3.profitTarget) : '-'}</div>
                   <div class="table_row">${formatPercent(phase1.maxDailyLoss)}</div>
                   <div class="table_row">${formatPercent(phase1.maxOverallLoss)}</div>
                   <div class="table_row">${item.consistency || "None"}</div>
@@ -2155,7 +2133,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                   <div class="table_row">${formatDays(phase1.maxTradingDays)}</div>
                   <div class="table_row"><span class="check"><i class="fi fi-rs-check-circle"></i></span></div>
                   
-                  <div class="table_row">5</div>
+                  <div class="table_row">${item.minTradingDays ?? 5}</div>
                   <div class="price-section">
                      <div class="old-price">$${Math.round(item.equityPrice * 1.3)}</div>
                      <div class="new-price">$${Number(item.equityPrice)}</div>
@@ -2170,21 +2148,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             existingComingSoon.forEach(el => el.remove());
          }
 
-         if (planName === "Fewpips Instant - Most popular") {
-            const comingSoonElement = document.createElement("div");
-            comingSoonElement.innerHTML = `
-               <div class="coming-soon-wrapper">
-                  <div class="coming-soon-box">
-                     <h2>🚀 Instant Funding</h2>
-                     <p>This plan is launching very soon.</p>
-                     <div class="coming-badge">COMING SOON</div>
-                  </div>
-               </div>
-            `;
-            container.parentNode.insertBefore(comingSoonElement, container);
-         }
-
-
          container.innerHTML = html;
 
          // Lucide icons or other re-initialization if needed
@@ -2196,10 +2159,9 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
          try {
 
             // 1. Fetch Templates
-            const response = await fetch(API_URL, {
-               headers: { 'Authorization': `Bearer ${AUTH_TOKEN}` }
-            });
-            const templates = await response.json();
+            const response = await fetch(API_URL);
+            const json = await response.json();
+            const templates = json.data;
 
             // get a list of unique plan names
             const uniquePlanNames = [...new Set(templates.map(t => t.plan.name.en))];
@@ -2213,9 +2175,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                // API_URL is .../challenges/templates
                // We want .../bonuses?isActive=true
                const bonusUrl = API_URL.replace('/challenges/templates', '/bonuses?isActive=true');
-               const bonusResponse = await fetch(bonusUrl, {
-                  headers: { 'Authorization': `Bearer ${AUTH_TOKEN}` }
-               });
+               const bonusResponse = await fetch(bonusUrl);
                const bonusData = await bonusResponse.json();
                if (bonusData && bonusData.data) {
                   activeBonuses = bonusData.data;
@@ -2228,7 +2188,7 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
             // Initialize comparison part
             initComparisonTabs();
-            renderComparisonTable("Fewpips 3-Step"); // Default
+            renderComparisonTable("Fewpips Future Based CFDs - 1-Step"); // Default
             updatePlan(activePlan);
 
          } catch (err) {
@@ -2337,10 +2297,8 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
                let planName = "";
 
-               if (text.includes("Instant")) planName = "Fewpips Instant - Most popular";
-               if (text.includes("1-Step")) planName = "Fewpips 1-Step";
-               if (text.includes("2-Step")) planName = "Fewpips 2-Step";
-               if (text.includes("3-Step")) planName = "Fewpips 3-Step";
+               if (text.includes("Instant")) planName = "Fewpips Future Based CFDs - Instant Account";
+               if (text.includes("1-Step")) planName = "Fewpips Future Based CFDs - 1-Step";
                if (planName) {
                   renderComparisonTable(planName);
                }

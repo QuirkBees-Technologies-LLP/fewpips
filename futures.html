@@ -2554,6 +2554,14 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
             const phaseData = data.phases.find(p => p.name === phaseName);
 
+            if (data.phases.length === 1) {
+               grid.classList.remove('xl:grid-cols-2');
+               grid.classList.add('xl:grid-cols-1');
+            } else {
+               grid.classList.remove('xl:grid-cols-1');
+               grid.classList.add('xl:grid-cols-2');
+            }
+
             if (!phaseData) return '';
 
             const isFunded = phaseData.type === "funded";

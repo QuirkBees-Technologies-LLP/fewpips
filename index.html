@@ -1441,15 +1441,58 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
                   <span class="fp-log-stat-val">
                      Up to $5,000
                      <span class="info-icon">
-                        <i class="fi fi-rs-info ml-1 cursor-help opacity-60"></i>
-                        <span class="tooltip-box">
-                           <strong>Maximum Per Request</strong><br>
-                           Basic Account: $1,000<br>
-                           Silver Account: $2,500<br>
-                           Gold Account: $5,000
-                        </span>
+                       <i class="fi fi-rs-info ml-1 cursor-help opacity-60"></i>
+                   
+                       <span class="tooltip-box tooltip-box-table">
+                         
+                         <strong>Fewpips Instant Account</strong>
+                         <table class="tooltip-table">
+                           <tr><th>Account Size</th><th>Withdrawal Limit*</th></tr>
+                           <tr><td>$3,000</td><td>$1,000</td></tr>
+                           <tr><td>$5,000</td><td>$2,000</td></tr>
+                           <tr><td>$10,000</td><td>$3,000</td></tr>
+                           <tr><td>$25,000</td><td>$4,000</td></tr>
+                           <tr><td>$50,000</td><td>$5,000</td></tr>
+                         </table>
+                         * Withdrawal Limit is per cycle.<br/><br/>
+                   
+                         <strong>Fewpips 1-Step Account</strong>
+                         <table class="tooltip-table">
+                           <tr><th>Account Size</th><th>Withdrawal Limit*</th></tr>
+                           <tr><td>$5,000</td><td>$1,000</td></tr>
+                           <tr><td>$10,000</td><td>$2,000</td></tr>
+                           <tr><td>$25,000</td><td>$3,000</td></tr>
+                           <tr><td>$50,000</td><td>$4,000</td></tr>
+                           <tr><td>$100,000</td><td>$5,000</td></tr>
+                         </table>
+                         * Withdrawal Limit is per cycle.<br/><br/>
+                   
+                         <strong>Fewpips 2-Step Account</strong>
+                         <table class="tooltip-table">
+                           <tr><th>Account Size</th><th>Withdrawal Limit*</th></tr>
+                           <tr><td>$5,000</td><td>$1,000</td></tr>
+                           <tr><td>$10,000</td><td>$1,000</td></tr>
+                           <tr><td>$25,000</td><td>$1,000</td></tr>
+                           <tr><td>$50,000</td><td>$1,000</td></tr>
+                           <tr><td>$100,000</td><td>$1,000</td></tr>
+                         </table>
+                         * Withdrawal Limit is per cycle.<br/><br/>
+                   
+                         <strong>Fewpips 3-Step Account</strong>
+                         <table class="tooltip-table">
+                           <tr><th>Account Size</th><th>Withdrawal Limit*</th></tr>
+                           <tr><td>$5,000</td><td>$1,000</td></tr>
+                           <tr><td>$10,000</td><td>$1,000</td></tr>
+                           <tr><td>$25,000</td><td>$1,000</td></tr>
+                           <tr><td>$50,000</td><td>$1,000</td></tr>
+                           <tr><td>$100,000</td><td>$1,000</td></tr>
+                           <tr><td>$200,000</td><td>$1,000</td></tr>
+                         </table>
+                         * Withdrawal Limit is per cycle.<br/><br/>
+                   
+                       </span>
                      </span>
-                  </span>
+                   </span>
 
                   <span class="fp-log-stat-label">
                      Depending On The Account
@@ -2657,6 +2700,8 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             console.log(uniquePlanNames);
             allData = formatTemplates(templates);
 
+            console.log("allData :: ", templates, allData);
+
             // 2. Fetch Active Bonuses
             // Using a separate try-catch so bonus failure doesn't break the whole app
             try {
@@ -2902,7 +2947,6 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
             document.getElementById('bonus-message').innerText = "";
             document.getElementById('bonus-code-input').classList.remove('border-green-500', 'border-red-500');
 
-
             // Update Button UI
             const buttons = document.querySelectorAll('.plan-btn');
             if (buttons.length === 0) console.warn("No .plan-btn elements found");
@@ -3039,6 +3083,8 @@ https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css
 
          const grid = document.getElementById('phases-grid');
 
+         console.log("planName, price, phases :: ", planName, price, phases);
+         console.log("data :: ", data);
 
          grid.innerHTML = phases.map(phaseName => {
 
